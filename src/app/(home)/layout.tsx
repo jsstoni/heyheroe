@@ -1,3 +1,4 @@
+import { ActiveLink } from '@/components/active-link';
 import prisma from '@/lib/db';
 import Link from 'next/link';
 
@@ -26,7 +27,7 @@ export default async function HomeLayout({
         <aside className="h-[calc(100vh-76px)] overflow-auto border-r">
           <nav className="flex flex-col gap-1">
             {services.map((service) => (
-              <Link
+              <ActiveLink
                 key={service.id}
                 href={`/services/${service.slug}`}
                 className="flex items-center gap-2 p-2.5 px-5 text-zinc-500 transition-colors hover:text-orange-500"
@@ -37,7 +38,7 @@ export default async function HomeLayout({
                   alt={service.name}
                 />
                 {service.name}
-              </Link>
+              </ActiveLink>
             ))}
           </nav>
         </aside>
