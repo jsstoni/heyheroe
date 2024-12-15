@@ -7,9 +7,16 @@ async function main() {
   const services = JSON.parse(
     await fs.readFile('./data/services.json', 'utf-8')
   );
+  const subservices = JSON.parse(
+    await fs.readFile('./data/sub-services.json', 'utf-8')
+  );
 
   await prisma.services.createMany({
     data: services,
+  });
+
+  await prisma.subServices.createMany({
+    data: subservices,
   });
 
   console.log('Seeding completed successfully!');

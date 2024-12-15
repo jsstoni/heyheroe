@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,12 +8,26 @@ datasource db {
 }
 
 model Services {
-  id Int @id @default(autoincrement())
-  name String
-  slug String
-  icon String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          Int      @id @default(autoincrement())
+  name        String
+  slug        String   @unique
+  icon        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  subServices SubServices[]
 
   @@map("services")
+}
+
+model SubServices {
+  id          Int      @id @default(autoincrement())
+  idService   Int      @map("id_service")
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  service Services @relation(fields: [idService], references: [id], onDelete: Cascade)
+
+  @@map("sub_services")
 }
