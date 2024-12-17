@@ -1,13 +1,15 @@
 export default function Home() {
   return (
     <>
-      <div className="bg-hero flex h-[360px] flex-col items-center justify-center bg-blue-600 bg-cover bg-center bg-no-repeat">
-        <h1 className="text-6xl font-bold text-white">
-          ¿Buscas algún servicio?
-        </h1>
-        <h2 className="text-4xl font-bold text-white">
-          Encuentra las mejores ofertas
-        </h2>
+      <div className="flex h-[360px] flex-col items-center justify-center bg-blue-600 bg-hero bg-cover bg-center bg-no-repeat">
+        <div className="max-w-2xl text-center">
+          <h1 className="text-6xl font-bold text-white drop-shadow-md">
+            ¿Buscas algún servicio?
+          </h1>
+          <h2 className="mt-1 text-2xl font-bold text-white drop-shadow-md">
+            Explora servicios confiables y de calidad.
+          </h2>
+        </div>
       </div>
 
       <div className="px-10">

@@ -1,3 +1,4 @@
+import FormService from '@/components/forms/form-service';
 import prisma from '@/lib/db';
 
 interface PropsParams {
@@ -28,9 +29,17 @@ export default async function Sub({ params }: PropsParams) {
   }
 
   return (
-    <div className="bg-indigo-400 p-14 text-center">
-      <h1 className="text-5xl font-bold text-white">{data.service.name}</h1>
-      <h2 className="text-3xl font-bold text-zinc-600">{data.name}</h2>
-    </div>
+    <>
+      <div className="bg-orange-50 p-14 text-center">
+        <h1 className="text-5xl font-bold text-zinc-500">
+          {data.service.name}
+        </h1>
+        <h2 className="text-3xl font-bold text-zinc-400">{data.name}</h2>
+      </div>
+
+      <div className="px-10">
+        <FormService />
+      </div>
+    </>
   );
 }

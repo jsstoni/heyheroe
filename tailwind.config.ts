@@ -9,8 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        border: 'hsl(var(--border))',
       },
       backgroundImage: {
         hero: "url('/background.webp')",

@@ -17,14 +17,33 @@ export default async function HomeLayout({
   });
   return (
     <main>
-      <nav className="flex w-full items-center justify-between border-b p-5 shadow-[0_5px_3px_-2px_rgba(200,200,200,.2)]">
-        <Link href="/" className="mx-auto">
-          <img src="/logo.svg" alt="heyheroe" />
+      <nav className="fixed top-0 z-50 flex h-[65px] w-full items-center justify-between border-b bg-white p-4 shadow-[0_5px_3px_-2px_rgba(200,200,200,.2)]">
+        <Link className="text-3xl font-extrabold text-orange-500" href="/">
+          HeyHeroe
+        </Link>
+
+        <ul className="flex items-center justify-between gap-6">
+          <li>
+            <Link href="#">Buscar trabajos</Link>
+          </li>
+          <li>
+            <Link href="#">Como funciona</Link>
+          </li>
+          <li>
+            <Link href="#">Garantia</Link>
+          </li>
+        </ul>
+
+        <Link
+          className="rounded-full border border-orange-500 px-6 py-1.5 hover:bg-orange-500 hover:text-white"
+          href="#"
+        >
+          Empezar ahora
         </Link>
       </nav>
 
-      <div className="grid grid-cols-[260px_1fr]">
-        <aside className="h-[calc(100vh-76px)] overflow-auto border-r">
+      <div className="mt-[65px]">
+        <aside className="fixed bottom-0 top-[65px] w-[260px] overflow-hidden border-r bg-white hover:overflow-auto">
           <nav className="flex flex-col gap-1">
             {services.map((service) => (
               <ActiveLink
@@ -42,7 +61,8 @@ export default async function HomeLayout({
             ))}
           </nav>
         </aside>
-        <div className="flex flex-col gap-5">{children}</div>
+
+        <div className="ml-[260px] flex flex-col gap-5 pb-10">{children}</div>
       </div>
     </main>
   );

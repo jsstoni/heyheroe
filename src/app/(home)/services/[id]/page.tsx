@@ -25,8 +25,8 @@ export default async function Service({ params }: PropsParams) {
 
   return (
     <>
-      <div className="bg-indigo-400 p-14 text-center">
-        <h1 className="text-5xl font-bold text-white">{data.name}</h1>
+      <div className="bg-orange-50 p-14 text-center">
+        <h1 className="text-5xl font-bold text-zinc-500">{data.name}</h1>
       </div>
       <div className="grid gap-8 px-10 md:grid-cols-2">
         {data.subServices.map((service) => (
