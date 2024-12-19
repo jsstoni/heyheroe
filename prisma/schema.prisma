@@ -12,6 +12,7 @@ model Services {
   name        String
   slug        String        @unique
   icon        String
+  active      Boolean       @default(true)
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
   subServices SubServices[]
@@ -24,6 +25,7 @@ model SubServices {
   idService   Int      @map("id_service")
   name        String
   description String
+  active      Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

@@ -1,100 +1,128 @@
 [
-  { "id": 1, "name": "Cocina", "slug": "cocina", "icon": "icon-cocina" },
+  {
+    "id": 1,
+    "name": "Cocina",
+    "slug": "cocina",
+    "icon": "icon-cocina",
+    "active": false
+  },
   {
     "id": 2,
     "name": "Cuidado de personas",
     "slug": "cuidado-personas",
-    "icon": "icon-cuidado-personas"
+    "icon": "icon-cuidado-personas",
+    "active": true
   },
   {
     "id": 3,
     "name": "Cuidado de ropa",
     "slug": "cuidado-ropa",
-    "icon": "icon-ropa"
+    "icon": "icon-ropa",
+    "active": false
   },
   {
     "id": 4,
     "name": "Cuidado de vehículos",
     "slug": "cuidado-vehiculos",
-    "icon": "icon-vehiculo"
+    "icon": "icon-vehiculo",
+    "active": false
   },
   {
     "id": 5,
     "name": "Decoración",
     "slug": "decoracion",
-    "icon": "icon-decorar"
+    "icon": "icon-decorar",
+    "active": false
   },
   {
     "id": 6,
     "name": "Electrónica",
     "slug": "electronica",
-    "icon": "icon-electronica"
+    "icon": "icon-electronica",
+    "active": true
   },
   {
     "id": 7,
     "name": "Estética",
     "slug": "estetica",
-    "icon": "icon-estetica"
+    "icon": "icon-estetica",
+    "active": true
   },
   {
     "id": 8,
     "name": "Relajación",
     "slug": "relajacion",
-    "icon": "icon-masajitas"
+    "icon": "icon-masajitas",
+    "active": true
   },
-  { "id": 9, "name": "Eventos", "slug": "eventos", "icon": "icon-eventos" },
+  {
+    "id": 9,
+    "name": "Eventos",
+    "slug": "eventos",
+    "icon": "icon-eventos",
+    "active": true
+  },
   {
     "id": 10,
     "name": "Jardinería",
     "slug": "jardineria",
-    "icon": "icon-jardinero"
+    "icon": "icon-jardinero",
+    "active": true
   },
   {
     "id": 11,
     "name": "Limpieza",
     "slug": "limpieza",
-    "icon": "icon-limpieza"
+    "icon": "icon-limpieza",
+    "active": true
   },
   {
     "id": 12,
     "name": "Mascotas",
     "slug": "mascotas",
-    "icon": "icon-mascotas"
+    "icon": "icon-mascotas",
+    "active": true
   },
   {
     "id": 13,
     "name": "Profesores",
     "slug": "profesores",
-    "icon": "icon-educacion"
+    "icon": "icon-educacion",
+    "active": false
   },
   {
     "id": 14,
     "name": "Entrenamiento",
     "slug": "entrenamiento",
-    "icon": "icon-entrenador"
+    "icon": "icon-entrenador",
+    "active": false
   },
   {
     "id": 15,
     "name": "Reparaciones Caseras",
     "slug": "reparaciones-caseras",
-    "icon": "icon-reparaciones"
+    "icon": "icon-reparaciones",
+    "active": true
   },
   {
     "id": 17,
     "name": "Seguridad",
     "slug": "seguridad",
-    "icon": "icon-seguridad"
+    "icon": "icon-seguridad",
+    "active": true
   },
   {
     "id": 19,
     "name": "Transporte \/ Fletes",
     "slug": "transporte-fletes",
-    "icon": "icon-flete"
+    "icon": "icon-flete",
+    "active": true
   },
   {
     "id": 20,
     "name": "Servicio Integral",
     "slug": "servicio-integral",
-    "icon": "icon-asistente"
+    "icon": "icon-asistente",
+    "active": false
   }
 ]
