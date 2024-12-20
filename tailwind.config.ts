@@ -14,6 +14,16 @@ export default {
       backgroundImage: {
         hero: "url('/background.webp')",
       },
+      container: {
+        center: true,
+        screens: {
+          sm: '100%',
+          md: '768px',
+          lg: '1024px',
+          xl: '1124px',
+          '2xl': '1536px',
+        },
+      },
     },
   },
   plugins: [],

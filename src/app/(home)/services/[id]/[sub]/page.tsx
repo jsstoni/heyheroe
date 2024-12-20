@@ -30,14 +30,12 @@ export default async function Sub({ params }: PropsParams) {
 
   return (
     <>
-      <div className="bg-orange-50 p-14 text-center">
-        <h1 className="text-5xl font-bold text-zinc-500">
-          {data.service.name}
-        </h1>
-        <h2 className="text-3xl font-bold text-zinc-400">{data.name}</h2>
+      <div className="bg-indigo-100 p-14 text-center">
+        <h1 className="text-5xl">{data.service.name}</h1>
+        <h2 className="text-2xl text-zinc-400">{data.name}</h2>
       </div>
 
-      <div className="px-10">
+      <div className="container mt-5">
         <FormService />
       </div>
     </>

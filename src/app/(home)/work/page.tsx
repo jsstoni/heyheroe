@@ -9,11 +9,20 @@ export default async function Work() {
     orderBy: {
       name: 'asc',
     },
+    where: {
+      active: true,
+    },
     include: {
       subServices: {
+        where: {
+          active: true,
+        },
         select: {
           id: true,
           name: true,
+        },
+        orderBy: {
+          name: 'asc',
         },
       },
     },
@@ -23,9 +32,9 @@ export default async function Work() {
     <>
       <WorkService services={services} />
 
-      <h3 className="text-2xl font-extrabold text-zinc-500 drop-shadow-md">
-        Trabajos destacados
-      </h3>
+      <div className="container mt-5">
+        <h3 className="text-2xl drop-shadow-md">Trabajos destacados</h3>
+      </div>
     </>
   );
 }

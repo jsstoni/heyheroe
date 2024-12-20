@@ -12,10 +12,18 @@ export default async function Service({ params }: PropsParams) {
   const { id } = await params;
   const data = await prisma.services.findUnique({
     where: {
+      active: true,
       slug: id,
     },
     include: {
-      subServices: true,
+      subServices: {
+        where: {
+          active: true,
+        },
+        orderBy: {
+          name: 'asc',
+        },
+      },
     },
   });
 
@@ -25,10 +33,11 @@ export default async function Service({ params }: PropsParams) {
 
   return (
     <>
-      <div className="bg-orange-50 p-14 text-center">
-        <h1 className="text-5xl font-bold text-zinc-500">{data.name}</h1>
+      <div className="bg-indigo-100 p-14 text-center">
+        <h1 className="text-5xl">{data.name}</h1>
       </div>
-      <div className="grid gap-8 px-10 md:grid-cols-2">
+
+      <div className="container mt-5 grid gap-8 md:grid-cols-2">
         {data.subServices.map((service) => (
           <Link
             className="text-xl font-bold text-zinc-600 hover:text-orange-500"
@@ -36,7 +45,7 @@ export default async function Service({ params }: PropsParams) {
             key={service.id}
           >
             {service.name}
-            <span className="block text-xs font-normal text-zinc-500">
+            <span className="block text-xs font-normal">
               {service.description}
             </span>
           </Link>
