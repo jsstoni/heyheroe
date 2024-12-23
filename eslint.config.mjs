@@ -15,6 +15,7 @@ const eslintConfig = [
     'next/core-web-vitals',
     'next/typescript',
     'plugin:tailwindcss/recommended',
+    'plugin:@typescript-eslint/recommended',
     'prettier'
   ),
   {
@@ -23,6 +24,7 @@ const eslintConfig = [
     },
     rules: {
       '@next/next/no-img-element': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [
         'warn',
