@@ -2,30 +2,49 @@ import prisma from '@/lib/db';
 import Link from 'next/link';
 
 interface PropsParams {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export const dynamic = 'force-static';
-export const revalidate = 60;
 
-export default async function Service({ params }: PropsParams) {
-  const { id } = await params;
-  const data = await prisma.services.findUnique({
-    where: {
-      active: true,
-      slug: id,
-    },
-    include: {
-      subServices: {
-        where: {
-          active: true,
-        },
-        orderBy: {
-          name: 'asc',
+const getData = async (slug: string) => {
+  try {
+    const data = await prisma.services.findUnique({
+      where: {
+        active: true,
+        slug: slug,
+      },
+      include: {
+        subServices: {
+          where: {
+            active: true,
+          },
+          orderBy: {
+            name: 'asc',
+          },
         },
       },
-    },
+    });
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+export async function generateStaticParams() {
+  const services = await prisma.services.findMany({
+    where: { active: true },
+    select: { slug: true },
   });
+
+  return services.map((service) => ({ slug: service.slug }));
+}
+
+export default async function Service({ params }: PropsParams) {
+  const { slug } = await params;
+  const data = await getData(slug);
 
   if (!data) {
     return <h1>Service not found</h1>;

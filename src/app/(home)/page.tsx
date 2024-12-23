@@ -2,27 +2,47 @@ import { ActiveLink } from '@/components/active-link';
 import prisma from '@/lib/db';
 
 export const dynamic = 'force-static';
-export const revalidate = 60;
 
-export default async function Home() {
-  const [services, total] = await prisma.$transaction([
-    prisma.services.findMany({
-      where: {
-        active: true,
-      },
-      orderBy: {
-        name: 'asc',
-      },
-    }),
-    prisma.subServices.count({
-      where: {
-        active: true,
-        service: {
+const getData = async () => {
+  try {
+    const [services, total] = await prisma.$transaction([
+      prisma.services.findMany({
+        where: {
           active: true,
         },
-      },
-    }),
-  ]);
+        orderBy: {
+          name: 'asc',
+        },
+      }),
+      prisma.subServices.count({
+        where: {
+          active: true,
+          service: {
+            active: true,
+          },
+        },
+      }),
+    ]);
+
+    return { services, total };
+  } catch (error) {
+    console.error(error);
+    return { services: [], total: 0 };
+  }
+};
+
+export async function generateStaticParams() {
+  const { services } = await getData();
+
+  if (!services) {
+    return [];
+  }
+
+  return services.map((service) => ({ id: service.slug }));
+}
+
+export default async function Home() {
+  const { services, total } = await getData();
 
   return (
     <>
