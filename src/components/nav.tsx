@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Profile from './profile';
 
 export const NavBar = () => {
   return (
@@ -12,17 +13,9 @@ export const NavBar = () => {
           <li>
             <Link href="/work">Buscar trabajos</Link>
           </li>
-          <li>
-            <Link href="#">Como funciona</Link>
-          </li>
         </ul>
 
-        <Link
-          className="rounded-full border border-orange-500 px-4 py-1 text-orange-500 hover:bg-orange-500 hover:text-white"
-          href="/login"
-        >
-          Empezar ahora
-        </Link>
+        <Profile />
       </nav>
     </div>
   );
