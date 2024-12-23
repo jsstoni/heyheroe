@@ -19,7 +19,7 @@ export const NavBar = () => {
 
         <Link
           className="rounded-full border border-orange-500 px-4 py-1 text-orange-500 hover:bg-orange-500 hover:text-white"
-          href="#"
+          href="/login"
         >
           Empezar ahora
         </Link>
