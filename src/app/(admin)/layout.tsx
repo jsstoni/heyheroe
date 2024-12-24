@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <main className="container relative mx-auto h-[calc(100vh-65px)] border-x">
         <aside className="absolute inset-y-0 flex w-[260px] flex-col gap-4 border-r bg-white">
-          <nav className="flex flex-col gap-1">
+          <nav className="flex flex-col">
             {menu.map((item) => (
               <ActiveLink
                 className="flex items-center gap-2 px-4 py-2.5 hover:bg-zinc-200 hover:text-orange-500"
@@ -33,5 +33,10 @@ const menu = [
     name: 'Perfil',
     href: '/admin',
     icon: '/svgs/icon-entrenador.svg',
+  },
+  {
+    name: 'Mis Servicios',
+    href: '/service',
+    icon: '/svgs/icon-servicio.svg',
   },
 ];
