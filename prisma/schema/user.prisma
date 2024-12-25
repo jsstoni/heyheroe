@@ -29,14 +29,15 @@ model Session {
 }
 
 model User {
-  id            Int       @id @default(autoincrement())
+  id            Int            @id @default(autoincrement())
   name          String?
-  email         String?   @unique
-  emailVerified DateTime? @map("email_verified")
+  email         String?        @unique
+  emailVerified DateTime?      @map("email_verified")
   image         String?
-  phoneNumber   String?   @map("phone_number")
+  phoneNumber   String?        @map("phone_number")
   accounts      Account[]
   sessions      Session[]
+  professionals Professional[]
 
   @@map("users")
 }
