@@ -22,9 +22,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     signIn: '/login',
   },
   callbacks: {
+    session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.sub as string;
+        session.user.phoneNumber = token.phoneNumber as string;
+      }
+      return session;
+    },
     authorized: ({ auth, request }) => {
       const isLoggedIn = !!auth?.user;
-      const protected_routes = ['/admin'];
+      const protected_routes = ['/admin', '/service', '/service/create'];
       const isOnDashboard = protected_routes.includes(request.nextUrl.pathname);
       return isLoggedIn || !isOnDashboard;
     },
