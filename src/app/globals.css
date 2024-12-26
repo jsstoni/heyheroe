@@ -8,6 +8,6 @@
   }
 
   * {
-    @apply border-border text-zinc-500;
+    @apply border-border text-zinc-700;
   }
 }

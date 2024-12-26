@@ -4,12 +4,12 @@ import Profile from './profile';
 export const NavBar = () => {
   return (
     <div className="fixed top-0 z-50 w-full border-b bg-white shadow-[0_5px_3px_-2px_rgba(200,200,200,.2)]">
-      <nav className="container flex h-[65px] items-center justify-between">
+      <nav className="container flex h-[65px] items-center justify-between gap-4">
         <Link className="text-3xl font-extrabold text-orange-500" href="/">
           HeyHeroe
         </Link>
 
-        <ul className="flex items-center justify-between gap-6">
+        <ul className="mr-auto flex items-center justify-between gap-6">
           <li>
             <Link href="/work">Buscar trabajos</Link>
           </li>
