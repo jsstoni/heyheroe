@@ -46,10 +46,12 @@ export default function Profile() {
         src={session.user?.image || ''}
         alt="avatar"
       />
-      <div className="flex flex-col">
-        <span className="text-sm font-medium">{session.user?.name}</span>
-        <span className="text-xs text-gray-500">{session.user?.email}</span>
-      </div>
+      <Link className="text-sm font-medium hover:underline" href="/admin">
+        {session.user?.name}
+        <span className="block text-xs text-gray-500">
+          {session.user?.email}
+        </span>
+      </Link>
     </div>
   );
 }
