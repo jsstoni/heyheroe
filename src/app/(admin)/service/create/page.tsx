@@ -1,9 +1,9 @@
+import { Heading } from '@/components/heading';
 import prisma from '@/lib/db';
 import { cache } from 'react';
 import Form from './_components/form';
 
 const getData = cache(async () => {
-  'use server';
   try {
     const services = await prisma.services.findMany({
       orderBy: {
@@ -39,7 +39,12 @@ export default async function Create() {
 
   return (
     <>
-      <div className="p-5">
+      <Heading
+        title="Agregar nuevo servicio"
+        sub="Complete los detalles del servicio que desea ofrecer."
+      />
+
+      <div className="mt-4">
         <Form services={services} />
       </div>
     </>

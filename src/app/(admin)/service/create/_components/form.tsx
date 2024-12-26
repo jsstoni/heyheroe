@@ -8,6 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { createService } from '../../action';
 
 interface SubService {
   id: number;
@@ -24,21 +25,20 @@ interface Props {
   services: Service[];
 }
 
-const schema = z.object({
-  pricePerHour: z.number().min(0, 'El precio debe ser mayor o igual a 0'),
-  experience: z.enum([
-    'Recien empieza',
-    '1 año',
-    '2 años',
-    '3 años',
-    'Más de 5 años',
-  ]),
-  serviceDescription: z
+export const schema = z.object({
+  service: z
+    .number({ message: 'Selecciona un servicio' })
+    .min(1, 'Selecciona un servicio'),
+  price: z
+    .number({ message: 'Agrega un precio' })
+    .min(1, 'El precio debe ser mayor o igual a 0'),
+  experience: z.string(),
+  description: z
     .string()
     .min(90, 'La descripción debe tener al menos 90 caracteres'),
 });
 
-type FormValues = z.infer<typeof schema>;
+export type FormValues = z.infer<typeof schema>;
 
 const options = [
   { value: 'Recien empieza', label: 'Recien empiezo' },
@@ -49,7 +49,6 @@ const options = [
 ];
 
 export default function Form({ services }: Props) {
-  const [selectedService, setSelectedService] = useState<number | null>(null);
   const [filteredSubServices, setFilteredSubServices] = useState<SubService[]>(
     []
   );
@@ -57,20 +56,25 @@ export default function Form({ services }: Props) {
   const {
     handleSubmit,
     register,
-    formState: { errors },
+    setError,
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
   });
 
   const handleServiceChange = (serviceId: number) => {
-    setSelectedService(serviceId);
-
     const service = services.find((s) => s.id === serviceId);
     setFilteredSubServices(service?.subServices || []);
   };
 
-  const onSubmit = (data: FormValues) => {
-    console.log('onSubmit', data);
+  const onSubmit = async (data: FormValues) => {
+    const response = await createService(data);
+    if (response && 'error' in response) {
+      setError('root', { message: 'hubo un error' });
+      return;
+    }
+    reset();
   };
 
   return (
@@ -80,42 +84,41 @@ export default function Form({ services }: Props) {
     >
       <label>
         Selecciona un servicio
-        <select
-          className="w-full rounded-md border bg-white px-5 py-2.5"
-          id="services"
+        <Select
+          options={[
+            { label: 'Seleccionar', value: '' },
+            ...services.map((service) => ({
+              label: service.name,
+              value: String(service.id),
+            })),
+          ]}
           onChange={(e) => handleServiceChange(Number(e.target.value))}
-        >
-          <option value="">-- Selecciona un servicio --</option>
-          {services.map((service) => (
-            <option key={service.id} value={service.id}>
-              {service.name}
-            </option>
-          ))}
-        </select>
+        />
       </label>
 
       <label>
         Selecciona un subservicio
-        <select
-          className="w-full rounded-md border bg-white px-5 py-2.5"
-          id="subServices"
-        >
-          <option value="">-- Selecciona un subservicio --</option>
-          {filteredSubServices.map((subService) => (
-            <option key={subService.id} value={subService.id}>
-              {subService.name}
-            </option>
-          ))}
-        </select>
+        <Select
+          options={[
+            { label: 'Seleccionar subservcio', value: '' },
+            ...filteredSubServices.map((subService) => ({
+              label: subService.name,
+              value: String(subService.id),
+            })),
+          ]}
+          error={errors.service}
+          {...register('service', { valueAsNumber: true })}
+        />
       </label>
 
       <label>
         Precio / Hora
         <Input
-          {...register('pricePerHour', { valueAsNumber: true })}
+          {...register('price', { valueAsNumber: true })}
           type="number"
           min="0"
-          step="0.01"
+          step="100"
+          error={errors.price}
         />
       </label>
 
@@ -137,14 +140,22 @@ export default function Form({ services }: Props) {
       <label className="col-span-2 flex flex-col space-y-1">
         Describe ampliamente tu servicio
         <Textarea
-          {...register('serviceDescription')}
+          {...register('description')}
           placeholder="Cuéntales a tus clientes lo que haces en más de 90 caracteres"
           className="h-32"
-          error={errors.serviceDescription}
+          error={errors.description}
         />
       </label>
 
-      <Button className="col-span-2 w-[100px]" type="submit">
+      {errors.root && (
+        <p className="col-span-2 text-red-500">{errors.root.message}</p>
+      )}
+
+      <Button
+        className="col-span-2 w-[100px]"
+        type="submit"
+        disabled={isSubmitting}
+      >
         Guardar
       </Button>
     </form>
