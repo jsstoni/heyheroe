@@ -11,7 +11,7 @@
     "name": "Cuidado de personas",
     "slug": "cuidado-personas",
     "icon": "icon-cuidado-personas",
-    "active": true
+    "active": false
   },
   {
     "id": 3,
@@ -32,7 +32,7 @@
     "name": "Decoración",
     "slug": "decoracion",
     "icon": "icon-decorar",
-    "active": false
+    "active": true
   },
   {
     "id": 6,
@@ -46,21 +46,21 @@
     "name": "Estética",
     "slug": "estetica",
     "icon": "icon-estetica",
-    "active": true
+    "active": false
   },
   {
     "id": 8,
     "name": "Relajación",
     "slug": "relajacion",
     "icon": "icon-masajitas",
-    "active": true
+    "active": false
   },
   {
     "id": 9,
     "name": "Eventos",
     "slug": "eventos",
     "icon": "icon-eventos",
-    "active": true
+    "active": false
   },
   {
     "id": 10,
