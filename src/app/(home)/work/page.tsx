@@ -3,7 +3,6 @@ import { cache } from 'react';
 import { WorkService } from './_components/work';
 
 const getData = cache(async () => {
-  'use server';
   try {
     const services = await prisma.services.findMany({
       orderBy: {

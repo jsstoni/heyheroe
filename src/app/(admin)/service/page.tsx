@@ -48,16 +48,16 @@ export default async function Service() {
             key={service.id}
           >
             <div className="flex flex-col">
-              <p>{service.service.service.name}</p>
+              <p className="text-xl">{service.service.service.name}</p>
               <p className="text-sm text-zinc-400">{service.service.name}</p>
             </div>
-            <strong className="ml-auto text-green-600">
+            <span className="ml-auto text-green-600">
               ${service.price}/hora
-            </strong>
+            </span>
           </div>
         ))}
         <Link
-          className="rounded-md border-2 border-dashed p-2 text-center"
+          className="flex flex-col justify-center rounded-md border-2 border-dashed p-2 text-center"
           href="/service/create"
         >
           <strong>Agregar nuevo servicio</strong>

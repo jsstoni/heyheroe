@@ -10,4 +10,11 @@
   * {
     @apply border-border text-zinc-700;
   }
+
+  label {
+    @apply font-bold;
+  }
+  label > * {
+    @apply mt-1 font-normal;
+  }
 }

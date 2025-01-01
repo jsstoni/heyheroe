@@ -46,39 +46,47 @@ export default async function Home() {
 
   return (
     <>
-      <div className="container gap-8 py-10">
-        <div className="space-y-5">
-          <div>
-            <h1 className="text-4xl font-bold drop-shadow-md">
-              Más de {total} tipos de servicios en un solo lugar.
-            </h1>
-            <h2 className="text-2xl drop-shadow-md">
-              Encuentra profesionales y contrata servicios para todo lo que
-              necesitas.
-            </h2>
-          </div>
-
-          <nav className="grid gap-4 rounded-md border-2 border-gray-400 bg-indigo-100 p-4 shadow-[4px_4px_0px_rgba(156,163,175,1)] md:grid-cols-4">
-            {services.map((service) => (
-              <ActiveLink
-                key={service.id}
-                href={`/services/${service.slug}`}
-                className="flex items-center gap-2 text-xl transition-colors hover:text-orange-500"
-              >
-                <img
-                  className="size-6"
-                  src={`/svgs/${service.icon}.svg`}
-                  alt={service.name}
-                />
-                {service.name}
-              </ActiveLink>
-            ))}
-          </nav>
+      <div className="container mx-auto flex h-[300px] items-center">
+        <div className="space-y-3">
+          <h1 className="text-5xl font-bold drop-shadow-md">
+            Más de {total} servicios disponibles en un solo lugar.
+          </h1>
+          <h2 className="text-2xl drop-shadow-md">
+            Encuentra profesionales y contrata servicios para todo lo que
+            necesitas.
+          </h2>
         </div>
 
-        <h3 className="mt-20 text-3xl drop-shadow-md">¿Cómo funciona?</h3>
+        <img
+          className="max-h-[360px] w-[640px]"
+          src="/svgs/service.svg"
+          alt=""
+        />
+      </div>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-3">
+      <div className="container mx-auto">
+        <nav className="mb-20 mt-5 grid gap-4 md:grid-cols-4">
+          {services.map((service) => (
+            <ActiveLink
+              key={service.id}
+              href={`/services/${service.slug}`}
+              className="group relative flex flex-col gap-2 overflow-hidden rounded-md border bg-white p-3 transition-all hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div className="absolute -right-8 -top-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
+              <img
+                className="size-7"
+                src={`/svgs/${service.icon}.svg`}
+                alt={service.name}
+              />
+              {service.name}
+            </ActiveLink>
+          ))}
+        </nav>
+
+        <h3 className="mt-20 text-3xl">¿Cómo funciona?</h3>
+        <p className="text-gray-400">Servicio para el cliente.</p>
+
+        <div className="my-10 grid gap-10 md:grid-cols-3">
           {steps.map(({ title, description }, index) => (
             <div className="relative bg-gray-100 p-5" key={index}>
               <div className="absolute -left-2 -top-2 size-4 border-l-2 border-t-2 border-zinc-400" />
@@ -87,7 +95,6 @@ export default async function Home() {
               <strong className="absolute -top-6 flex size-12 items-center justify-center rounded-lg bg-gray-300 text-4xl text-zinc-600">
                 {index + 1}
               </strong>
-
               <h4 className="my-4 text-2xl font-bold">{title}</h4>
 
               <p>{description}</p>

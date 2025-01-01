@@ -7,11 +7,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <NavBar />
 
       <main className="relative mt-[65px]">
-        <div className="border-b bg-zinc-100 py-3">
+        <div className="bg-gray-100 py-3">
           <nav className="container mx-auto flex items-center gap-3">
             {menu.map((item) => (
               <ActiveLink
-                className="flex items-center gap-2 rounded-full bg-zinc-200 px-4 py-1"
+                className="flex items-center gap-2 rounded-full bg-gray-200 px-4 py-1"
                 href={item.href}
                 key={item.name}
               >

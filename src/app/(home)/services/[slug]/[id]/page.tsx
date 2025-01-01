@@ -1,5 +1,5 @@
-import FormService from '@/components/forms/form-service';
 import prisma from '@/lib/db';
+import FormService from './_components/form';
 
 interface PropsParams {
   params: Promise<{ id: string }>;
@@ -55,12 +55,12 @@ export default async function Sub({ params }: PropsParams) {
 
   return (
     <>
-      <div className="bg-indigo-100 p-14 text-center">
+      <div className="bg-gradient-to-b from-indigo-100 to-white p-14 text-center">
         <h1 className="text-5xl">{data.service.name}</h1>
         <h2 className="text-2xl text-zinc-400">{data.name}</h2>
       </div>
 
-      <div className="container mt-5">
+      <div className="mx-auto max-w-3xl">
         <FormService />
       </div>
     </>
