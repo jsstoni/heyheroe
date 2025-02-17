@@ -44,7 +44,7 @@ export default async function Service() {
       <div className="mt-4 grid gap-4 md:grid-cols-3">
         {services.map((service) => (
           <div
-            className="flex items-start rounded-md border p-4 shadow-sm"
+            className="flex items-start rounded-md border p-4 shadow-xs"
             key={service.id}
           >
             <div className="flex flex-col">

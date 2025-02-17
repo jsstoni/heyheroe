@@ -46,7 +46,7 @@ export default function FormService() {
 
       <label>
         ¿Cúal es la ubicación?
-        <Input {...register('date')} error={errors.date} type="text" />
+        <Input {...register('location')} error={errors.location} type="text" />
       </label>
 
       <label>

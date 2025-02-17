@@ -29,7 +29,7 @@ export function WorkService({ services }: Props) {
   };
 
   return (
-    <div className="mb-4 rounded-md bg-gradient-to-b from-indigo-100 to-white p-14">
+    <div className="mb-4 rounded-md bg-linear-to-b from-indigo-100 to-white p-14">
       <div className="mx-auto md:max-w-3xl">
         <h1 className="text-5xl drop-shadow-md">
           Explora miles de oportunidades laborales en tu área:

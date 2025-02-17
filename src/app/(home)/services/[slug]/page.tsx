@@ -52,7 +52,7 @@ export default async function Service({ params }: PropsParams) {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-indigo-100 to-white p-14 text-center">
+      <div className="bg-linear-to-b from-indigo-100 to-white p-14 text-center">
         <h1 className="text-5xl">{data.name}</h1>
       </div>
 
