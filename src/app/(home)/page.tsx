@@ -46,8 +46,8 @@ export default async function Home() {
 
   return (
     <>
-      <div className="container mx-auto flex h-[300px] items-center">
-        <div className="space-y-3">
+      <div className="container mx-auto items-center max-sm:px-4 max-sm:pt-5 md:flex md:h-[310px]">
+        <div className="space-y-4">
           <h1 className="text-5xl font-bold drop-shadow-md">
             Más de {total} servicios disponibles en un solo lugar.
           </h1>
@@ -58,21 +58,21 @@ export default async function Home() {
         </div>
 
         <img
-          className="max-h-[360px] w-[640px]"
+          className="max-h-[320px] w-[640px] max-sm:hidden"
           src="/svgs/service.svg"
           alt=""
         />
       </div>
 
-      <div className="container mx-auto">
-        <nav className="mb-20 mt-5 grid gap-4 md:grid-cols-4">
+      <div className="container mx-auto max-sm:px-4">
+        <nav className="mt-5 mb-20 grid gap-4 max-sm:grid-cols-2 md:grid-cols-4">
           {services.map((service) => (
             <ActiveLink
               key={service.id}
               href={`/services/${service.slug}`}
-              className="group relative flex flex-col gap-2 overflow-hidden rounded-md border bg-white p-3 transition-all hover:-translate-y-1 hover:shadow-xl"
+              className="group relative flex flex-col gap-2 overflow-hidden rounded-md border bg-white p-3 font-bold transition-all hover:-translate-y-1 hover:text-orange-500 hover:shadow-xl"
             >
-              <div className="absolute -right-8 -top-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
+              <div className="absolute -top-8 -right-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
               <img
                 className="size-7"
                 src={`/svgs/${service.icon}.svg`}
@@ -83,16 +83,16 @@ export default async function Home() {
           ))}
         </nav>
 
-        <h3 className="mt-20 text-3xl">¿Cómo funciona?</h3>
+        <h3 className="text-3xl font-bold">¿Cómo funciona?</h3>
         <p className="text-gray-400">Servicio para el cliente.</p>
 
         <div className="my-10 grid gap-10 md:grid-cols-3">
           {steps.map(({ title, description }, index) => (
             <div className="relative bg-gray-100 p-5" key={index}>
-              <div className="absolute -left-2 -top-2 size-4 border-l-2 border-t-2 border-zinc-400" />
-              <div className="absolute -bottom-2 -right-2 size-4 border-b-2 border-r-2 border-zinc-400" />
+              <div className="absolute -top-2 -left-2 size-4 border-t-2 border-l-2 border-orange-400" />
+              <div className="absolute -right-2 -bottom-2 size-4 border-r-2 border-b-2 border-orange-400" />
 
-              <strong className="absolute -top-6 flex size-12 items-center justify-center rounded-lg bg-gray-300 text-4xl text-zinc-600">
+              <strong className="absolute -top-6 flex size-12 items-center justify-center rounded-lg bg-orange-500 text-4xl text-white">
                 {index + 1}
               </strong>
               <h4 className="my-4 text-2xl font-bold">{title}</h4>

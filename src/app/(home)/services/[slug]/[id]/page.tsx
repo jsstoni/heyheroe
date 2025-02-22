@@ -60,7 +60,7 @@ export default async function Sub({ params }: PropsParams) {
         <h2 className="text-2xl text-zinc-400">{data.name}</h2>
       </div>
 
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-3xl max-sm:px-4">
         <FormService />
       </div>
     </>

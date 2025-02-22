@@ -57,7 +57,7 @@ export default async function Service() {
           </div>
         ))}
         <Link
-          className="flex flex-col justify-center rounded-md border-2 border-dashed p-2 text-center"
+          className="flex flex-col justify-center rounded-md border-2 border-dashed p-2 text-center hover:border-orange-500"
           href="/service/create"
         >
           <strong>Agregar nuevo servicio</strong>

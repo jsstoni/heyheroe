@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <NavBar />
 
       <main className="relative mt-[65px]">
-        <div className="bg-gray-100 py-3">
+        <div className="bg-gray-100 py-3 max-sm:px-4">
           <nav className="container mx-auto flex items-center gap-3">
             {menu.map((item) => (
               <ActiveLink
@@ -21,7 +21,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
 
-        <section className="container mx-auto py-4">{children}</section>
+        <section className="container mx-auto py-4 max-sm:px-4">
+          {children}
+        </section>
       </main>
     </>
   );
