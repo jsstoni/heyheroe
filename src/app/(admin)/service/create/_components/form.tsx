@@ -1,14 +1,15 @@
 'use client';
 
+import { createService } from '@/app/(admin)/service/action';
+import { schemaService, ServiceValues } from '@/app/(admin)/service/validation';
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useAction } from 'next-safe-action/hooks';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { createService } from '../../action';
 
 interface SubService {
   id: number;
@@ -24,21 +25,6 @@ interface Service {
 interface Props {
   services: Service[];
 }
-
-export const schema = z.object({
-  service: z
-    .number({ message: 'Selecciona un servicio' })
-    .min(1, 'Selecciona un servicio'),
-  price: z
-    .number({ message: 'Agrega un precio' })
-    .min(1, 'El precio debe ser mayor o igual a 0'),
-  experience: z.string(),
-  description: z
-    .string()
-    .min(90, 'La descripción debe tener al menos 90 caracteres'),
-});
-
-export type FormValues = z.infer<typeof schema>;
 
 const options = [
   { value: 'Recien empieza', label: 'Recien empiezo' },
@@ -56,11 +42,11 @@ export default function Form({ services }: Props) {
   const {
     handleSubmit,
     register,
+    getValues,
     setError,
-    reset,
     formState: { errors, isSubmitting },
-  } = useForm<FormValues>({
-    resolver: zodResolver(schema),
+  } = useForm<ServiceValues>({
+    resolver: zodResolver(schemaService),
   });
 
   const handleServiceChange = (serviceId: number) => {
@@ -68,13 +54,17 @@ export default function Form({ services }: Props) {
     setFilteredSubServices(service?.subServices || []);
   };
 
-  const onSubmit = async (data: FormValues) => {
-    const response = await createService(data);
-    if (response && 'error' in response) {
-      setError('root', { message: 'hubo un error' });
-      return;
-    }
-    reset();
+  const { execute } = useAction(createService, {
+    onSuccess({ data }) {
+      console.log('result:', data);
+    },
+    onError({ error }) {
+      setError('root', { message: error.serverError });
+    },
+  });
+
+  const onSubmit = () => {
+    execute(getValues());
   };
 
   return (
