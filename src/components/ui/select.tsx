@@ -31,7 +31,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
       <div>
         <select
           className={cn(
-            'w-full appearance-none rounded-md border bg-white px-3 py-1.5',
+            'h-10 w-full rounded-md border px-3 py-1.5',
             errorMessage && 'border-red-500',
             className
           )}

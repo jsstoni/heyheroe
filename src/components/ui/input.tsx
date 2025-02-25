@@ -25,7 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div>
         <input
           className={cn(
-            'w-full rounded-md border px-3 py-1.5',
+            'h-10 w-full rounded-md border px-3 py-1.5',
             errorMessage && 'border-red-500',
             className
           )}
