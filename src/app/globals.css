@@ -39,7 +39,7 @@
   }
 
   label {
-    @apply font-bold;
+    @apply font-medium;
   }
   label > * {
     @apply mt-1 font-normal;

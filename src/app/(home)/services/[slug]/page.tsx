@@ -52,24 +52,24 @@ export default async function Service({ params }: PropsParams) {
 
   return (
     <>
-      <div className="bg-linear-to-b from-indigo-100 to-white p-14 text-center">
-        <h1 className="text-5xl">{data.name}</h1>
-      </div>
+      <div className="mx-auto max-w-4xl py-14">
+        <h1 className="text-3xl font-bold">{data.name}</h1>
 
-      <div className="mx-auto grid max-w-4xl gap-8 py-5 md:grid-cols-2">
-        {data.subServices.map((service) => (
-          <Link
-            className="group relative overflow-hidden rounded-md bg-white p-5 text-xl font-bold text-zinc-600 shadow-lg transition-all hover:-translate-y-1 hover:text-orange-500 hover:shadow-xl"
-            href={`/services/${data.slug}/${service.id}`}
-            key={service.id}
-          >
-            <div className="absolute -right-8 -top-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
-            {service.name}
-            <span className="block text-sm font-normal">
-              {service.description}
-            </span>
-          </Link>
-        ))}
+        <div className="grid gap-8 py-5 md:grid-cols-2">
+          {data.subServices.map((service) => (
+            <Link
+              className="group relative overflow-hidden rounded-md border bg-white p-5 text-xl font-bold text-zinc-600 shadow-lg transition-all hover:-translate-y-1 hover:text-orange-500 hover:shadow-xl"
+              href={`/services/${data.slug}/${service.id}`}
+              key={service.id}
+            >
+              <div className="absolute -top-8 -right-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
+              {service.name}
+              <span className="mt-1 block text-sm font-normal">
+                {service.description}
+              </span>
+            </Link>
+          ))}
+        </div>
       </div>
     </>
   );

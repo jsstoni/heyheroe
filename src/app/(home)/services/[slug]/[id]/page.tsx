@@ -54,15 +54,10 @@ export default async function Sub({ params }: PropsParams) {
   }
 
   return (
-    <>
-      <div className="bg-linear-to-b from-indigo-100 to-white p-14 text-center">
-        <h1 className="text-5xl">{data.service.name}</h1>
-        <h2 className="text-2xl text-zinc-400">{data.name}</h2>
-      </div>
-
-      <div className="mx-auto max-w-3xl max-sm:px-4">
-        <FormService />
-      </div>
-    </>
+    <div className="mx-auto max-w-3xl py-14 max-sm:px-4">
+      <h1 className="text-3xl font-bold">{data.service.name}</h1>
+      <h2 className="mb-8 text-xl text-zinc-400">{data.name}</h2>
+      <FormService />
+    </div>
   );
 }

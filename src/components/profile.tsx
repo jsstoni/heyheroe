@@ -46,9 +46,9 @@ export default function Profile() {
         src={session.user?.image || ''}
         alt="avatar"
       />
-      <Link className="text-sm font-medium hover:underline" href="/admin">
+      <Link className="text-sm font-medium hover:text-orange-400" href="/admin">
         {session.user?.name}
-        <span className="block text-xs text-gray-500">
+        <span className="block text-xs font-normal text-gray-400">
           {session.user?.email}
         </span>
       </Link>

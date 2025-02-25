@@ -46,10 +46,10 @@ export default async function Home() {
 
   return (
     <>
-      <div className="container mx-auto items-center max-sm:px-4 max-sm:pt-5 md:flex md:h-[310px]">
+      <div className="container mx-auto items-center max-sm:px-4 max-sm:pt-5 md:flex md:h-[410px]">
         <div className="space-y-4">
           <h1 className="text-5xl font-bold drop-shadow-md">
-            Más de {total} servicios disponibles en un solo lugar.
+            Más de {total} servicios en un solo lugar.
           </h1>
           <h2 className="text-2xl drop-shadow-md">
             Encuentra profesionales y contrata servicios para todo lo que
@@ -58,7 +58,7 @@ export default async function Home() {
         </div>
 
         <img
-          className="max-h-[320px] w-[640px] max-sm:hidden"
+          className="max-h-[420px] w-[640px] max-sm:hidden"
           src="/svgs/service.svg"
           alt=""
         />

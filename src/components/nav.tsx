@@ -9,7 +9,7 @@ export const NavBar = () => {
           HeyHéroe
         </Link>
 
-        <ul className="mx-auto flex items-center justify-between gap-6">
+        <ul className="ml-auto flex items-center justify-between gap-4">
           <li>
             <Link className="hover:text-orange-500" href="/work">
               Buscar trabajos
@@ -21,6 +21,8 @@ export const NavBar = () => {
             </Link>
           </li>
         </ul>
+
+        <hr className="mx-4 h-6 w-[1px] bg-gray-300" />
 
         <Profile />
       </nav>
