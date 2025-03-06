@@ -9,7 +9,7 @@ type SelectError =
   | undefined;
 
 export interface SelectOption {
-  value: string;
+  value: string | number;
   label: string;
 }
 
@@ -28,7 +28,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           : null;
 
     return (
-      <div>
+      <>
         <select
           className={cn(
             'h-10 w-full rounded-md border px-3 py-1.5',
@@ -47,7 +47,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         {errorMessage && (
           <p className="mt-1 text-sm text-red-500">{errorMessage}</p>
         )}
-      </div>
+      </>
     );
   }
 );

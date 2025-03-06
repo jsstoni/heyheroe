@@ -22,7 +22,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           : null;
 
     return (
-      <div>
+      <>
         <input
           className={cn(
             'h-10 w-full rounded-md border px-3 py-1.5',
@@ -36,7 +36,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {errorMessage && (
           <p className="mt-1 text-sm text-red-500">{errorMessage}</p>
         )}
-      </div>
+      </>
     );
   }
 );

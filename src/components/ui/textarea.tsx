@@ -22,7 +22,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           : null;
 
     return (
-      <div>
+      <>
         <textarea
           className={cn(
             'w-full rounded-md border px-3 py-1.5',
@@ -35,7 +35,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         {errorMessage && (
           <p className="mt-1 text-sm text-red-500">{errorMessage}</p>
         )}
-      </div>
+      </>
     );
   }
 );
