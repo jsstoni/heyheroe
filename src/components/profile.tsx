@@ -31,7 +31,7 @@ export default function Profile() {
   if (!session) {
     return (
       <Link
-        className="rounded-full border border-orange-500 px-4 py-1 text-orange-500 hover:bg-orange-500 hover:text-white"
+        className="rounded-full border border-amber-500 px-4 py-1 text-amber-500 hover:bg-amber-500 hover:text-white"
         href="/login"
       >
         Empezar ahora
@@ -46,7 +46,7 @@ export default function Profile() {
         src={session.user?.image || ''}
         alt="avatar"
       />
-      <Link className="text-sm font-medium hover:text-orange-400" href="/admin">
+      <Link className="text-sm font-medium hover:text-amber-400" href="/admin">
         {session.user?.name}
         <span className="block text-xs font-normal text-gray-400">
           {session.user?.email}
