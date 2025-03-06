@@ -1,5 +1,11 @@
+import CoverageSection from '@/app/(home)/_components/coverage-section';
 import { ActiveLink } from '@/components/active-link';
+import { Footer } from '@/components/footer';
+import Button from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import prisma from '@/lib/db';
+import { ArrowRight, Search } from 'lucide-react';
+import ProfesionalCTA from './_components/cta-profesional';
 
 export const dynamic = 'force-static';
 
@@ -46,62 +52,102 @@ export default async function Home() {
 
   return (
     <>
-      <div className="container mx-auto items-center max-sm:px-4 max-sm:pt-5 md:flex md:h-[410px]">
-        <div className="space-y-4">
-          <h1 className="text-5xl font-bold drop-shadow-md">
-            Más de {total} servicios en un solo lugar.
-          </h1>
-          <h2 className="text-2xl drop-shadow-md">
-            Encuentra profesionales y contrata servicios para todo lo que
-            necesitas.
-          </h2>
-        </div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-amber-100 py-6 md:py-26">
+        <div className="container mx-auto items-center max-sm:px-4 max-sm:pt-5 md:flex md:gap-6">
+          <div className="space-y-4">
+            <h1 className="text-5xl font-black">
+              Más de <span className="text-amber-400">{total} servicios</span>{' '}
+              en un solo lugar.
+            </h1>
+            <h2 className="text-xl text-gray-500">
+              Encuentra profesionales y contrata servicios para todo lo que
+              necesitas.
+            </h2>
 
-        <img
-          className="max-h-[420px] w-[640px] max-sm:hidden"
-          src="/svgs/service.svg"
-          alt=""
-        />
-      </div>
-
-      <div className="container mx-auto max-sm:px-4">
-        <nav className="mt-5 mb-20 grid gap-4 max-sm:grid-cols-2 md:grid-cols-4">
-          {services.map((service) => (
-            <ActiveLink
-              key={service.id}
-              href={`/services/${service.slug}`}
-              className="group relative flex flex-col gap-2 overflow-hidden rounded-md border bg-white p-3 font-bold transition-all hover:-translate-y-1 hover:text-orange-500 hover:shadow-xl"
-            >
-              <div className="absolute -top-8 -right-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
-              <img
-                className="size-7"
-                src={`/svgs/${service.icon}.svg`}
-                alt={service.name}
+            <div className="relative mb-8 max-w-md">
+              <Search className="pointer-events-none absolute top-4 left-3 h-5 w-5 text-gray-400" />
+              <Input
+                type="text"
+                className="bg-white py-6 pl-10"
+                placeholder="¿Qué servicio necesitas?"
               />
-              {service.name}
-            </ActiveLink>
-          ))}
-        </nav>
+              <Button
+                className="absolute inset-y-0 right-0 flex items-center rounded-l-none"
+                variant="primary"
+              >
+                Buscar
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </div>
 
-        <h3 className="text-3xl font-bold">¿Cómo funciona?</h3>
-        <p className="text-gray-400">Servicio para el cliente.</p>
+          <img
+            className="max-h-[380px] max-md:hidden"
+            src="/svgs/service.svg"
+            alt=""
+          />
+          <div className="absolute top-0 left-0 hidden h-32 w-32 rounded-br-full bg-amber-200 opacity-50 lg:block"></div>
+          <div className="absolute right-0 bottom-0 hidden h-44 w-44 rounded-tl-full bg-amber-200 opacity-50 lg:block"></div>
+        </div>
+      </section>
 
-        <div className="my-10 grid gap-10 md:grid-cols-3">
+      <section className="container mx-auto py-16 max-sm:px-4">
+        <h3 className="mb-16 text-center text-3xl font-bold">
+          ¿Cómo funciona?
+        </h3>
+
+        <div className="grid gap-10 md:grid-cols-3">
           {steps.map(({ title, description }, index) => (
-            <div className="relative bg-gray-100 p-5" key={index}>
-              <div className="absolute -top-2 -left-2 size-4 border-t-2 border-l-2 border-orange-400" />
-              <div className="absolute -right-2 -bottom-2 size-4 border-r-2 border-b-2 border-orange-400" />
+            <div className="relative rounded-md bg-gray-100 p-6" key={index}>
+              <div className="absolute -top-2 -left-2 size-4 border-t-2 border-l-2 border-gray-400" />
+              <div className="absolute -right-2 -bottom-2 size-4 border-r-2 border-b-2 border-gray-400" />
 
-              <strong className="absolute -top-6 flex size-12 items-center justify-center rounded-lg bg-orange-500 text-4xl text-white">
+              <strong className="absolute -top-6 flex size-12 items-center justify-center rounded-xl border border-amber-400 bg-white text-4xl text-amber-400">
                 {index + 1}
               </strong>
-              <h4 className="my-4 text-2xl font-bold">{title}</h4>
+              <h4 className="my-2 text-2xl font-medium">{title}</h4>
 
-              <p>{description}</p>
+              <p className="text-gray-500">{description}</p>
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      <section className="bg-gray-50 py-16 max-sm:px-4">
+        <div className="container mx-auto">
+          <h3 className="mb-10 text-center text-3xl font-bold">
+            Conoce nuestras categorías
+          </h3>
+          <nav className="grid grid-cols-2 gap-6 md:grid-cols-4">
+            {services.map((service) => (
+              <ActiveLink
+                key={service.id}
+                href={`/services/${service.slug}`}
+                className="group relative flex flex-col gap-2 overflow-hidden rounded-xl bg-white p-3 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="absolute -top-8 -right-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
+                <img
+                  className="size-7"
+                  src={`/svgs/${service.icon}.svg`}
+                  alt={service.name}
+                />
+                <h3 className="font-semibold group-hover:text-amber-500">
+                  {service.name}
+                </h3>
+                <span className="text-sm text-gray-500">
+                  {service.description}
+                </span>
+              </ActiveLink>
+            ))}
+          </nav>
+        </div>
+      </section>
+
+      <CoverageSection />
+
+      <ProfesionalCTA />
+
+      <Footer />
     </>
   );
 }
@@ -110,16 +156,16 @@ const steps = [
   {
     title: 'Encuentra el servicio',
     description:
-      'Explora nuestras categorías y selecciona el servicio que necesitas, todo de manera fácil y rápida.',
+      'Explora nuestras categorías y selecciona el servicio que necesitas.',
   },
   {
     title: 'Recibe propuestas',
     description:
-      'Revisa perfiles, elige al profesional adecuado y agenda el servicio de manera fácil y segura.',
+      'Revisa perfiles, elige al profesional adecuado y agenda el servicio.',
   },
   {
     title: 'Deja tu reseña',
     description:
-      'Recibe el servicio, comparte tu experiencia y ayuda a otros a encontrar a los mejores héroes.',
+      'Comparte tu experiencia y ayuda a otros a encontrar a los mejores héroes.',
   },
 ];
