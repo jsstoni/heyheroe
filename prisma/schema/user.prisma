@@ -38,6 +38,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   professionals Professional[]
+  Proposal      Proposal[]
 
   @@map("users")
 }
