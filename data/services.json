@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Cocina",
+    "description": "",
     "slug": "cocina",
     "icon": "icon-cocina",
     "active": false
@@ -9,6 +10,7 @@
   {
     "id": 2,
     "name": "Cuidado de personas",
+    "description": "",
     "slug": "cuidado-personas",
     "icon": "icon-cuidado-personas",
     "active": false
@@ -16,6 +18,7 @@
   {
     "id": 3,
     "name": "Cuidado de ropa",
+    "description": "",
     "slug": "cuidado-ropa",
     "icon": "icon-ropa",
     "active": false
@@ -23,6 +26,7 @@
   {
     "id": 4,
     "name": "Cuidado de vehículos",
+    "description": "",
     "slug": "cuidado-vehiculos",
     "icon": "icon-vehiculo",
     "active": false
@@ -30,6 +34,7 @@
   {
     "id": 5,
     "name": "Decoración",
+    "description": "Transforma tu espacio con profesionales en decoración",
     "slug": "decoracion",
     "icon": "icon-decorar",
     "active": true
@@ -37,6 +42,7 @@
   {
     "id": 6,
     "name": "Electrónica",
+    "description": "Reparación y mantenimiento de dispositivos electrónicos",
     "slug": "electronica",
     "icon": "icon-electronica",
     "active": true
@@ -44,6 +50,7 @@
   {
     "id": 7,
     "name": "Estética",
+    "description": "",
     "slug": "estetica",
     "icon": "icon-estetica",
     "active": false
@@ -51,6 +58,7 @@
   {
     "id": 8,
     "name": "Relajación",
+    "description": "",
     "slug": "relajacion",
     "icon": "icon-masajitas",
     "active": false
@@ -58,6 +66,7 @@
   {
     "id": 9,
     "name": "Eventos",
+    "description": "",
     "slug": "eventos",
     "icon": "icon-eventos",
     "active": false
@@ -65,6 +74,7 @@
   {
     "id": 10,
     "name": "Jardinería",
+    "description": "Mantén tu jardín hermoso con expertos jardineros",
     "slug": "jardineria",
     "icon": "icon-jardinero",
     "active": true
@@ -72,6 +82,7 @@
   {
     "id": 11,
     "name": "Limpieza",
+    "description": "Servicios profesionales de limpieza para tu hogar",
     "slug": "limpieza",
     "icon": "icon-limpieza",
     "active": true
@@ -79,6 +90,7 @@
   {
     "id": 12,
     "name": "Mascotas",
+    "description": "Cuidado y atención especializada para tus mascotas",
     "slug": "mascotas",
     "icon": "icon-mascotas",
     "active": true
@@ -86,6 +98,7 @@
   {
     "id": 13,
     "name": "Profesores",
+    "description": "",
     "slug": "profesores",
     "icon": "icon-educacion",
     "active": false
@@ -93,6 +106,7 @@
   {
     "id": 14,
     "name": "Entrenamiento",
+    "description": "",
     "slug": "entrenamiento",
     "icon": "icon-entrenador",
     "active": false
@@ -100,6 +114,7 @@
   {
     "id": 15,
     "name": "Reparaciones Caseras",
+    "description": "Soluciones rápidas para problemas del hogar",
     "slug": "reparaciones-caseras",
     "icon": "icon-reparaciones",
     "active": true
@@ -107,6 +122,7 @@
   {
     "id": 17,
     "name": "Seguridad",
+    "description": "Protege tu hogar con sistemas de seguridad profesionales",
     "slug": "seguridad",
     "icon": "icon-seguridad",
     "active": true
@@ -114,6 +130,7 @@
   {
     "id": 19,
     "name": "Transporte \/ Fletes",
+    "description": "Servicios de transporte y mudanzas confiables",
     "slug": "transporte-fletes",
     "icon": "icon-flete",
     "active": true
@@ -121,6 +138,7 @@
   {
     "id": 20,
     "name": "Servicio Integral",
+    "description": "",
     "slug": "servicio-integral",
     "icon": "icon-asistente",
     "active": false

@@ -1,6 +1,7 @@
 model Services {
   id          Int           @id @default(autoincrement())
   name        String
+  description String
   slug        String        @unique
   icon        String
   active      Boolean       @default(true)
