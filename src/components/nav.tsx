@@ -3,29 +3,30 @@ import Profile from './profile';
 
 export const NavBar = () => {
   return (
-    <div className="fixed top-0 z-50 w-full border-b bg-white shadow-[0_5px_3px_-2px_rgba(200,200,200,.2)]">
-      <nav className="container flex h-[65px] items-center justify-between gap-4 max-sm:px-4">
-        <Link className="text-2xl font-extrabold" href="/">
-          HeyHéroe
+    <header className="fixed top-0 z-50 w-full border-b-2 bg-white">
+      <nav className="container flex h-[70px] items-center justify-between gap-4 max-sm:px-4">
+        <Link className="text-2xl font-black" href="/">
+          Hey
+          <span className="text-amber-400">Héroe</span>
         </Link>
 
-        <ul className="ml-auto flex items-center justify-between gap-4">
+        <ul className="ml-auto flex items-center justify-between gap-5 font-medium">
           <li>
-            <Link className="hover:text-orange-500" href="/work">
-              Buscar trabajos
+            <Link className="hover:text-amber-500" href="/work">
+              Ofertas de trabajo
             </Link>
           </li>
           <li>
-            <Link className="hover:text-orange-500" href="/services">
+            <Link className="hover:text-amber-500" href="/services">
               Servicios
             </Link>
           </li>
         </ul>
 
-        <hr className="mx-4 h-6 w-[1px] bg-gray-300" />
+        <hr className="mx-2 h-6 w-[1px] bg-gray-300" />
 
         <Profile />
       </nav>
-    </div>
+    </header>
   );
 };
