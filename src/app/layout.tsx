@@ -1,22 +1,14 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { SessionProvider } from 'next-auth/react';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import { Manrope } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'HeyHeroe',
   description: 'Encuentra las mejores ofertas.',
 };
+
+const manrope = Manrope({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
@@ -24,10 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`bg-white text-gray-800 ${manrope.className}`}>
+      <body className={`antialiased`}>
         <SessionProvider>{children}</SessionProvider>
       </body>
     </html>

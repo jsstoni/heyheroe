@@ -31,10 +31,6 @@
     border-color: var(--color-gray-200);
   }
 
-  body {
-    @apply text-gray-800;
-  }
-
   * {
     @apply border-border;
   }
