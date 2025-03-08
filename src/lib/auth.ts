@@ -31,7 +31,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     authorized: ({ auth, request }) => {
       const isLoggedIn = !!auth?.user;
-      const protected_routes = ['/admin', '/service', '/service/create'];
+      const protected_routes = [
+        '/admin',
+        '/service',
+        '/service/create',
+        '/request',
+        '/finance',
+      ];
       const isOnDashboard = protected_routes.includes(request.nextUrl.pathname);
       return isLoggedIn || !isOnDashboard;
     },
