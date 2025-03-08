@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { SessionProvider } from 'next-auth/react';
 import { Manrope } from 'next/font/google';
 
 export const metadata: Metadata = {
@@ -17,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`bg-white text-gray-800 ${manrope.className}`}>
-      <body className={`antialiased`}>
-        <SessionProvider>{children}</SessionProvider>
-      </body>
+      <body className={`antialiased`}>{children}</body>
     </html>
   );
 }
