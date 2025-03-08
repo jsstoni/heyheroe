@@ -16,7 +16,7 @@ export const createService = authActionClient
       try {
         await prisma.professional.create({
           data: {
-            userId: +user,
+            userId: user,
             serviceId: service,
             description,
             experience,
