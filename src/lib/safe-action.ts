@@ -1,9 +1,10 @@
+import { auth } from '@/lib/auth';
 import {
   createSafeActionClient,
   DEFAULT_SERVER_ERROR_MESSAGE,
 } from 'next-safe-action';
+import { headers } from 'next/headers';
 import { z } from 'zod';
-import { auth } from './auth';
 
 export const actionClient = createSafeActionClient({
   handleServerError(e) {
@@ -34,18 +35,13 @@ export const actionClient = createSafeActionClient({
 });
 
 export const authActionClient = actionClient.use(async ({ next }) => {
-  const session = await auth();
+  const session = await auth.api.getSession({ headers: await headers() });
 
-  if (!session || !session.user?.id) throw new Error('Unauthorized');
-
-  const userId = Number(session.user.id);
-  if (isNaN(userId)) {
-    throw new Error('Error de autenticación: ID de usuario inválido');
-  }
+  if (!session || !session.user.id) throw new Error('Unauthorized');
 
   return next({
     ctx: {
-      user: userId,
+      user: session.user.id,
     },
   });
 });
