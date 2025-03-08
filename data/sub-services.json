@@ -80,13 +80,13 @@
   {
     "idService": 5,
     "name": "Diseñador de Interiores",
-    "description": "TRANSFORMA TU HOGAR EN EL ESPACIO DE TUS SUEÑOS.",
+    "description": "Convierte tu casa en el espacio de tus sueños.",
     "active": true
   },
   {
     "idService": 5,
     "name": "Decorador de eventos",
-    "description": "DECENAS DE HÉROES, MILES DE IDEAS PARA DECORAR ESA FIESTA",
+    "description": "Hacemos de tu fiesta un espectáculo inolvidable.",
     "active": true
   },
   {
@@ -110,13 +110,13 @@
   {
     "idService": 6,
     "name": "Técnico electrodoméstico",
-    "description": "¿NO ENCIENDE? ¿NO APAGA? DEJALO EN BUENAS MANOS",
+    "description": "¿No enciende? ¿No apaga? ¡Déjalo en manos de profesionales!",
     "active": true
   },
   {
     "idService": 6,
     "name": "Técnico de aire",
-    "description": "EXPERTOS EN REPARACIÓN Y MANTENIMIENTO",
+    "description": "Reparación y mantenimiento por expertos. ¡Tu clima, siempre perfecto!",
     "active": true
   },
   {
@@ -200,13 +200,13 @@
   {
     "idService": 10,
     "name": "Jardinero",
-    "description": "DISEÑA Y CUIDA EL JARDÍN QUE SIEMPRE HAS SOÑADO.",
+    "description": "Diseña y cuida el jardín de tus sueños. ¡Hacemos crecer tus ideas!",
     "active": true
   },
   {
     "idService": 11,
     "name": "Limpieza de ventanas",
-    "description": "LOS MEJORES PARA DEJAR ESOS VIDRIOS SUPER LIMPIOS",
+    "description": "Conviértelas en cristal puro: sin huellas, sin manchas, solo la claridad perfecta.",
     "active": true
   },
   {
@@ -217,56 +217,56 @@
   },
   {
     "idService": 11,
-    "name": "Limpieza de casas",
-    "description": "ENCONTRÁ A ESA PERSONA IDEAL PARA DEJAR TU CASA IMPECABLE",
-    "active": false
+    "name": "Limpieza general",
+    "description": "Todo tu hogar en su mejor estado, ¡deja que la limpieza profesional te ahorre tiempo!",
+    "active": true
   },
   {
     "idService": 11,
     "name": "Limpieza de cocinas",
-    "description": "¿QUERÉS DEJAR ESA COCINA BIEN LIMPIA? MIRÁ QUIENES ESTÁN ESPERANDOTE",
+    "description": "Deja tu cocina como nueva: eliminamos grasa, restos y suciedad para que quede perfecta.",
     "active": true
   },
   {
     "idService": 11,
     "name": "Limpieza de baños",
-    "description": "SI NO TIENES TIEMPO DE HACERLO, HAY CIENTOS QUE LO HACEN POR TI.",
+    "description": "Transforma tu baño en un espacio fresco y reluciente, ¡sin estrés ni esfuerzo!",
     "active": true
   },
   {
     "idService": 11,
-    "name": "Limpieza de muebles\/alfombras",
-    "description": "DEJA ESTE TRABAJO EN MANO DE LOS ESPECIALISTAS",
+    "name": "Limpieza de alfombras",
+    "description": "Restauramos el brillo y frescura de tus alfombras, ¡como si fueran nuevos!",
     "active": true
   },
   {
     "idService": 11,
     "name": "Limpieza de patios y terrazas",
-    "description": "DEVUÉLVELE LA VIDA A TU PATIO. QUE QUEDE IMPECABLE PARA TUS ASADOS.",
+    "description": "Recupera la vitalidad de tu patio o terraza, dejándolos listos para disfrutar en cualquier momento.",
     "active": true
   },
   {
     "idService": 11,
     "name": "Limpieza profunda de dormitorios",
-    "description": "QUE TU DORMITORIO VUELVA A SER TU REFUGIO. LIMPIO Y ORDENADO.",
+    "description": "Haz que tu dormitorio sea un lugar más acogedor, eliminando polvo, suciedad y alergias.",
     "active": true
   },
   {
     "idService": 12,
     "name": "Paseador de Animales",
-    "description": "MIRA CUANTOS HAY DISPUESTOS A PASEAR A TU PERRO",
+    "description": "Asegura que tu perro haga su paseo diario con el mejor cuidado. ¡Hay un paseador esperando para consentirlo!",
     "active": true
   },
   {
     "idService": 12,
     "name": "Peluquería canina",
-    "description": "ESPECIALISTAS EN DEJAR A TUS CONSENTIDOS HERMOSOS",
+    "description": "Deja que nuestros expertos cuiden el pelaje de tu mascota, ¡y consiéntelo con un look impecable!",
     "active": true
   },
   {
     "idService": 12,
     "name": "Adiestrador de animales",
-    "description": "ENTRENAR A TU MASCOTA NUNCA FUE TAN FÁCIL",
+    "description": "Transforma el comportamiento de tu mascota con métodos efectivos y personalizados. ¡Entrenar nunca fue tan fácil!",
     "active": true
   },
   {
@@ -350,67 +350,67 @@
   {
     "idService": 15,
     "name": "Pintor",
-    "description": "¡CUANDO TU CASA NO TIENE EL COLOR QUE TIENE TU VIDA!",
+    "description": "Transforma tu hogar con colores que reflejan tu estilo. Pintores profesionales para cada rincón.",
     "active": true
   },
   {
     "idService": 15,
     "name": "Techista",
-    "description": "CUANDO LAS FILTRACIONES SON TU ENEMIGO, ENTRÁ ACÁ",
+    "description": "Soluciones contra filtraciones y goteras. Reparaciones para mantener tu techo a salvo.",
     "active": true
   },
   {
     "idService": 15,
     "name": "Sanitario",
-    "description": "LOS EXPERTOS AL ALCANCE DE UN CLICK",
+    "description": "Soluciones rápidas y eficaces para tus problemas de fontanería.",
     "active": true
   },
   {
     "idService": 15,
     "name": "Electricista",
-    "description": "CON LA CORRIENTE NO SE JUEGA, DEJASELA A LOS QUE SABEN",
+    "description": "Cuando se trata de electricidad, déjalo en manos de los profesionales. Seguridad y eficiencia garantizadas.",
     "active": true
   },
   {
     "idService": 15,
     "name": "Carpintero",
-    "description": "ESPECIALISTAS EN LA MATERIA DISPUESTOS A COMPLETAR ESA TAREA",
+    "description": "Transforma tu espacio con muebles y estructuras a medida. Expertos en diseño y acabados de calidad.",
     "active": true
   },
   {
     "idService": 15,
-    "name": "Albañil",
-    "description": "DECENAS DE HÉROES A LA ESPERA DE TU LLAMADO",
+    "name": "Maestro",
+    "description": "Expertos en soluciones para tus proyectos de construcción y remodelación. ¡Construimos lo que imaginas!",
     "active": true
   },
   {
     "idService": 15,
     "name": "Herrero",
-    "description": "CONTACTÁ CON LOS MEJORES",
+    "description": "Forjamos soluciones duraderas para cualquier necesidad metálica. Expertos en trabajo de hierro y acero.",
     "active": true
   },
   {
     "idService": 15,
-    "name": "Gasista",
-    "description": "ENCONTRÁ AQUÍ A LOS EXPERTOS EN EQUIPOS A GAS",
+    "name": "Gasfiter",
+    "description": "Expertos en instalaciones y reparaciones de sistemas de gas. ¡Tu seguridad es nuestra prioridad!",
     "active": true
   },
   {
     "idService": 15,
     "name": "Cerrajero",
-    "description": "UBICÁ AL MEJOR PROFESIONAL EN UN PAR DE CLICKS",
+    "description": "Desbloquea soluciones rápidas y confiables para tus cerraduras. ¡Seguridad al alcance de tu mano!",
     "active": true
   },
   {
     "idService": 15,
-    "name": "Ensamblador de muebles",
-    "description": "CUANDO LOS MANUALES Y LOS TORNILLOS NO SON LO TUYO, ENTRA ACÁ",
+    "name": "Armador de muebles",
+    "description": "No luches con manuales complicados. Armamos tus muebles de manera rápida y profesional.",
     "active": true
   },
   {
     "idService": 17,
     "name": "Instalación de equipos de seguridad",
-    "description": "CON LA SEGURIDAD NO SE JUEGA, DEJA QUE INSTALEN LOS QUE SABEN",
+    "description": "Con la seguridad no se juega. Deja que los expertos instalen sistemas confiables para proteger lo que más te importa.",
     "active": true
   },
   {
@@ -422,13 +422,13 @@
   {
     "idService": 19,
     "name": "Fletero",
-    "description": "SIN IMPORTAR EL TAMAÑO DE LA MUDANZA, TENEMOS AL HÉROE.",
+    "description": "Sin importar lo que necesites mover, tenemos al profesional que se encarga de todo, con la mejor eficiencia.",
     "active": true
   },
   {
     "idService": 19,
     "name": "Ayudante de Mudanza",
-    "description": "NUNCA SOBRA UNA MANO A LA HORA DE MUDARSE",
+    "description": "Nunca está de más una mano extra. Deja que los expertos te ayuden a que tu mudanza sea más fácil y rápida.",
     "active": true
   },
   {

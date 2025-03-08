@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Cocina",
-    "description": "",
+    "description": "Preparación de alimentos y menús personalizados para toda ocasión",
     "slug": "cocina",
     "icon": "icon-cocina",
     "active": false
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "name": "Cuidado de personas",
-    "description": "",
+    "description": "Atención especializada para niños, adultos mayores y personas con necesidades especiales",
     "slug": "cuidado-personas",
     "icon": "icon-cuidado-personas",
     "active": false
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "name": "Cuidado de ropa",
-    "description": "",
+    "description": "Lavado, planchado y mantenimiento de prendas para todo tipo de tejidos",
     "slug": "cuidado-ropa",
     "icon": "icon-ropa",
     "active": false
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "name": "Cuidado de vehículos",
-    "description": "",
+    "description": "Limpieza y mantenimiento profesional para tu automóvil",
     "slug": "cuidado-vehiculos",
     "icon": "icon-vehiculo",
     "active": false
@@ -50,7 +50,7 @@
   {
     "id": 7,
     "name": "Estética",
-    "description": "",
+    "description": "Tratamientos de belleza y bienestar personal para verte y sentirte mejor",
     "slug": "estetica",
     "icon": "icon-estetica",
     "active": false
@@ -58,7 +58,7 @@
   {
     "id": 8,
     "name": "Relajación",
-    "description": "",
+    "description": "Masajes terapéuticos y técnicas de relajación para reducir el estrés",
     "slug": "relajacion",
     "icon": "icon-masajitas",
     "active": false
@@ -66,7 +66,7 @@
   {
     "id": 9,
     "name": "Eventos",
-    "description": "",
+    "description": "Organización y planificación de eventos sociales y corporativos",
     "slug": "eventos",
     "icon": "icon-eventos",
     "active": false
@@ -98,7 +98,7 @@
   {
     "id": 13,
     "name": "Profesores",
-    "description": "",
+    "description": "Clases particulares y tutorías para distintas materias y niveles educativos",
     "slug": "profesores",
     "icon": "icon-educacion",
     "active": false
@@ -106,14 +106,14 @@
   {
     "id": 14,
     "name": "Entrenamiento",
-    "description": "",
+    "description": "Rutinas personalizadas y asesoramiento de entrenadores profesionales",
     "slug": "entrenamiento",
     "icon": "icon-entrenador",
     "active": false
   },
   {
     "id": 15,
-    "name": "Reparaciones Caseras",
+    "name": "Reparaciones caseras",
     "description": "Soluciones rápidas para problemas del hogar",
     "slug": "reparaciones-caseras",
     "icon": "icon-reparaciones",
@@ -129,7 +129,7 @@
   },
   {
     "id": 19,
-    "name": "Transporte \/ Fletes",
+    "name": "Transporte / Fletes",
     "description": "Servicios de transporte y mudanzas confiables",
     "slug": "transporte-fletes",
     "icon": "icon-flete",
@@ -137,8 +137,8 @@
   },
   {
     "id": 20,
-    "name": "Servicio Integral",
-    "description": "",
+    "name": "Servicio integral",
+    "description": "Asistencia en múltiples áreas para facilitar tu día a día",
     "slug": "servicio-integral",
     "icon": "icon-asistente",
     "active": false
