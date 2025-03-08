@@ -21,6 +21,7 @@ model SubServices {
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   professionals Professional[]
+  Proposal      Proposal[]
 
   service Services @relation(fields: [idService], references: [id], onDelete: Cascade)
 
