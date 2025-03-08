@@ -38,9 +38,14 @@ export const authActionClient = actionClient.use(async ({ next }) => {
 
   if (!session || !session.user?.id) throw new Error('Unauthorized');
 
+  const userId = Number(session.user.id);
+  if (isNaN(userId)) {
+    throw new Error('Error de autenticación: ID de usuario inválido');
+  }
+
   return next({
     ctx: {
-      user: session.user.id,
+      user: userId,
     },
   });
 });
