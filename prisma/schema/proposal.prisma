@@ -5,7 +5,7 @@ enum ProposalHome {
 
 model Proposal {
   id          Int          @id @default(autoincrement())
-  userId      Int          @map("user_id")
+  userId      String       @map("user_id")
   serviceId   Int          @map("service_id")
   type        ProposalHome @default(Casa)
   commune     Int
