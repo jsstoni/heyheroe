@@ -44,6 +44,7 @@ export default function Form({ services }: Props) {
     register,
     getValues,
     setError,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ServiceValues>({
     resolver: zodResolver(schemaService),
@@ -57,6 +58,7 @@ export default function Form({ services }: Props) {
   const { execute } = useAction(createService, {
     onSuccess({ data }) {
       console.log('result:', data);
+      reset();
     },
     onError({ error }) {
       setError('root', { message: error.serverError });
