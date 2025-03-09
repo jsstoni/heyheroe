@@ -10,6 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useAction } from 'next-safe-action/hooks';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 interface SubService {
   id: number;
@@ -55,18 +56,19 @@ export default function Form({ services }: Props) {
     setFilteredSubServices(service?.subServices || []);
   };
 
-  const { execute } = useAction(createService, {
+  const { executeAsync } = useAction(createService, {
     onSuccess({ data }) {
-      console.log('result:', data);
+      toast.success(data?.success || 'Servicio agregado');
       reset();
     },
     onError({ error }) {
+      toast.error(error.serverError || 'Ocurrió un error al crear el servicio');
       setError('root', { message: error.serverError });
     },
   });
 
-  const onSubmit = () => {
-    execute(getValues());
+  const onSubmit = async () => {
+    await executeAsync(getValues());
   };
 
   return (

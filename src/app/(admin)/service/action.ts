@@ -24,7 +24,7 @@ export const createService = authActionClient
           },
         });
         revalidatePath('/service');
-        return { success: 'servicio creado' };
+        return { success: 'Servicio agregado' };
       } catch (error) {
         console.error(error);
         throw new Error('Error al crear el servicio');
