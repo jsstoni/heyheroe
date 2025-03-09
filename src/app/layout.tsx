@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Manrope } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: 'HeyHeroe',
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`bg-white text-gray-800 ${manrope.className}`}>
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        {children}
+        <Toaster position="bottom-right" />
+      </body>
     </html>
   );
 }
