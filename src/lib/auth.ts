@@ -13,6 +13,14 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: 'postgresql', // or "mysql", "postgresql", ...etc
   }),
+  user: {
+    additionalFields: {
+      phone: {
+        type: 'string',
+        required: false,
+      },
+    },
+  },
   socialProviders: {
     google: {
       clientId: process.env.AUTH_GOOGLE_ID as string,
