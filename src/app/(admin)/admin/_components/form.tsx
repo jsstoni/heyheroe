@@ -2,8 +2,8 @@
 
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { updateUser, useSession } from '@/lib/auth-client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Session } from 'next-auth';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -13,22 +13,34 @@ const schema = z.object({
   phone: z.string().min(1, 'Se require numero de teléfono'),
 });
 
-export default function Form({ values }: { values: Session }) {
+export default function Form() {
+  const { data: session } = useSession();
+
   const {
     handleSubmit,
     register,
     formState: { errors },
+    getValues,
+    setValue,
   } = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
-      name: values.user.name,
-      email: values.user.email,
-      phone: values.user.phoneNumber,
+      name: session?.user.name,
+      email: session?.user.email,
+      phone: '',
     },
   });
 
-  const onSubmit = () => {
-    console.log('onSubmit');
+  setValue('name', session?.user.name);
+  setValue('email', session?.user.email);
+  setValue('phone', session?.user.phone || '');
+
+  const onSubmit = async () => {
+    const { name, phone } = getValues();
+    await updateUser({
+      name,
+      phone,
+    });
   };
 
   return (
