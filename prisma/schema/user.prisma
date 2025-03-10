@@ -8,10 +8,9 @@ model User {
   createdAt     DateTime
   updatedAt     DateTime
 
-  sessions     Session[]
-  accounts     Account[]
-  professional Professional[]
-  proposal     Proposal[]
+  sessions Session[]
+  accounts Account[]
+  proposal Proposal[]
 
   @@unique([email])
   @@map("user")

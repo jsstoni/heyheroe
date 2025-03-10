@@ -13,15 +13,15 @@ model Services {
 }
 
 model SubServices {
-  id            Int            @id @default(autoincrement())
-  idService     Int            @map("id_service")
-  name          String
-  description   String
-  active        Boolean        @default(true)
-  createdAt     DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
-  professionals Professional[]
-  Proposal      Proposal[]
+  id          Int      @id @default(autoincrement())
+  idService   Int      @map("id_service")
+  name        String
+  description String
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  Proposal Proposal[]
 
   service Services @relation(fields: [idService], references: [id], onDelete: Cascade)
 
