@@ -1,0 +1,28 @@
+import prisma from '@/lib/db';
+import { unstable_cache } from 'next/cache';
+import 'server-only';
+
+export const myRequests = async (userId: string) =>
+  unstable_cache(
+    async () => {
+      const requests = await prisma.proposal.findMany({
+        include: {
+          subServices: {
+            select: {
+              name: true,
+              service: {
+                select: {
+                  name: true,
+                },
+              },
+            },
+          },
+        },
+        where: { userId },
+      });
+
+      return requests;
+    },
+    [`services-${userId}`],
+    { revalidate: 60, tags: ['requests'] }
+  )();
