@@ -1,18 +1,21 @@
 import prisma from '@/lib/db';
+import { Clock, DollarSign } from 'lucide-react';
 import FormService from './_components/form';
 
 interface PropsParams {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: number }>;
 }
 
 export const dynamic = 'force-static';
 
-const getData = async (id: string) => {
+const getData = async (id: number) => {
   try {
+    const serviceId = Number(id);
+    if (isNaN(serviceId)) {
+      throw new Error('ID es inválido');
+    }
+
     const data = await prisma.subServices.findUnique({
-      where: {
-        id: +id,
-      },
       select: {
         name: true,
         service: {
@@ -21,6 +24,7 @@ const getData = async (id: string) => {
           },
         },
       },
+      where: { id: serviceId },
     });
 
     return data;
@@ -54,10 +58,49 @@ export default async function Sub({ params }: PropsParams) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl py-14 max-sm:px-4">
-      <h1 className="text-3xl font-bold">{data.service.name}</h1>
-      <h2 className="mb-8 text-xl text-zinc-400">{data.name}</h2>
-      <FormService />
+    <div className="h-[340px] bg-amber-50 py-10 max-sm:px-4">
+      <div className="relative container mx-auto grid items-start gap-8 md:grid-cols-2">
+        <div className="md:mt-10">
+          <h1 className="mb-1 text-4xl font-bold">{data.service.name}</h1>
+          <h2 className="mb-6 text-2xl">{data.name}</h2>
+
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <div className="rounded-full bg-purple-300 p-2">
+                <Clock className="size-5 stroke-purple-700" />
+              </div>
+              <div>
+                <h4 className="font-medium">Ahorra tiempo</h4>
+                <p className="text-sm text-gray-600">
+                  Deja que profesionales se encarguen mientras te enfocas en lo
+                  importante
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="rounded-full bg-green-300 p-2">
+                <DollarSign className="size-5 stroke-green-700" />
+              </div>
+              <div>
+                <h4 className="font-medium">Precios competitivos</h4>
+                <p className="text-sm text-gray-600">
+                  Compara presupuestos y elige la mejor opción para tu bolsillo
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-xl border bg-white p-6 shadow-lg">
+          <p className="text-2xl font-medium">Solicitar Presupuesto</p>
+          <p className="mb-6 text-gray-400">
+            Por favor complete la información para procesar su solicitud
+          </p>
+
+          <FormService id={id} />
+        </div>
+      </div>
     </div>
   );
 }

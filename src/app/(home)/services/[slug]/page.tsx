@@ -54,19 +54,20 @@ export default async function Service({ params }: PropsParams) {
     <>
       <div className="mx-auto max-w-4xl py-14">
         <h1 className="text-3xl font-bold">{data.name}</h1>
+        <p className="text-gray-500">Selecciona el servicio a contratar</p>
 
         <div className="grid gap-8 py-5 md:grid-cols-2">
           {data.subServices.map((service) => (
             <Link
-              className="group relative overflow-hidden rounded-md border bg-white p-5 text-xl font-bold text-zinc-600 shadow-lg transition-all hover:-translate-y-1 hover:text-orange-500 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-md border bg-white p-5 text-xl font-bold text-zinc-600 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
               href={`/services/${data.slug}/${service.id}`}
               key={service.id}
             >
               <div className="absolute -top-8 -right-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
-              {service.name}
-              <span className="mt-1 block text-sm font-normal">
+              <span className="group-hover:text-amber-500">{service.name}</span>
+              <small className="mt-1 block text-sm font-normal text-gray-500">
                 {service.description}
-              </span>
+              </small>
             </Link>
           ))}
         </div>
