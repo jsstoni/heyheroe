@@ -1,6 +1,7 @@
 import CoverageSection from '@/app/(home)/_components/coverage-section';
 import { ActiveLink } from '@/components/active-link';
 import { Footer } from '@/components/footer';
+import HowItWorks from '@/components/how-it-works';
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import prisma from '@/lib/db';
@@ -92,25 +93,7 @@ export default async function Home() {
       </section>
 
       <section className="container mx-auto py-16 max-sm:px-4">
-        <h3 className="mb-16 text-center text-3xl font-bold">
-          ¿Cómo funciona?
-        </h3>
-
-        <div className="grid gap-10 md:grid-cols-3">
-          {steps.map(({ title, description }, index) => (
-            <div className="relative rounded-md bg-gray-100 p-6" key={index}>
-              <div className="absolute -top-2 -left-2 size-4 border-t-2 border-l-2 border-gray-400" />
-              <div className="absolute -right-2 -bottom-2 size-4 border-r-2 border-b-2 border-gray-400" />
-
-              <strong className="absolute -top-6 flex size-12 items-center justify-center rounded-xl border border-amber-400 bg-white text-4xl text-amber-400">
-                {index + 1}
-              </strong>
-              <h4 className="my-2 text-2xl font-medium">{title}</h4>
-
-              <p className="text-gray-500">{description}</p>
-            </div>
-          ))}
-        </div>
+        <HowItWorks steps={steps} />
       </section>
 
       <section className="bg-gray-50 py-16 max-sm:px-4">
