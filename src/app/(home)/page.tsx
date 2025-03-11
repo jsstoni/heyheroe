@@ -1,12 +1,12 @@
 import CoverageSection from '@/app/(home)/_components/coverage-section';
+import ProfesionalCTA from '@/app/(home)/_components/cta-profesional';
+import HowItWorks from '@/app/(home)/_components/how-it-works';
 import { ActiveLink } from '@/components/active-link';
 import { Footer } from '@/components/footer';
-import HowItWorks from '@/components/how-it-works';
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import prisma from '@/lib/db';
 import { ArrowRight, Search } from 'lucide-react';
-import ProfesionalCTA from './_components/cta-profesional';
 
 export const dynamic = 'force-static';
 
