@@ -1,3 +1,5 @@
+import { Accordion } from '@/components/accordion';
+import { Footer } from '@/components/footer';
 import prisma from '@/lib/db';
 import { Clock, DollarSign } from 'lucide-react';
 import FormService from './_components/form';
@@ -58,49 +60,77 @@ export default async function Sub({ params }: PropsParams) {
   }
 
   return (
-    <div className="h-[340px] bg-amber-50 py-10 max-sm:px-4">
-      <div className="relative container mx-auto grid items-start gap-8 md:grid-cols-2">
-        <div className="md:mt-10">
-          <h1 className="mb-1 text-4xl font-bold">{data.service.name}</h1>
-          <h2 className="mb-6 text-2xl">{data.name}</h2>
+    <>
+      <div className="bg-gray-50 py-14 max-sm:px-4">
+        <div className="relative container mx-auto grid items-start gap-8 md:grid-cols-2">
+          <div className="md:mt-4">
+            <h1 className="mb-1 text-4xl font-bold">{data.service.name}</h1>
+            <h2 className="mb-6 text-2xl">{data.name}</h2>
 
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <div className="rounded-full bg-purple-300 p-2">
-                <Clock className="size-5 stroke-purple-700" />
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-purple-300/40 p-2">
+                  <Clock className="size-7 stroke-purple-700" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Ahorra tiempo</h4>
+                  <p className="text-sm text-gray-600">
+                    Deja que profesionales se encarguen mientras te enfocas en
+                    lo importante
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-medium">Ahorra tiempo</h4>
-                <p className="text-sm text-gray-600">
-                  Deja que profesionales se encarguen mientras te enfocas en lo
-                  importante
-                </p>
-              </div>
-            </div>
 
-            <div className="flex items-start gap-3">
-              <div className="rounded-full bg-green-300 p-2">
-                <DollarSign className="size-5 stroke-green-700" />
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-green-300/40 p-2">
+                  <DollarSign className="size-7 stroke-green-700" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Precios competitivos</h4>
+                  <p className="text-sm text-gray-600">
+                    Compara presupuestos y elige la mejor opción para tu
+                    bolsillo
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-medium">Precios competitivos</h4>
-                <p className="text-sm text-gray-600">
-                  Compara presupuestos y elige la mejor opción para tu bolsillo
-                </p>
-              </div>
+
+              <h3 className="mt-10 text-xl font-medium underline">
+                Preguntas frecuentes
+              </h3>
+              <Accordion items={items} defaultOpen={0} />
             </div>
           </div>
-        </div>
 
-        <div className="rounded-xl border bg-white p-6 shadow-lg">
-          <p className="text-2xl font-medium">Solicitar Presupuesto</p>
-          <p className="mb-6 text-gray-400">
-            Por favor complete la información para procesar su solicitud
-          </p>
+          <div className="rounded-xl border bg-white p-6 shadow-lg">
+            <p className="text-2xl font-medium">Solicitar Presupuesto</p>
+            <p className="mb-6 text-gray-400">
+              Por favor complete la información para procesar su solicitud
+            </p>
 
-          <FormService id={id} />
+            <FormService id={id} />
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
+
+//Esto es temporal, puede cambiar con el tiempo
+const items = [
+  {
+    title: '¿Cómo se garantiza la calidad de los profesionales?',
+    content:
+      'Todos nuestros profesionales pasan por un riguroso proceso de verificación que incluye revisión de antecedentes y validación de habilidades.',
+  },
+  {
+    title: '¿Qué sucede si no estoy satisfecho con el servicio?',
+    content:
+      'Si no estás satisfecho con el servicio recibido, puedes contactar a nuestro equipo de soporte dentro de las 48 horas posteriores y te ayudaremos a encontrar una solución, que puede incluir un reembolso parcial o total.',
+  },
+  {
+    title: '¿Cómo funciona el sistema de pagos?',
+    content:
+      'Utilizamos un sistema de pago seguro donde el dinero se retiene hasta que confirmas que el servicio ha sido completado satisfactoriamente. Aceptamos tarjetas de crédito, débito y transferencias bancarias.',
+  },
+];
