@@ -1,6 +1,6 @@
 import { ActiveLink } from '@/components/active-link';
 import { NavBar } from '@/components/nav';
-import { Clock, CreditCard, User } from 'lucide-react';
+import { FileText, User, Wallet } from 'lucide-react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <NavBar />
 
       <main className="relative mt-[72px]">
-        <div className="border-b max-sm:px-4">
+        <div className="border-b bg-gray-50 max-sm:px-4">
           <nav className="container mx-auto flex items-center font-medium">
             {menu.map((item) => (
               <ActiveLink
@@ -35,16 +35,16 @@ const menu = [
   {
     name: 'Perfil',
     href: '/admin',
-    Icon: <User className="size-4" />,
+    Icon: <User className="size-5" />,
   },
   {
-    name: 'Solicitudes',
+    name: 'Mis Solicitudes',
     href: '/request',
-    Icon: <Clock className="size-4" />,
+    Icon: <FileText className="size-5" />,
   },
   {
     name: 'Finanzas',
     href: '/finance',
-    Icon: <CreditCard className="size-4" />,
+    Icon: <Wallet className="size-5" />,
   },
 ];
