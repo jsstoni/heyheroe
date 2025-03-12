@@ -52,7 +52,7 @@ export default async function Service({ params }: PropsParams) {
 
   return (
     <>
-      <div className="mx-auto max-w-4xl py-14">
+      <div className="container mx-auto py-14">
         <h1 className="text-3xl font-bold">{data.name}</h1>
         <p className="text-gray-500">Selecciona el servicio a contratar</p>
 
