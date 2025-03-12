@@ -39,6 +39,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
     reset,
     formState: { errors },
     watch,
+    trigger,
   } = useForm<ProposalValues>({
     resolver: zodResolver(schemaProposal),
     defaultValues: { serviceId },
@@ -60,12 +61,22 @@ export default function FormService({ id: serviceId }: { id: number }) {
     },
   });
 
-  const nextStep = () => {
-    setStep(step + 1);
+  const nextStep = async () => {
+    let valid = false;
+
+    if (step === 1) {
+      valid = await trigger(['type', 'commune', 'address']);
+    } else if (step === 2) {
+      valid = await trigger(['serviceDate', 'budget']);
+    }
+
+    if (valid) {
+      setStep((prev) => prev + 1);
+    }
   };
 
   const prevStep = () => {
-    setStep(step - 1);
+    setStep((prev) => prev - 1);
   };
 
   const watchAllFields = watch();
