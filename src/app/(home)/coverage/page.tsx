@@ -9,9 +9,9 @@ export default function Coverage() {
     <>
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto max-sm:px-4">
-          <h2 className="mb-4 text-center text-2xl font-bold md:text-3xl">
+          <h1 className="mb-1 text-center text-2xl font-bold md:text-3xl">
             Comunas donde operamos
-          </h2>
+          </h1>
           <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
             Encuentra profesionales en todas las comunas de la Quinta Región
           </p>

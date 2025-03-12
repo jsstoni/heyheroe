@@ -56,13 +56,13 @@ export default async function Home() {
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-amber-100 py-6 md:py-26">
         <div className="container mx-auto items-center max-sm:px-4 max-sm:pt-5 md:flex md:gap-6">
           <div className="space-y-4">
-            <h1 className="text-5xl font-black">
-              Más de <span className="text-amber-400">{total} servicios</span>{' '}
-              en un solo lugar.
+            <h1 className="text-5xl font-black md:text-6xl">
+              Tu hogar, en manos expertas.
             </h1>
-            <h2 className="text-xl text-gray-500">
-              Encuentra profesionales y contrata servicios para todo lo que
-              necesitas.
+            <h2 className="text-lg text-gray-500">
+              Desde limpieza hasta reparaciones, tenemos más de{' '}
+              <span className="text-amber-400">{total} servicios</span> para tu
+              hogar.
             </h2>
 
             <div className="relative mb-8 max-w-md">
