@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { updateUser, useSession } from '@/lib/auth-client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { z } from 'zod';
 
 const schema = z.object({
@@ -40,6 +41,9 @@ export default function Form() {
     await updateUser({
       name,
       phone,
+    });
+    toast('Perfil actualizado', {
+      icon: '✅',
     });
   };
 
