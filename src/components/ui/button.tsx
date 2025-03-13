@@ -9,7 +9,7 @@ const buttonVariants = cva('rounded-md bg-white px-4 py-2 text-black', {
     variant: {
       default:
         'border border-amber-500 bg-white text-amber-500 hover:bg-amber-500 hover:text-white',
-      primary: 'bg-amber-500 text-white hover:bg-amber-600',
+      primary: 'bg-amber-400 text-white hover:bg-amber-500',
       secondary: 'bg-gray-500 text-white hover:bg-gray-700',
     },
   },
@@ -28,7 +28,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         className={cn(
           buttonVariants({ className, variant }),
-          'hover:cursor-pointer disabled:border-none disabled:bg-amber-100 disabled:text-white'
+          'hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-30'
         )}
         ref={ref}
         type={type}
