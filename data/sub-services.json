@@ -79,7 +79,7 @@
   },
   {
     "idService": 5,
-    "name": "Diseñador de Interiores",
+    "name": "Diseñador de interiores",
     "description": "Convierte tu casa en el espacio de tus sueños.",
     "active": true
   },
@@ -89,11 +89,18 @@
     "description": "Hacemos de tu fiesta un espectáculo inolvidable.",
     "active": true
   },
+
+  {
+    "idService": 5,
+    "name": "Armador de muebles",
+    "description": "No luches con manuales complicados. Armamos tus muebles de manera rápida y profesional.",
+    "active": true
+  },
   {
     "idService": 6,
-    "name": "Técnico de PC (Cualquier marca, menos Apple)",
+    "name": "Técnico de PC",
     "description": "SI APAGAR Y ENCENDER NO FUNCIONA, LLEGASTE AL LUGAR CORRECTO.",
-    "active": false
+    "active": true
   },
   {
     "idService": 6,
@@ -109,13 +116,13 @@
   },
   {
     "idService": 6,
-    "name": "Técnico electrodoméstico",
+    "name": "Técnico de electrodomésticos",
     "description": "¿No enciende? ¿No apaga? ¡Déjalo en manos de profesionales!",
     "active": true
   },
   {
     "idService": 6,
-    "name": "Técnico de aire",
+    "name": "Técnico de aire acondicionado",
     "description": "Reparación y mantenimiento por expertos. ¡Tu clima, siempre perfecto!",
     "active": true
   },
@@ -204,6 +211,30 @@
     "active": true
   },
   {
+    "idService": 10,
+    "name": "Podador",
+    "description": "Poda precisa de árboles y arbustos para un jardín sano y armonioso.",
+    "active": true
+  },
+  {
+    "idService": 10,
+    "name": "Controlador de plagas",
+    "description": "Tratamientos efectivos para eliminar plagas y proteger tus plantas.",
+    "active": true
+  },
+  {
+    "idService": 10,
+    "name": "Desmalezador",
+    "description": "Eliminación de maleza y limpieza de áreas verdes sin complicaciones.",
+    "active": true
+  },
+  {
+    "idService": 11,
+    "name": "Limpieza en general",
+    "description": "Todo tu hogar en su mejor estado, ¡deja que la limpieza profesional te ahorre tiempo!",
+    "active": true
+  },
+  {
     "idService": 11,
     "name": "Limpieza de ventanas",
     "description": "Conviértelas en cristal puro: sin huellas, sin manchas, solo la claridad perfecta.",
@@ -214,12 +245,6 @@
     "name": "Limpieza de negocios",
     "description": "LA SOLUCIÓN PERFECTA PARA MANTENER LIMPIO TU ESTABLECIMIENTO",
     "active": false
-  },
-  {
-    "idService": 11,
-    "name": "Limpieza general",
-    "description": "Todo tu hogar en su mejor estado, ¡deja que la limpieza profesional te ahorre tiempo!",
-    "active": true
   },
   {
     "idService": 11,
@@ -237,7 +262,7 @@
     "idService": 11,
     "name": "Limpieza de alfombras",
     "description": "Restauramos el brillo y frescura de tus alfombras, ¡como si fueran nuevos!",
-    "active": true
+    "active": false
   },
   {
     "idService": 11,
@@ -247,7 +272,7 @@
   },
   {
     "idService": 11,
-    "name": "Limpieza profunda de dormitorios",
+    "name": "Limpieza de dormitorios",
     "description": "Haz que tu dormitorio sea un lugar más acogedor, eliminando polvo, suciedad y alergias.",
     "active": true
   },
@@ -363,7 +388,7 @@
     "idService": 15,
     "name": "Sanitario",
     "description": "Soluciones rápidas y eficaces para tus problemas de fontanería.",
-    "active": true
+    "active": false
   },
   {
     "idService": 15,
@@ -379,7 +404,7 @@
   },
   {
     "idService": 15,
-    "name": "Maestro",
+    "name": "Albañil",
     "description": "Expertos en soluciones para tus proyectos de construcción y remodelación. ¡Construimos lo que imaginas!",
     "active": true
   },
@@ -402,32 +427,44 @@
     "active": true
   },
   {
-    "idService": 15,
-    "name": "Armador de muebles",
-    "description": "No luches con manuales complicados. Armamos tus muebles de manera rápida y profesional.",
-    "active": true
-  },
-  {
     "idService": 17,
     "name": "Instalación de equipos de seguridad",
     "description": "Con la seguridad no se juega. Deja que los expertos instalen sistemas confiables para proteger lo que más te importa.",
+    "active": false
+  },
+  {
+    "idService": 17,
+    "name": "Mantenimiento de sistemas de seguridad",
+    "description": "Si ya tienes equipos, nos aseguramos de que funcionen perfecto todo el año.",
     "active": true
   },
   {
     "idService": 17,
-    "name": "Mantención y actualización de sistemas de seguridad",
-    "description": "SI YA TIENES EQUIPOS, NOS ASEGURAMOS DE QUE FUNCIONEN PERFECTO TODO EL AÑO.",
-    "active": false
+    "name": "Instalador de cámaras (CCTV)",
+    "description": "No basta con mirar, hay que proteger. Instala cámaras de seguridad con expertos que te brindan vigilancia real las 24 horas.",
+    "active": true
+  },
+  {
+    "idService": 17,
+    "name": "Instalador de alarmas",
+    "description": "Actúa antes de que sea tarde. Las alarmas profesionales disuaden intrusos y te dan tranquilidad en cada rincón de tu hogar.",
+    "active": true
+  },
+  {
+    "idService": 17,
+    "name": "Instalador de cercos eléctricos",
+    "description": "Una barrera que impone respeto. Protege tu propiedad con cercos eléctricos instalados por especialistas en seguridad perimetral.",
+    "active": true
   },
   {
     "idService": 19,
-    "name": "Fletero",
+    "name": "Fletes",
     "description": "Sin importar lo que necesites mover, tenemos al profesional que se encarga de todo, con la mejor eficiencia.",
     "active": true
   },
   {
     "idService": 19,
-    "name": "Ayudante de Mudanza",
+    "name": "Ayudante de mudanza",
     "description": "Nunca está de más una mano extra. Deja que los expertos te ayuden a que tu mudanza sea más fácil y rápida.",
     "active": true
   },

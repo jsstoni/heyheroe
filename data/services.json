@@ -37,7 +37,7 @@
     "description": "Transforma tu espacio con profesionales en decoración",
     "slug": "decoracion",
     "icon": "icon-decorar",
-    "active": true
+    "active": false
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "description": "Reparación y mantenimiento de dispositivos electrónicos",
     "slug": "electronica",
     "icon": "icon-electronica",
-    "active": true
+    "active": false
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
   {
     "id": 10,
     "name": "Jardinería",
-    "description": "Mantén tu jardín hermoso con expertos jardineros",
+    "description": "Corte, poda y diseño para mantener tus áreas verdes.",
     "slug": "jardineria",
     "icon": "icon-jardinero",
     "active": true
@@ -82,7 +82,7 @@
   {
     "id": 11,
     "name": "Limpieza",
-    "description": "Servicios profesionales de limpieza para tu hogar",
+    "description": "Servicio profesional para mantener tus espacios impecables.",
     "slug": "limpieza",
     "icon": "icon-limpieza",
     "active": true
@@ -90,7 +90,7 @@
   {
     "id": 12,
     "name": "Mascotas",
-    "description": "Cuidado y atención especializada para tus mascotas",
+    "description": "Atención diaria, paseos y cuidados especiales a domicilio.",
     "slug": "mascotas",
     "icon": "icon-mascotas",
     "active": true
@@ -114,7 +114,7 @@
   {
     "id": 15,
     "name": "Reparaciones caseras",
-    "description": "Soluciones rápidas para problemas del hogar",
+    "description": "Soluciones prácticas para arreglos eléctricos y domésticos.",
     "slug": "reparaciones-caseras",
     "icon": "icon-reparaciones",
     "active": true
@@ -122,15 +122,15 @@
   {
     "id": 17,
     "name": "Seguridad",
-    "description": "Protege tu hogar con sistemas de seguridad profesionales",
+    "description": "Instalación de sistemas y dispositivos de seguridad electrónica.",
     "slug": "seguridad",
     "icon": "icon-seguridad",
     "active": true
   },
   {
     "id": 19,
-    "name": "Transporte / Fletes",
-    "description": "Servicios de transporte y mudanzas confiables",
+    "name": "Fletes y mudanzas",
+    "description": "Transporte eficiente de muebles, cajas y objetos personales.",
     "slug": "transporte-fletes",
     "icon": "icon-flete",
     "active": true

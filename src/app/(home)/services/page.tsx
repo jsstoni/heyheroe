@@ -58,10 +58,10 @@ export default async function AllService() {
               <h3 className="mb-2 text-xl font-medium">{service.name}</h3>
               <p className="text-gray-500">{service.description}</p>
 
-              <div className="mt-2 flex flex-wrap gap-2">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {service.subServices.map((sub) => (
                   <Link
-                    className="rounded-full bg-amber-50 px-2 py-1 text-xs text-amber-600"
+                    className="rounded-full bg-amber-50 px-3 py-1.5 text-xs text-amber-600 hover:bg-amber-100 hover:text-amber-700"
                     href={`/services/${service.slug}/${sub.id}`}
                     key={sub.id}
                   >
