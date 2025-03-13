@@ -101,7 +101,7 @@ export default async function Home() {
           <h3 className="mb-10 text-center text-3xl font-bold">
             Conoce nuestras categorías
           </h3>
-          <nav className="grid grid-cols-2 gap-6 md:grid-cols-4">
+          <nav className="grid grid-cols-2 gap-6 md:grid-cols-3">
             {services.map((service) => (
               <ActiveLink
                 key={service.id}
