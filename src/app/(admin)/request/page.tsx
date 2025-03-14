@@ -1,7 +1,7 @@
 import { myRequests } from '@/app/(admin)/request/data';
 import { Heading } from '@/components/heading';
 import { auth } from '@/lib/auth';
-import { formatPrice } from '@/lib/utils';
+import { formatPrice, relativeDate } from '@/lib/utils';
 import { Calendar } from 'lucide-react';
 import { headers } from 'next/headers';
 
@@ -38,7 +38,8 @@ export default async function Request() {
               {service.subServices.service.name} - {service.subServices.name}
             </h3>
             <p className="flex items-center gap-2 text-sm">
-              <Calendar className="size-3" /> {service.createdAt.toString()}
+              <Calendar className="size-3" />
+              {relativeDate(service.createdAt)}
             </p>
 
             <p className="my-2">{service.description}</p>
