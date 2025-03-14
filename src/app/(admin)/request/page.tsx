@@ -1,6 +1,7 @@
 import { myRequests } from '@/app/(admin)/request/data';
 import { Heading } from '@/components/heading';
 import { auth } from '@/lib/auth';
+import { formatPrice } from '@/lib/utils';
 import { Calendar } from 'lucide-react';
 import { headers } from 'next/headers';
 
@@ -42,7 +43,9 @@ export default async function Request() {
 
             <p className="my-2">{service.description}</p>
 
-            <span className="text-gray-800">${service.budget.toString()}</span>
+            <span className="text-gray-800">
+              {formatPrice(Number(service.budget))}
+            </span>
           </div>
         ))}
       </div>
