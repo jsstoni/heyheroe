@@ -8,7 +8,7 @@ export default function Coverage() {
   return (
     <>
       <section className="bg-gray-50 py-16">
-        <div className="container mx-auto max-sm:px-4">
+        <div className="container mx-auto px-4 md:px-8">
           <h1 className="mb-1 text-center text-2xl font-bold md:text-3xl">
             Comunas donde operamos
           </h1>

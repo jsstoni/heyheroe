@@ -49,7 +49,7 @@ export default async function AllService() {
           especializadas
         </p>
 
-        <div className="container mx-auto grid grid-cols-2 gap-4 py-5 max-sm:px-4 md:grid-cols-3">
+        <div className="container mx-auto grid grid-cols-2 gap-4 px-4 py-5 md:grid-cols-3 md:px-8">
           {data.map((service) => (
             <div
               className="rounded-xl bg-white p-5 shadow-sm transition-shadow hover:shadow-md"

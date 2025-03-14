@@ -10,7 +10,7 @@ export default function CoverageSection() {
 
   return (
     <section className="py-16">
-      <div className="container mx-auto max-sm:px-4">
+      <div className="container mx-auto px-4 md:px-8">
         <h3 className="mb-1 text-center text-2xl font-bold md:text-3xl">
           Cobertura de servicios
         </h3>

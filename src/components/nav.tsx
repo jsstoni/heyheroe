@@ -4,7 +4,7 @@ import Profile from './profile';
 export const NavBar = () => {
   return (
     <header className="fixed top-0 z-50 w-full border-b-2 bg-white">
-      <nav className="container flex h-[70px] items-center justify-between gap-4 max-sm:px-4">
+      <nav className="container flex h-[70px] items-center justify-between gap-4 px-4 md:px-0">
         <Link className="text-2xl font-black" href="/">
           Hey
           <span className="text-amber-400">Héroe</span>

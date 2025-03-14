@@ -54,7 +54,7 @@ export default async function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-amber-100 py-6 md:py-26">
-        <div className="container mx-auto items-center max-sm:px-4 max-sm:pt-5 md:flex md:gap-6">
+        <div className="container mx-auto items-center px-4 max-sm:pt-5 md:flex md:gap-6 md:p-0">
           <div className="space-y-4">
             <h1 className="text-5xl font-black md:text-6xl">
               Tu hogar, en manos expertas.
@@ -92,12 +92,12 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto py-16 max-sm:px-4">
+      <section className="container mx-auto px-4 py-16 md:px-8">
         <HowItWorks steps={steps} />
       </section>
 
-      <section className="bg-gray-50 py-16 max-sm:px-4">
-        <div className="container mx-auto">
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4 md:px-8">
           <h3 className="mb-10 text-center text-3xl font-bold">
             Conoce nuestras categorías
           </h3>
