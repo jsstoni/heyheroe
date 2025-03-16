@@ -29,13 +29,13 @@ export function WorkService({ services }: Props) {
   };
 
   return (
-    <div className="mb-4 rounded-md bg-linear-to-b from-indigo-100 to-white p-14">
+    <div className="bg-gray-100 px-4 md:p-14">
       <div className="mx-auto md:max-w-3xl">
-        <h1 className="text-5xl drop-shadow-md">
+        <h1 className="mb-6 text-center text-3xl font-black md:text-4xl lg:text-5xl">
           Explora miles de oportunidades laborales en tu área:
         </h1>
 
-        <div className="my-5 flex items-center gap-4 rounded-full border bg-white px-8 py-4 shadow-lg">
+        <div className="grid grid-cols-3 items-center gap-4 rounded-xl border bg-white p-4 shadow-lg">
           <select
             className="w-full rounded-md border bg-white px-5 py-2.5"
             id="services"
@@ -61,7 +61,7 @@ export function WorkService({ services }: Props) {
             ))}
           </select>
 
-          <Button>Filtrar</Button>
+          <Button variant="primary">Buscar trabajo</Button>
         </div>
       </div>
     </div>
