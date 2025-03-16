@@ -2,9 +2,10 @@
 
 import { schemaProposal } from '@/app/(home)/services/validation';
 import prisma from '@/lib/db';
-import { authActionClient } from '@/lib/safe-action';
+import { actionClient, authMiddleware } from '@/lib/safe-action';
 
-const sendProposal = authActionClient
+const sendProposal = actionClient
+  .use(authMiddleware)
   .metadata({ name: 'send-proposal' })
   .schema(schemaProposal)
   .action(async ({ parsedInput: data, ctx: { user } }) => {
