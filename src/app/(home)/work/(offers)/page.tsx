@@ -1,4 +1,4 @@
-import { formatPrice, relativeDate } from '@/lib/utils';
+import { generateSlug, relativeDate } from '@/lib/utils';
 import { Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { getOffers } from '../data';
@@ -15,7 +15,11 @@ export default async function Work() {
 
         <div className="space-y-3">
           {offers.map((item) => (
-            <Link className="group block" href="#" key={item.id}>
+            <Link
+              className="group block"
+              href={`/work/${generateSlug(`${item.subServices.service.name}-${item.subServices.name}`)}-tarea-${item.id}`}
+              key={item.id}
+            >
               <div className="rounded-lg border p-4 shadow-xs group-hover:shadow-lg">
                 <div className="flex items-center">
                   <strong className="text-lg font-medium group-hover:text-amber-400">
