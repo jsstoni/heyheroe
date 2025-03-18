@@ -14,7 +14,7 @@ export default function ProfesionalCTA() {
 
         <Link
           href="#"
-          className="rounded-lg border border-amber-500 bg-white px-6 py-3 font-medium text-amber-500 hover:text-amber-700"
+          className="border-primary-500 hover:text-primary-700 text-primary-500 rounded-lg border bg-white px-6 py-3 font-medium"
         >
           Saber más
         </Link>

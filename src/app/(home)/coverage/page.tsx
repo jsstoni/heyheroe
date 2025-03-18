@@ -22,7 +22,7 @@ export default function Coverage() {
                 key={index}
                 className="flex items-center rounded-lg bg-white p-4 shadow-sm"
               >
-                <MapPin className="mr-2 h-5 w-5 text-amber-500" />
+                <MapPin className="text-primary-500 mr-2 h-5 w-5" />
                 <span>{city}</span>
               </div>
             ))}

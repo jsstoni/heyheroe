@@ -25,7 +25,7 @@ export default function Login() {
           variant="secondary"
           onClick={googleSignIn}
         >
-          <small className="absolute inset-0 w-3 bg-amber-400 transition-all duration-300 group-hover:w-full"></small>
+          <small className="bg-primary-400 absolute inset-0 w-3 transition-all duration-300 group-hover:w-full"></small>
           <span className="relative z-10">Iniciar con Google</span>
         </Button>
         <p className="mt-4 text-center text-sm text-gray-600">

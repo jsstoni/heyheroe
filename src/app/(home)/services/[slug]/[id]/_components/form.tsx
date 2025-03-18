@@ -156,9 +156,9 @@ export default function FormService({ id: serviceId }: { id: number }) {
             />
           </label>
 
-          <p className="col-span-2 flex items-center gap-2 rounded-lg bg-amber-50 p-2 text-xs font-medium text-amber-500">
-            <TriangleAlert className="size-4 stroke-amber-500" /> Un presupuesto
-            demasiado bajo puede dificultar encontrar profesionales.
+          <p className="bg-primary-50 text-primary-500 col-span-2 flex items-center gap-2 rounded-lg p-2 text-xs font-medium">
+            <TriangleAlert className="stroke-primary-500 size-4" /> Un
+            presupuesto demasiado bajo puede dificultar encontrar profesionales.
           </p>
         </>
       )}

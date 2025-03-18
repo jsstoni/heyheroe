@@ -64,7 +64,9 @@ export default async function Service({ params }: PropsParams) {
               key={service.id}
             >
               <div className="absolute -top-8 -right-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
-              <span className="group-hover:text-amber-500">{service.name}</span>
+              <span className="group-hover:text-primary-500">
+                {service.name}
+              </span>
               <small className="mt-1 block text-sm font-normal text-gray-500">
                 {service.description}
               </small>

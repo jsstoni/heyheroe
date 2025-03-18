@@ -22,7 +22,7 @@ export default async function Work() {
             >
               <div className="rounded-lg border p-4 shadow-xs group-hover:shadow-lg">
                 <div className="flex items-center">
-                  <strong className="text-lg font-medium group-hover:text-amber-400">
+                  <strong className="group-hover:text-primary-500 text-lg font-medium">
                     {item.subServices.service.name} - {item.subServices.name}
                   </strong>
                 </div>

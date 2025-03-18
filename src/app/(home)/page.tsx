@@ -53,7 +53,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-amber-100 py-6 md:py-26">
+      <section className="to-primary-100 relative overflow-hidden bg-gradient-to-br from-amber-50 py-6 md:py-26">
         <div className="container mx-auto items-center px-4 max-sm:pt-5 md:flex md:gap-6 md:p-0">
           <div className="space-y-4">
             <h1 className="text-5xl font-black md:text-6xl">
@@ -61,8 +61,8 @@ export default async function Home() {
             </h1>
             <h2 className="text-lg text-gray-500">
               Desde limpieza hasta reparaciones, tenemos más de{' '}
-              <span className="text-amber-400">{total} servicios</span> para tu
-              hogar.
+              <span className="text-primary-600">{total} servicios</span> para
+              tu hogar.
             </h2>
 
             <div className="relative mb-8 max-w-md">
@@ -87,8 +87,8 @@ export default async function Home() {
             src="/svgs/service.svg"
             alt=""
           />
-          <div className="absolute top-0 left-0 hidden h-32 w-32 rounded-br-full bg-amber-200 opacity-50 lg:block"></div>
-          <div className="absolute right-0 bottom-0 hidden h-44 w-44 rounded-tl-full bg-amber-200 opacity-50 lg:block"></div>
+          <div className="bg-primary-200 absolute top-0 left-0 hidden h-32 w-32 rounded-br-full opacity-50 lg:block"></div>
+          <div className="bg-primary-200 absolute right-0 bottom-0 hidden h-44 w-44 rounded-tl-full opacity-50 lg:block"></div>
         </div>
       </section>
 
@@ -114,7 +114,7 @@ export default async function Home() {
                   src={`/svgs/${service.icon}.svg`}
                   alt={service.name}
                 />
-                <h3 className="font-semibold group-hover:text-amber-500">
+                <h3 className="group-hover:text-primary-500 font-semibold">
                   {service.name}
                 </h3>
                 <span className="text-sm text-gray-500">

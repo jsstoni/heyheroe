@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
             <h3 className="mb-4 text-2xl font-bold">
-              Hey<span className="text-amber-500">Héroe</span>
+              Hey<span className="text-primary-500">Héroe</span>
             </h3>
             <p className="text-gray-400">
               Conectamos tus necesidades con profesionales calificados.
@@ -21,7 +21,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={item?.href || '#'}
-                    className="flex items-center transition-colors hover:text-amber-500"
+                    className="hover:text-primary-500 flex items-center transition-colors"
                   >
                     <ArrowRight className="mr-2 h-3 w-3" />
                     {item?.title}
@@ -34,13 +34,14 @@ export function Footer() {
             <h4 className="mb-4 text-lg font-semibold">Contacto</h4>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center gap-2">
-                <Mail className="size-4 stroke-amber-400" /> info@heyheroe.com
+                <Mail className="stroke-primary-400 size-4" /> info@heyheroe.com
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="size-4 stroke-amber-400" /> +56 948 977 182
+                <Phone className="stroke-primary-400 size-4" /> +56 948 977 182
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="size-4 stroke-amber-400" /> Chile, Valparaíso
+                <MapPin className="stroke-primary-400 size-4" /> Chile,
+                Valparaíso
               </li>
             </ul>
           </div>
