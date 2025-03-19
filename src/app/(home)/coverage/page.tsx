@@ -1,5 +1,5 @@
 import { Footer } from '@/components/footer';
-import { commune } from '@/contants/commune';
+import { commune } from '@/constants/commune';
 import { MapPin } from 'lucide-react';
 
 export default function Coverage() {

@@ -9,7 +9,7 @@ import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { commune } from '@/contants/commune';
+import { commune } from '@/constants/commune';
 import { useCharacterLimit } from '@/hooks/use-character-limit';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ArrowRight, Calendar, DollarSign, TriangleAlert } from 'lucide-react';

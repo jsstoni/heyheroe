@@ -5,6 +5,7 @@ import { ActiveLink } from '@/components/active-link';
 import { Footer } from '@/components/footer';
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import steps from '@/constants/steps-client';
 import prisma from '@/lib/db';
 import { ArrowRight, Search } from 'lucide-react';
 
@@ -134,21 +135,3 @@ export default async function Home() {
     </>
   );
 }
-
-const steps = [
-  {
-    title: 'Encuentra el servicio',
-    description:
-      'Explora nuestras categorías y selecciona el servicio que necesitas.',
-  },
-  {
-    title: 'Recibe propuestas',
-    description:
-      'Revisa perfiles, elige al profesional adecuado y agenda el servicio.',
-  },
-  {
-    title: 'Deja tu reseña',
-    description:
-      'Comparte tu experiencia y ayuda a otros a encontrar a los mejores héroes.',
-  },
-];

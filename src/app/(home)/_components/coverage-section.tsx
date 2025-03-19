@@ -1,4 +1,4 @@
-import { commune } from '@/contants/commune';
+import { commune } from '@/constants/commune';
 import { ArrowRight, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
