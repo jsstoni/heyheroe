@@ -34,17 +34,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 const menu = [
   {
     name: 'Perfil',
-    href: '/admin',
+    href: '/dashboard',
     Icon: <User className="size-5" />,
   },
   {
     name: 'Mis Solicitudes',
-    href: '/request',
+    href: '/dashboard/request',
     Icon: <FileText className="size-5" />,
   },
   {
     name: 'Finanzas',
-    href: '/finance',
+    href: '/dashboard/finance',
     Icon: <Wallet className="size-5" />,
   },
 ];

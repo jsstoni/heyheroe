@@ -1,5 +1,5 @@
+import FormPerfil from '@/app/(admin)/_components/form-perfil';
 import { Heading } from '@/components/heading';
-import Form from './_components/form';
 
 export default async function Admin() {
   return (
@@ -7,7 +7,7 @@ export default async function Admin() {
       <Heading title="Perfil" sub="Administra tu información personal" />
 
       <div className="mt-4">
-        <Form />
+        <FormPerfil />
       </div>
     </>
   );

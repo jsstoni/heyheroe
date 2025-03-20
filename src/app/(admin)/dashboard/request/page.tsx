@@ -1,4 +1,4 @@
-import { myRequests } from '@/app/(admin)/request/data';
+import { myRequests } from '@/app/(admin)/data';
 import { Heading } from '@/components/heading';
 import { auth } from '@/lib/auth';
 import { formatPrice, relativeDate } from '@/lib/utils';
@@ -34,7 +34,7 @@ export default async function Request() {
             className="rounded-lg border bg-white p-4 text-gray-400 shadow-sm"
             key={service.id}
           >
-            <h3 className="text-2xl font-medium text-gray-800">
+            <h3 className="text-xl font-medium text-gray-800">
               {service.subServices.service.name} - {service.subServices.name}
             </h3>
             <p className="flex items-center gap-2 text-sm">

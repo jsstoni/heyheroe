@@ -26,7 +26,7 @@ export default function Profile() {
       />
       <Link
         className="hover:text-primary-400 text-sm font-medium"
-        href="/admin"
+        href="/dashboard"
       >
         {session.user?.name}
         <span className="block text-xs font-normal text-gray-400">

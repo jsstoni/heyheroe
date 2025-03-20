@@ -14,7 +14,7 @@ const schema = z.object({
   phone: z.string().min(1, 'Se require numero de teléfono'),
 });
 
-export default function Form() {
+export default function FormPerfil() {
   const { data: session } = useSession();
 
   const {
