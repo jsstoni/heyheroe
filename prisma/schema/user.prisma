@@ -11,6 +11,7 @@ model User {
   sessions Session[]
   accounts Account[]
   proposal Proposal[]
+  Budget   Budget[]
 
   @@unique([email])
   @@map("user")

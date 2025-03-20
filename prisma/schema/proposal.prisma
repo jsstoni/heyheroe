@@ -21,5 +21,7 @@ model Proposal {
   user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   subServices SubServices @relation(fields: [serviceId], references: [id], onDelete: Cascade)
 
+  Budget Budget[]
+
   @@map("proposals")
 }
