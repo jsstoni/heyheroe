@@ -8,7 +8,7 @@ const buttonVariants = cva('rounded-md bg-white px-4 py-2 text-black', {
   variants: {
     variant: {
       default:
-        'border border-primary-500 bg-white text-primary-500 hover:bg-primary-500 hover:text-white',
+        'border border-primary-500 bg-white text-primary-500 hover:text-primary-600',
       primary: 'bg-primary-500 text-white hover:bg-primary-600',
       secondary: 'bg-gray-500 text-white hover:bg-gray-700',
     },
