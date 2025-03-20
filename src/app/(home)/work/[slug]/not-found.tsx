@@ -2,10 +2,17 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div>
-      <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
-      <Link href="/">Return Home</Link>
+    <div className="container space-y-2 py-20 text-center">
+      <h2 className="text-6xl font-medium">No encontrado</h2>
+      <p className="text-lg text-gray-500">
+        No se pudo encontrar el recurso solicitado
+      </p>
+      <Link
+        className="bg-primary-500 hover:bg-primary-600 mt-4 inline-block rounded-full p-2 px-4 text-white"
+        href="/"
+      >
+        Volver a la página principal
+      </Link>
     </div>
   );
 }
