@@ -1,7 +1,7 @@
 import { Heading } from '@/components/heading';
 import { auth } from '@/lib/auth';
 import { formatPrice, relativeDate } from '@/lib/utils';
-import { myRequests } from '#/admin/data';
+import { myRequests } from '#/admin/dashboard/request/data';
 import { Calendar } from 'lucide-react';
 import { headers } from 'next/headers';
 
