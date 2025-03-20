@@ -1,6 +1,6 @@
 import { Footer } from '@/components/footer';
 import prisma from '@/lib/db';
-import { WorkService } from '../_components/work';
+import { WorkService } from '#/home/_components/work';
 
 const getData = async () => {
   try {

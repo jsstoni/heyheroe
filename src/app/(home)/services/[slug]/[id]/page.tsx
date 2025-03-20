@@ -2,8 +2,8 @@ import { Accordion } from '@/components/accordion';
 import { Footer } from '@/components/footer';
 import items from '@/constants/faq-client';
 import prisma from '@/lib/db';
+import FormService from '#/home/_components/form-service';
 import { Clock, DollarSign } from 'lucide-react';
-import FormService from './_components/form';
 
 interface PropsParams {
   params: Promise<{ id: number }>;

@@ -1,8 +1,8 @@
 'use server';
 
-import { schemaProposal } from '@/app/(home)/services/validation';
 import prisma from '@/lib/db';
 import { actionClient, authMiddleware } from '@/lib/safe-action';
+import { schemaProposal } from '#/home/services/validation';
 
 const sendProposal = actionClient
   .use(authMiddleware)

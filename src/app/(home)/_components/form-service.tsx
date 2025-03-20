@@ -1,10 +1,5 @@
 'use client';
 
-import { sendProposal } from '@/app/(home)/services/action';
-import {
-  ProposalValues,
-  schemaProposal,
-} from '@/app/(home)/services/validation';
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
@@ -12,6 +7,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { commune } from '@/constants/commune';
 import { useCharacterLimit } from '@/hooks/use-character-limit';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { sendProposal } from '#/home/services/action';
+import { ProposalValues, schemaProposal } from '#/home/services/validation';
 import { ArrowRight, Calendar, DollarSign, TriangleAlert } from 'lucide-react';
 import { useAction } from 'next-safe-action/hooks';
 import { useState } from 'react';
