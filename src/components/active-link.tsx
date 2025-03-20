@@ -16,8 +16,7 @@ export function ActiveLink({ children, className, href }: Props) {
   return (
     <Link
       className={cn(className, {
-        'border-primary-400 text-primary-400 border-b font-medium':
-          pathname === href,
+        'text-primary-400 font-medium': pathname === href,
       })}
       href={href}
     >

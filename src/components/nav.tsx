@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ActiveLink } from './active-link';
 import Profile from './profile';
 
 export const NavBar = () => {
@@ -12,14 +13,14 @@ export const NavBar = () => {
 
         <ul className="ml-auto flex items-center justify-between gap-5 font-medium">
           <li>
-            <Link className="hover:text-primary-500" href="/work">
+            <ActiveLink className="hover:text-primary-500" href="/work">
               Ofertas de trabajo
-            </Link>
+            </ActiveLink>
           </li>
           <li>
-            <Link className="hover:text-primary-500" href="/services">
+            <ActiveLink className="hover:text-primary-500" href="/services">
               Servicios
-            </Link>
+            </ActiveLink>
           </li>
         </ul>
 
