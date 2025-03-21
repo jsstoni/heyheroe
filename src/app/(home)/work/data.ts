@@ -1,14 +1,6 @@
 import prisma from '@/lib/db';
 import 'server-only';
 
-function getId(slug: string) {
-  const match = slug.match(/tarea-(\d+)$/);
-  if (match && match[1]) {
-    return parseInt(match[1], 10);
-  }
-  return null;
-}
-
 export const getOffers = async () => {
   const data = await prisma.proposal.findMany({
     include: {
@@ -39,9 +31,7 @@ export const getOffers = async () => {
   return data;
 };
 
-export async function getOffersById(slug: string) {
-  const id = getId(slug);
-
+export async function getOffersById(id: number | null) {
   if (!id) {
     return null;
   }

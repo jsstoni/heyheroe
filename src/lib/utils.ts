@@ -35,3 +35,11 @@ export function generateSlug(text: string): string {
     .replace(/^-+/, '')
     .replace(/-+$/, '');
 }
+
+export function getIdFrom(slug: string) {
+  const match = slug.match(/tarea-(\d+)$/);
+  if (match && match[1]) {
+    return parseInt(match[1], 10);
+  }
+  return null;
+}
