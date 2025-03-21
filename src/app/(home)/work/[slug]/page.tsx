@@ -1,9 +1,10 @@
 import Button from '@/components/ui/button';
-import { commune } from '@/contants/commune';
-import { relativeDate } from '@/lib/utils';
+import { commune } from '@/constants/commune';
+import { getIdFrom, relativeDate } from '@/lib/utils';
+import FormBudget from '#/home/_components/form-budget';
+import { getOffersById } from '#/home/work/data';
 import { Briefcase, Calendar, MapPinned } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { getOffersById } from '../data';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,7 +14,8 @@ export default async function Offers({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const offer = await getOffersById(slug);
+  const id = getIdFrom(slug);
+  const offer = await getOffersById(id);
 
   if (!offer) {
     notFound();
@@ -25,8 +27,8 @@ export default async function Offers({
     <div className="container mx-auto px-4 py-8 md:px-0">
       <div className="grid grid-cols-6 gap-4">
         <div className="col-span-4">
-          <div className="mb-1 flex items-center gap-2 text-gray-400">
-            <span className="rounded-full border bg-amber-50 px-3 py-1 text-xs font-medium text-amber-600">
+          <div className="mb-1 flex items-center gap-2 font-thin text-gray-500">
+            <span className="bg-primary-50 text-primary-600 rounded-full border px-3 py-1 text-xs font-medium">
               {offer.subServices.service.name}
             </span>
             <span className="flex items-center gap-2">
@@ -47,12 +49,17 @@ export default async function Offers({
         </div>
 
         <div className="col-span-2">
-          <div className="space-y-2 rounded-lg border p-4 shadow-sm">
-            Solicitado por: {offer.user.name} ({place?.name})
+          <div className="mb-4 space-y-2 rounded-lg border p-4 shadow-sm">
+            <span className="block text-xs font-thin text-gray-500">
+              Solicitado por:
+            </span>
+            {offer.user.name} ({place?.name})
           </div>
 
-          <div className="space-y-2 rounded-lg border p-4 shadow-sm">
-            <strong>¿Eres un profesional?</strong>
+          <FormBudget id={id} />
+
+          <div className="border-primary-200 bg-primary-50/40 mt-5 space-y-2 rounded-lg border p-6 text-center shadow-sm">
+            <strong className="block">¿Eres un profesional?</strong>
             <p>
               Postúlate a este servicio y miles más. Crea tu perfil gratis y
               comienza a trabajar.
