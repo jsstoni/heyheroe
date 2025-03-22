@@ -9,7 +9,10 @@ export default function HowItWorks({ steps }: Props) {
 
       <div className="grid gap-10 md:grid-cols-3">
         {steps.map(({ title, description }, index) => (
-          <div className="relative rounded-md border bg-white p-6" key={index}>
+          <div
+            className="relative rounded-md border bg-gray-50 p-6"
+            key={index}
+          >
             <div className="absolute -top-2 -left-2 size-4 border-t-2 border-l-2 border-gray-400" />
             <div className="absolute -right-2 -bottom-2 size-4 border-r-2 border-b-2 border-gray-400" />
 
