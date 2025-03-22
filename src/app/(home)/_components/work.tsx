@@ -1,33 +1,8 @@
-'use client';
-
+import SearchService from '@/components/search';
 import Button from '@/components/ui/button';
-import { useState } from 'react';
+import { Search } from 'lucide-react';
 
-interface SubService {
-  id: number;
-  name: string;
-}
-
-interface Service {
-  id: number;
-  name: string;
-  subServices: SubService[];
-}
-
-interface Props {
-  services: Service[];
-}
-
-export function WorkService({ services }: Props) {
-  const [filteredSubServices, setFilteredSubServices] = useState<SubService[]>(
-    []
-  );
-
-  const handleServiceChange = (serviceId: number) => {
-    const service = services.find((s) => s.id === serviceId);
-    setFilteredSubServices(service?.subServices || []);
-  };
-
+export function WorkService() {
   return (
     <div className="bg-gray-100 px-4 md:p-14">
       <div className="mx-auto md:max-w-3xl">
@@ -36,32 +11,14 @@ export function WorkService({ services }: Props) {
         </h1>
 
         <div className="grid grid-cols-3 items-center gap-4 rounded-xl border bg-white p-4 shadow-lg">
-          <select
-            className="w-full rounded-md border bg-white px-5 py-2.5"
-            id="services"
-            onChange={(e) => handleServiceChange(Number(e.target.value))}
-          >
-            <option value="">-- Selecciona un servicio --</option>
-            {services.map((service) => (
-              <option key={service.id} value={service.id}>
-                {service.name}
-              </option>
-            ))}
-          </select>
+          <div className="relative col-span-2 rounded-lg border">
+            <Search className="pointer-events-none absolute top-3.5 left-3 z-10 h-5 w-5 text-gray-400" />
+            <SearchService />
+          </div>
 
-          <select
-            className="w-full rounded-md border bg-white px-5 py-2.5"
-            id="subServices"
-          >
-            <option value="">-- Selecciona un subservicio --</option>
-            {filteredSubServices.map((subService) => (
-              <option key={subService.id} value={subService.id}>
-                {subService.name}
-              </option>
-            ))}
-          </select>
-
-          <Button variant="primary">Buscar trabajo</Button>
+          <Button className="py-3" variant="primary">
+            Buscar trabajo
+          </Button>
         </div>
       </div>
     </div>
