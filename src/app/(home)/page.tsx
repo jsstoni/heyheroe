@@ -1,13 +1,13 @@
 import { ActiveLink } from '@/components/active-link';
 import { Footer } from '@/components/footer';
+import SearchService from '@/components/search';
 import Button from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import steps from '@/constants/steps-client';
 import prisma from '@/lib/db';
 import CoverageSection from '#/home/_components/coverage-section';
 import ProfesionalCTA from '#/home/_components/cta-profesional';
 import HowItWorks from '#/home/_components/how-it-works';
-import { ArrowRight, Search } from 'lucide-react';
+import { ArrowRight, Search, Star } from 'lucide-react';
 
 export const dynamic = 'force-static';
 
@@ -39,40 +39,30 @@ const getData = async () => {
   }
 };
 
-export async function generateStaticParams() {
-  const { services } = await getData();
-
-  if (!services) {
-    return [];
-  }
-
-  return services.map((service) => ({ id: service.slug }));
-}
-
 export default async function Home() {
   const { services, total } = await getData();
 
   return (
     <>
-      <section className="to-primary-100 relative overflow-hidden bg-gradient-to-br from-amber-50 py-6 md:py-26">
-        <div className="container mx-auto items-center px-4 max-sm:pt-5 md:flex md:gap-6 md:p-0">
-          <div className="space-y-4">
-            <h1 className="text-5xl font-black md:text-6xl">
-              Tu hogar, en manos expertas.
+      <section className="to-primary-100 relative bg-gradient-to-br from-white py-6 md:pt-20 md:pb-0">
+        <div className="container items-start px-4 max-sm:pt-5 md:flex md:gap-16 md:p-0">
+          <div className="flex-1 space-y-4">
+            <span className="bg-primary-100 text-primary-500 inline-block rounded-full px-3 py-1 font-medium">
+              +{total} servicios profesionales.
+            </span>
+            <h1 className="text-5xl font-black text-balance md:text-6xl">
+              Tu hogar, en manos{' '}
+              <span className="relative z-10 text-green-600">expertas</span>
             </h1>
-            <h2 className="text-lg text-gray-500">
+            <h2 className="text-lg font-medium text-gray-500">
               Desde limpieza hasta reparaciones, tenemos más de{' '}
               <span className="text-primary-600">{total} servicios</span> para
-              tu hogar.
+              tu hogar. Profesionales verificados y listos para ayudarte.
             </h2>
 
-            <div className="relative mb-8 max-w-md">
-              <Search className="pointer-events-none absolute top-4 left-3 h-5 w-5 text-gray-400" />
-              <Input
-                type="text"
-                className="bg-white py-6 pl-10"
-                placeholder="¿Qué servicio necesitas?"
-              />
+            <div className="border-primary-500 relative rounded-lg border-2">
+              <Search className="pointer-events-none absolute top-3.5 left-3 z-10 h-5 w-5 text-gray-400" />
+              <SearchService />
               <Button
                 className="absolute inset-y-0 right-0 flex items-center rounded-l-none"
                 variant="primary"
@@ -83,13 +73,35 @@ export default async function Home() {
             </div>
           </div>
 
-          <img
-            className="max-h-[380px] max-md:hidden"
-            src="/svgs/service.svg"
-            alt=""
-          />
-          <div className="bg-primary-200 absolute top-0 left-0 hidden h-32 w-32 rounded-br-full opacity-50 lg:block"></div>
-          <div className="bg-primary-200 absolute right-0 bottom-0 hidden h-44 w-44 rounded-tl-full opacity-50 lg:block"></div>
+          <figure className="relative hidden flex-1 md:block">
+            <img
+              src="/hero.png"
+              className="h-[450px] w-full rounded-xl"
+              alt="heyhéroe - trabajador"
+            />
+
+            <div className="absolute -right-20 bottom-10 w-[180px] rounded-lg bg-white p-3 shadow-lg">
+              <strong className="text-sm">Limpieza</strong>
+              <span className="block text-xs text-gray-400">
+                Limpieza en general
+              </span>
+            </div>
+
+            <div className="absolute top-16 -left-10 flex w-[200px] items-center gap-2 rounded-2xl bg-white p-2 shadow-xl">
+              <div className="size-12 rounded-full bg-gray-200"></div>
+              <div className="flex flex-col">
+                <span>Martin G.</span>
+                <div className="flex items-center gap-1">
+                  <Star className="size-3 fill-yellow-400 stroke-yellow-400" />
+                  <Star className="size-3 fill-yellow-400 stroke-yellow-400" />
+                  <Star className="size-3 fill-yellow-400 stroke-yellow-400" />
+                  <Star className="size-3 fill-yellow-400 stroke-yellow-400" />
+                  <Star className="size-3 fill-yellow-400 stroke-yellow-400" />
+                  <span className="text-xs text-gray-400">5.0</span>
+                </div>
+              </div>
+            </div>
+          </figure>
         </div>
       </section>
 
