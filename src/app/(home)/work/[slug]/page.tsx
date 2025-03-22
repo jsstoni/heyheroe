@@ -1,9 +1,9 @@
-import Button from '@/components/ui/button';
 import { commune } from '@/constants/commune';
 import { getIdFrom, relativeDate } from '@/lib/utils';
 import FormBudget from '#/home/_components/form-budget';
 import { getOffersById } from '#/home/work/data';
 import { Briefcase, Calendar, MapPinned } from 'lucide-react';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
@@ -64,9 +64,13 @@ export default async function Offers({
               Postúlate a este servicio y miles más. Crea tu perfil gratis y
               comienza a trabajar.
             </p>
-            <Button className="flex w-full items-center justify-center gap-2">
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLScx8OXvSgSOzNZvUU5f56RTMUnE-QH8XL_TB_fNaoYpkYxtXw/viewform?usp=header"
+              target="_blank"
+              className="border-primary-500 text-primary-500 flex w-full items-center justify-center gap-2 rounded-lg border p-2"
+            >
               <Briefcase className="size-4" /> Postularme a este servicio
-            </Button>
+            </Link>
           </div>
         </div>
       </div>
