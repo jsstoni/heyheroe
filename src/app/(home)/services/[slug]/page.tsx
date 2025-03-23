@@ -1,4 +1,5 @@
 import prisma from '@/lib/db';
+import { Metadata } from 'next';
 import Link from 'next/link';
 
 interface PropsParams {
@@ -32,6 +33,24 @@ const getData = async (slug: string) => {
     return null;
   }
 };
+
+export async function generateMetadata({
+  params,
+}: PropsParams): Promise<Metadata> {
+  const { slug } = await params;
+  const data = await getData(slug);
+  if (!data) {
+    return {
+      title: 'Servicio no encontrado',
+      description: 'El servicio solicitado no está disponible.',
+    };
+  }
+
+  return {
+    title: data.name,
+    description: data.description,
+  };
+}
 
 export async function generateStaticParams() {
   const services = await prisma.services.findMany({

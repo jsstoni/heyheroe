@@ -1,9 +1,16 @@
 import { generateSlug, relativeDate } from '@/lib/utils';
 import { Calendar } from 'lucide-react';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { getOffers } from '../data';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Ofertas de trabajo',
+  description:
+    '¿Buscas trabajo? Aquí puedes encontrar oportunidades que se ajustan a ti.',
+};
 
 export default async function Work() {
   const offers = await getOffers();

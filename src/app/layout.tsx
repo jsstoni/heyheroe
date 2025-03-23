@@ -4,8 +4,11 @@ import { Manrope } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
-  title: 'HeyHeroe',
-  description: 'Encuentra las mejores ofertas.',
+  title: {
+    template: 'HeyHeroe | %s',
+    default: 'HeyHeroe',
+  },
+  description: 'Encuentra profesionales y recibe las mejores ofertas.',
 };
 
 const manrope = Manrope({ subsets: ['latin'] });

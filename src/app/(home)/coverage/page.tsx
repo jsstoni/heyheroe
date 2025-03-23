@@ -1,6 +1,11 @@
 import { Footer } from '@/components/footer';
 import { commune } from '@/constants/commune';
 import { MapPin } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cobertura',
+};
 
 export default function Coverage() {
   const cities = commune.sort((a, b) => a.name.localeCompare(b.name));

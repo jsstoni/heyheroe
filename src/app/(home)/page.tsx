@@ -8,6 +8,7 @@ import CoverageSection from '#/home/_components/coverage-section';
 import ProfesionalCTA from '#/home/_components/cta-profesional';
 import HowItWorks from '#/home/_components/how-it-works';
 import { ArrowRight, Search, Star } from 'lucide-react';
+import { Metadata } from 'next';
 
 export const dynamic = 'force-static';
 
@@ -38,6 +39,10 @@ const getData = async () => {
     return { services: [], total: 0 };
   }
 };
+
+export const metadata: Metadata = {
+  title: 'Tu hogar, en manos expertas'
+}
 
 export default async function Home() {
   const { services, total } = await getData();

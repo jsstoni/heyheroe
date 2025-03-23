@@ -4,6 +4,7 @@ import items from '@/constants/faq-client';
 import prisma from '@/lib/db';
 import FormService from '#/home/_components/form-service';
 import { Clock, DollarSign } from 'lucide-react';
+import { Metadata } from 'next';
 
 interface PropsParams {
   params: Promise<{ id: number }>;
@@ -21,6 +22,7 @@ const getData = async (id: number) => {
     const data = await prisma.subServices.findUnique({
       select: {
         name: true,
+        description: true,
         service: {
           select: {
             name: true,
@@ -36,6 +38,24 @@ const getData = async (id: number) => {
     return null;
   }
 };
+
+export async function generateMetadata({
+  params,
+}: PropsParams): Promise<Metadata> {
+  const { id } = await params;
+  const data = await getData(id);
+  if (!data) {
+    return {
+      title: 'Servicio no encontrado',
+      description: 'El servicio solicitado no está disponible.',
+    };
+  }
+
+  return {
+    title: data.name,
+    description: data.description,
+  };
+}
 
 export async function generateStaticParams() {
   const subServices = await prisma.subServices.findMany({

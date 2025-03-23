@@ -1,8 +1,15 @@
 import { Footer } from '@/components/footer';
 import prisma from '@/lib/db';
+import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const dynamic = 'force-static';
+
+export const metadata: Metadata = {
+  title: 'Servicios',
+  description:
+    'Servicios para el hogar que simplifican tu día a día. Soluciones rápidas y eficaces para que disfrutes de un espacio más cómodo y seguro.',
+};
 
 const getData = async () => {
   try {
