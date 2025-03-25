@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "bun .next/standalone/server.js",
     "lint": "next lint"
   },
   "prisma": {
@@ -14,6 +14,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@prisma/client": "^6.3.1",
+    "@t3-oss/env-nextjs": "^0.12.0",
     "better-auth": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
