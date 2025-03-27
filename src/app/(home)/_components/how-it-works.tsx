@@ -19,9 +19,7 @@ export default function HowItWorks({ steps }: Props) {
             <strong className="text-primary-500 border-primary-400 absolute -top-6 flex size-12 items-center justify-center rounded-xl border bg-white text-4xl">
               {index + 1}
             </strong>
-            <h4 className="text-primary-600 my-2 text-2xl font-medium">
-              {title}
-            </h4>
+            <h4 className="my-2 text-2xl font-medium">{title}</h4>
 
             <p className="text-gray-500">{description}</p>
           </div>
