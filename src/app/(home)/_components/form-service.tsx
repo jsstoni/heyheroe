@@ -24,6 +24,7 @@ const home = [
 export default function FormService({ id: serviceId }: { id: number }) {
   const cities = commune
     .sort((a, b) => a.name.localeCompare(b.name))
+    .filter((s) => s.active)
     .map((v) => ({ value: v.id, label: v.name }));
 
   const [step, setStep] = useState(1);

@@ -1,5 +1,6 @@
 import { Footer } from '@/components/footer';
 import { commune } from '@/constants/commune';
+import { cn } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
 import { Metadata } from 'next';
 
@@ -22,12 +23,20 @@ export default function Coverage() {
           </p>
 
           <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-            {cities.map(({ name: city, id: index }) => (
+            {cities.map(({ name: city, id: index, active }) => (
               <div
                 key={index}
-                className="flex items-center rounded-lg bg-white p-4 shadow-sm"
+                className={cn(
+                  'flex items-center rounded-lg bg-white p-4 shadow-sm',
+                  !active && 'border border-red-200'
+                )}
               >
-                <MapPin className="text-primary-500 mr-2 h-5 w-5" />
+                <MapPin
+                  className={cn(
+                    'text-primary-500 mr-2 h-5 w-5',
+                    !active && 'stroke-red-200'
+                  )}
+                />
                 <span>{city}</span>
               </div>
             ))}
