@@ -22,7 +22,8 @@ export default function Profile() {
       <img
         className="size-8 rounded-full"
         src={session.user?.image || ''}
-        alt="avatar"
+        alt={session.user.name}
+        title={session.user.name}
       />
       <Link
         className="hover:text-primary-400 text-sm font-medium"

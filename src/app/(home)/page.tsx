@@ -41,8 +41,8 @@ const getData = async () => {
 };
 
 export const metadata: Metadata = {
-  title: 'Tu hogar, en manos expertas'
-}
+  title: 'Tu hogar, en manos expertas',
+};
 
 export default async function Home() {
   const { services, total } = await getData();
@@ -51,7 +51,7 @@ export default async function Home() {
     <>
       <section className="to-primary-100 relative bg-gradient-to-br from-white py-6 md:pt-20 md:pb-0">
         <div className="container items-start px-4 max-sm:pt-5 md:flex md:gap-16 md:p-0">
-          <div className="flex-1 space-y-4">
+          <div className="mt-8 flex-1 space-y-4">
             <span className="bg-primary-100 text-primary-500 inline-block rounded-full px-3 py-1 font-medium">
               +{total} servicios profesionales.
             </span>
@@ -62,7 +62,7 @@ export default async function Home() {
             <h2 className="text-lg font-medium text-gray-500">
               Desde limpieza hasta reparaciones, tenemos más de{' '}
               <span className="text-primary-600">{total} servicios</span> para
-              tu hogar. Profesionales verificados y listos para ayudarte.
+              tu hogar.
             </h2>
 
             <div className="border-primary-500 relative rounded-lg border-2">
@@ -82,7 +82,8 @@ export default async function Home() {
             <img
               src="/hero.png"
               className="h-[450px] w-full rounded-xl"
-              alt="heyhéroe - trabajador"
+              title="héroe - limpieza en general"
+              alt="heyhéroe"
             />
 
             <div className="absolute -right-20 bottom-10 w-[180px] rounded-lg bg-white p-3 shadow-lg">
@@ -123,14 +124,16 @@ export default async function Home() {
             {services.map((service) => (
               <ActiveLink
                 key={service.id}
-                href={`/services/${service.slug}`}
                 className="group relative flex flex-col gap-2 overflow-hidden rounded-xl bg-white p-3 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                href={`/services/${service.slug}`}
+                title={service.name}
               >
                 <div className="absolute -top-8 -right-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
                 <img
                   className="size-7"
                   src={`/svgs/${service.icon}.svg`}
                   alt={service.name}
+                  title={service.name}
                 />
                 <h3 className="group-hover:text-primary-500 font-semibold">
                   {service.name}

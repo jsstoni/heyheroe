@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     template: 'HeyHeroe | %s',
     default: 'HeyHeroe',
   },
-  description: 'Encuentra profesionales y recibe las mejores ofertas.',
+  description:
+    'Desde limpieza hasta reparaciones, tenemos más de 27 servicios para tu hogar, encuentra profesionales y recibe las mejores ofertas.',
 };
 
 const manrope = Manrope({ subsets: ['latin'] });

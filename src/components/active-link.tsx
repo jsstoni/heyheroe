@@ -7,10 +7,11 @@ import { usePathname } from 'next/navigation';
 interface Props {
   href: string;
   children: React.ReactNode;
+  title?: string;
   className?: string;
 }
 
-export function ActiveLink({ children, className, href }: Props) {
+export function ActiveLink({ children, title, className, href }: Props) {
   const pathname = usePathname();
 
   return (
@@ -19,6 +20,7 @@ export function ActiveLink({ children, className, href }: Props) {
         'text-primary-400 font-medium': pathname === href,
       })}
       href={href}
+      title={title}
     >
       {children}
     </Link>
