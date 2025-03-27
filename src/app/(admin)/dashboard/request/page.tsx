@@ -1,8 +1,9 @@
 import { Heading } from '@/components/heading';
+import { commune } from '@/constants/commune';
 import { auth } from '@/lib/auth';
 import { formatPrice, relativeDate } from '@/lib/utils';
 import { getCachedRequests } from '#/admin/dashboard/request/data';
-import { Calendar, File } from 'lucide-react';
+import { Calendar, File, MapPin } from 'lucide-react';
 import { headers } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
@@ -16,6 +17,11 @@ const getMyRequests = async () => {
 
   const resquests = await getCachedRequests(session.user.id);
   return resquests;
+};
+
+const getCommuneById = (communeId: number) => {
+  const city = commune.find(({ id }) => id === communeId);
+  return city?.name;
 };
 
 async function AsyncDataRequest() {
@@ -37,7 +43,7 @@ async function AsyncDataRequest() {
   }
 
   return (
-    <div className="mt-6 space-y-4">
+    <div className="mt-6 grid grid-cols-1 md:grid-cols-3">
       {resquests.map((service) => (
         <div
           className="rounded-lg border bg-white p-4 text-gray-400 shadow-sm"
@@ -51,7 +57,10 @@ async function AsyncDataRequest() {
             {relativeDate(service.createdAt)}
           </p>
 
-          <p className="my-2">{service.description}</p>
+          <p className="my-3 flex items-center gap-1">
+            <MapPin className="size-3" /> {getCommuneById(service.commune)} -{' '}
+            {service.address}
+          </p>
 
           <span className="text-gray-800">
             {formatPrice(Number(service.budget))}
