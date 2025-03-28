@@ -1,5 +1,5 @@
 import { Heading } from '@/components/heading';
-import { commune } from '@/constants/commune';
+import { getCommuneById } from '@/constants/commune';
 import { auth } from '@/lib/auth';
 import { formatPrice, relativeDate } from '@/lib/utils';
 import { getCachedRequests } from '#/admin/dashboard/request/data';
@@ -17,11 +17,6 @@ const getMyRequests = async () => {
 
   const resquests = await getCachedRequests(session.user.id);
   return resquests;
-};
-
-const getCommuneById = (communeId: number) => {
-  const city = commune.find(({ id }) => id === communeId);
-  return city?.name;
 };
 
 async function AsyncDataRequest() {
@@ -43,10 +38,10 @@ async function AsyncDataRequest() {
   }
 
   return (
-    <div className="mt-6 grid grid-cols-1 md:grid-cols-3">
+    <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
       {resquests.map((service) => (
         <div
-          className="rounded-lg border bg-white p-4 text-gray-400 shadow-sm"
+          className="rounded-lg border bg-white p-4 text-gray-400 shadow-xs"
           key={service.id}
         >
           <h3 className="text-xl font-medium text-gray-800">

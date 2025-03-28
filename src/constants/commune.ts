@@ -36,3 +36,8 @@ export const commune = [
   { id: 35, name: 'Quilpué', active: true, home: true },
   { id: 36, name: 'Villa Alemana', active: true, home: true },
 ];
+
+export function getCommuneById(communeId: number) {
+  const city = commune.find(({ id }) => id === communeId);
+  return city?.name;
+}
