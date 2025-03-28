@@ -2,7 +2,6 @@
 
 @theme {
   --color-border: hsl(var(--border));
-  --background-image-hero: url('/background.webp');
 
   --color-primary-50: #effef2;
   --color-primary-100: #dafee2;
