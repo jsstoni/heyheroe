@@ -1,5 +1,4 @@
 import { Footer } from '@/components/footer';
-import { WorkService } from '#/home/_components/work';
 
 export default async function WorkLayout({
   children,
@@ -7,12 +6,10 @@ export default async function WorkLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <WorkService />
-
+    <section className="bg-gray-50">
       {children}
 
       <Footer />
-    </>
+    </section>
   );
 }

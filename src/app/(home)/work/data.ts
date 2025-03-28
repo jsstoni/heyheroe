@@ -1,7 +1,7 @@
 import prisma from '@/lib/db';
 import 'server-only';
 
-export const getOffers = async () => {
+export const getOffers = async (category: string[] | null = null) => {
   const data = await prisma.proposal.findMany({
     include: {
       user: {
@@ -20,6 +20,10 @@ export const getOffers = async () => {
         },
       },
     },
+    where:
+      category && category.length > 0
+        ? { subServices: { service: { slug: { in: category } } } }
+        : undefined,
     omit: {
       userId: true,
       serviceId: true,
