@@ -9,7 +9,7 @@ import { useCharacterLimit } from '@/hooks/use-character-limit';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { sendProposal } from '#/home/services/action';
 import { ProposalValues, schemaProposal } from '#/home/services/validation';
-import { ArrowRight, Calendar, DollarSign, TriangleAlert } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import { useAction } from 'next-safe-action/hooks';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -63,9 +63,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
     let valid = false;
 
     if (step === 1) {
-      valid = await trigger(['type', 'commune', 'address']);
-    } else if (step === 2) {
-      valid = await trigger(['serviceDate', 'budget']);
+      valid = await trigger(['type', 'commune', 'address', 'serviceDate']);
     }
 
     if (valid) {
@@ -85,10 +83,9 @@ export default function FormService({ id: serviceId }: { id: number }) {
         return (
           !!watchAllFields.type &&
           !!watchAllFields.commune &&
-          !!watchAllFields.address
+          !!watchAllFields.address &&
+          !!watchAllFields.serviceDate
         );
-      case 2:
-        return !!watchAllFields.serviceDate && !!watchAllFields.budget;
       default:
         return false;
     }
@@ -105,6 +102,17 @@ export default function FormService({ id: serviceId }: { id: number }) {
     >
       {step === 1 && (
         <>
+          <label className="relative col-span-2">
+            ¿Para qué fecha lo necesitas?
+            <Calendar className="pointer-events-none absolute top-9 left-3 size-4 text-gray-400" />
+            <Input
+              {...register('serviceDate')}
+              error={errors.serviceDate}
+              type="date"
+              className="pl-8"
+            />
+          </label>
+
           <label>
             Tipo de domicilio
             <Select options={home} error={errors.type} {...register('type')} />
@@ -132,37 +140,6 @@ export default function FormService({ id: serviceId }: { id: number }) {
 
       {step === 2 && (
         <>
-          <label className="relative col-span-2">
-            ¿Para qué fecha lo necesitas?
-            <Calendar className="pointer-events-none absolute top-9 left-3 size-4 text-gray-400" />
-            <Input
-              {...register('serviceDate')}
-              error={errors.serviceDate}
-              type="date"
-              className="pl-8"
-            />
-          </label>
-
-          <label className="relative col-span-2">
-            Presupuesto estimado
-            <DollarSign className="pointer-events-none absolute top-9 left-3 size-4 text-gray-400" />
-            <Input
-              className="pl-8"
-              {...register('budget')}
-              error={errors.budget}
-              type="number"
-            />
-          </label>
-
-          <p className="bg-primary-50 text-primary-500 col-span-2 flex items-center gap-2 rounded-lg p-2 text-xs font-medium">
-            <TriangleAlert className="stroke-primary-500 size-4" /> Un
-            presupuesto demasiado bajo puede dificultar encontrar profesionales.
-          </p>
-        </>
-      )}
-
-      {step === 3 && (
-        <>
           <label className="col-span-2">
             Describe tu necesidad a detalle ({rest})
             <Textarea
@@ -187,7 +164,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
           </Button>
         )}
 
-        {step !== 3 && (
+        {step !== 2 && (
           <Button
             className="ml-auto"
             type="button"
@@ -198,7 +175,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
           </Button>
         )}
 
-        {step === 3 && (
+        {step === 2 && (
           <Button
             className="ml-auto flex items-center justify-center gap-2 font-medium"
             variant="primary"

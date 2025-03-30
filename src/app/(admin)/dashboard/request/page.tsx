@@ -1,7 +1,7 @@
 import { Heading } from '@/components/heading';
 import { getCommuneById } from '@/constants/commune';
 import { auth } from '@/lib/auth';
-import { formatPrice, relativeDate } from '@/lib/utils';
+import { relativeDate } from '@/lib/utils';
 import { getCachedRequests } from '#/admin/dashboard/request/data';
 import { Calendar, File, MapPin } from 'lucide-react';
 import { headers } from 'next/headers';
@@ -52,14 +52,10 @@ async function AsyncDataRequest() {
             {relativeDate(service.createdAt)}
           </p>
 
-          <p className="my-3 flex items-center gap-1">
+          <p className="mt-3 flex items-center gap-1">
             <MapPin className="size-3" /> {getCommuneById(service.commune)} -{' '}
             {service.address}
           </p>
-
-          <span className="text-gray-800">
-            {formatPrice(Number(service.budget))}
-          </span>
         </div>
       ))}
     </div>
