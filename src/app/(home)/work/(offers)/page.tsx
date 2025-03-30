@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { SearchParams } from 'nuqs/server';
 import { Suspense } from 'react';
+import CityFilter from '../../_components/city-filter';
 
 export const metadata: Metadata = {
   title: 'Ofertas de trabajo',
@@ -18,9 +19,9 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 async function WorkList() {
-  const category = filterParamsCache.get('category');
+  const { category, commune } = filterParamsCache.all();
 
-  const offers = await getOffers(category);
+  const offers = await getOffers(category, commune);
 
   if (offers.length < 1) {
     return (
@@ -31,7 +32,7 @@ async function WorkList() {
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       {offers.map((item) => (
         <Link
           className="group block"
@@ -74,6 +75,10 @@ export default async function Work({
           </p>
 
           <CategoryFilter />
+
+          <hr className="my-3" />
+
+          <CityFilter />
         </div>
 
         <div className="flex-1">
