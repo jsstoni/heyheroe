@@ -1,11 +1,13 @@
 interface Props {
   steps: { title: string; description: string }[];
+  subtitle: string;
 }
 
-export default function HowItWorks({ steps }: Props) {
+export default function HowItWorks({ subtitle, steps }: Props) {
   return (
     <>
-      <h3 className="mb-16 text-center text-3xl font-bold">¿Cómo funciona?</h3>
+      <h3 className="mb-1 text-center text-4xl font-black">¿Cómo funciona?</h3>
+      <h4 className="mx-auto mb-16 max-w-md text-center">{subtitle}</h4>
 
       <div className="grid gap-10 md:grid-cols-3">
         {steps.map(({ title, description }, index) => (

@@ -8,14 +8,14 @@ export default function CoverageSection() {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4 md:px-8">
-        <h3 className="mb-1 text-center text-2xl font-bold md:text-3xl">
+    <section className="py-20">
+      <div className="container mx-auto px-4 text-center md:px-8">
+        <h3 className="mb-1 text-2xl font-black md:text-4xl">
           Cobertura de servicios
         </h3>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
+        <h4 className="mx-auto mb-12 max-w-md text-gray-600">
           Explora nuestra área de servicio en la Quinta Región de Chile
-        </p>
+        </h4>
 
         <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {cities.map(({ name: city, id: index }) => (

@@ -2,15 +2,15 @@ import Link from 'next/link';
 
 export default function ProfesionalCTA() {
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-gray-50 py-20">
       <div className="container mx-auto px-4 text-center">
-        <h4 className="mb-4 text-2xl font-bold md:text-3xl">
+        <h3 className="mb-4 text-2xl font-black md:text-4xl">
           ¿Eres un profesional?
-        </h4>
-        <p className="mx-auto mb-8 max-w-2xl text-gray-600">
+        </h3>
+        <h4 className="mx-auto mb-8 max-w-2xl text-gray-600">
           Únete a nuestra plataforma y comienza a ofrecer tus servicios a miles
           de clientes potenciales. Aumenta tus ingresos y expande tu negocio.
-        </p>
+        </h4>
 
         <Link
           href="#"

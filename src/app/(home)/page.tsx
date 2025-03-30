@@ -8,7 +8,7 @@ import CoverageSection from '#/home/_components/coverage-section';
 import ProfesionalCTA from '#/home/_components/cta-profesional';
 import HowItWorks from '#/home/_components/how-it-works';
 import { ArrowRight, Search, Star } from 'lucide-react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';
 
@@ -49,10 +49,10 @@ export default async function Home() {
 
   return (
     <>
-      <section className="to-primary-100 relative bg-gradient-to-br from-white py-6 md:pt-20 md:pb-0">
+      <section className="bg-primary-100 relative py-6 md:pt-20 md:pb-0">
         <div className="container items-start px-4 max-sm:pt-5 md:flex md:gap-16 md:p-0">
           <div className="mt-8 flex-1 space-y-4">
-            <span className="bg-primary-100 text-primary-500 inline-block rounded-full px-3 py-1 font-medium">
+            <span className="bg-primary-300 text-primary-700 inline-block rounded-full px-3 py-1 font-medium">
               +{total} servicios profesionales.
             </span>
             <h1 className="text-5xl font-black text-balance md:text-6xl">
@@ -111,15 +111,22 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16 md:px-8">
-        <HowItWorks steps={steps} />
+      <section className="container mx-auto px-4 py-20 md:px-8">
+        <HowItWorks
+          subtitle="En solo tres pasos podrás encontrar al profesional perfecto para tus necesidades"
+          steps={steps}
+        />
       </section>
 
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-4 md:px-8">
-          <h3 className="mb-10 text-center text-3xl font-bold">
+          <h3 className="text-center text-4xl font-black">
             Conoce nuestras categorías
           </h3>
+          <h4 className="mx-auto mb-10 max-w-md text-center">
+            Ofrecemos una amplia variedad de servicios profesionales para todas
+            tus necesidades
+          </h4>
           <nav className="grid grid-cols-2 gap-6 md:grid-cols-3">
             {services.map((service) => (
               <ActiveLink
