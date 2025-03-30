@@ -14,7 +14,6 @@ export const sendBudget = actionClient
         userId: user,
         proposalId: data.id,
         budget: data.budget,
-        description: data.description,
       },
     });
 

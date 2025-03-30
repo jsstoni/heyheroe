@@ -2,7 +2,6 @@
 
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { sendBudget } from '#/home/work/action';
 import { BudgetValues, schemaBudget } from '#/home/work/validation';
@@ -60,15 +59,6 @@ export default function FormBudget({ id }: { id: number | null }) {
               error={errors.budget}
               type="number"
               placeholder="$0"
-            />
-          </label>
-
-          <label className="block">
-            Mensaje
-            <Textarea
-              {...register('description')}
-              error={errors.description}
-              rows={2}
             />
           </label>
 

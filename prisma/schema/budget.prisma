@@ -3,7 +3,6 @@ model Budget {
   userId      String  @map("user_id")
   proposalId  Int     @map("proposal_id")
   budget      Decimal
-  description String  @db.Text
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
