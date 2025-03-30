@@ -54,26 +54,30 @@ export default function FormBudget({ id }: { id: number | null }) {
         >
           <label className="block">
             Valor del servicio
-            <Input
-              {...register('budget')}
-              error={errors.budget}
-              type="number"
-              placeholder="$0"
-            />
+            <div className="flex items-center">
+              <Input
+                className="rounded-none rounded-l-xl"
+                {...register('budget')}
+                type="number"
+                placeholder="$0"
+              />
+              <Button
+                className="flex items-center gap-2 rounded-none rounded-r-xl"
+                disabled={isExecuting}
+                variant="primary"
+              >
+                <Send className="size-4" />
+                {isExecuting ? 'Enviando ...' : 'Enviar'}
+              </Button>
+            </div>
           </label>
+          {errors.budget && (
+            <p className="col-span-2 text-red-500">{errors.budget.message}</p>
+          )}
 
           {errors.root && (
             <p className="col-span-2 text-red-500">{errors.root.message}</p>
           )}
-
-          <Button
-            className="flex items-center gap-2"
-            disabled={isExecuting}
-            variant="primary"
-          >
-            <Send className="size-4" />
-            {isExecuting ? 'Enviando ...' : 'Enviar'}
-          </Button>
         </form>
       )}
     </>
