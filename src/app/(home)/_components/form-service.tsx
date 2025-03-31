@@ -9,7 +9,7 @@ import { useCharacterLimit } from '@/hooks/use-character-limit';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { sendProposal } from '#/home/services/action';
 import { ProposalValues, schemaProposal } from '#/home/services/validation';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, CheckCircle } from 'lucide-react';
 import { useAction } from 'next-safe-action/hooks';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -51,7 +51,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
     onSuccess({ data }) {
       toast.success(data?.success || 'Solicitud enviada');
       reset();
-      setStep(1);
+      setStep(3);
     },
     onError({ error }) {
       toast.error(error.serverError || 'Hubo un error, vuelve intentar');
@@ -114,7 +114,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
           </label>
 
           <label>
-            Tipo de domicilio
+            Tipo de propiedad
             <Select options={home} error={errors.type} {...register('type')} />
           </label>
 
@@ -126,7 +126,6 @@ export default function FormService({ id: serviceId }: { id: number }) {
               {...register('commune')}
             />
           </label>
-
           <label className="col-span-2">
             ¿Cúal es la ubicación?
             <Textarea
@@ -157,35 +156,53 @@ export default function FormService({ id: serviceId }: { id: number }) {
         </>
       )}
 
-      <div className="col-span-2 flex items-center gap-4">
-        {step > 1 && (
-          <Button type="button" onClick={prevStep}>
-            Atras
-          </Button>
-        )}
-
-        {step !== 2 && (
-          <Button
-            className="ml-auto"
+      {step === 3 ? (
+        <div className="col-span-2 text-center">
+          <CheckCircle className="stroke-primary-300 mx-auto size-16" />
+          <p className="mt-3 text-lg font-medium">¡Gracias por tu solicitud!</p>
+          <p className="mx-auto max-w-sm text-sm">
+            Pronto comenzarás a recibir propuestas personalizadas para el
+            servicio que necesitas.
+          </p>
+          <button
+            className="hover:text-primary-500 mx-auto mt-3 flex cursor-pointer items-center gap-2"
             type="button"
-            onClick={nextStep}
-            disabled={!isStepValid()}
+            onClick={() => setStep(1)}
           >
-            Siguiente
-          </Button>
-        )}
+            <ArrowLeft className="size-4" /> Volver
+          </button>
+        </div>
+      ) : (
+        <div className="col-span-2 flex items-center gap-4">
+          {step > 1 && (
+            <Button type="button" onClick={prevStep}>
+              Atras
+            </Button>
+          )}
 
-        {step === 2 && (
-          <Button
-            className="ml-auto flex items-center justify-center gap-2 font-medium"
-            variant="primary"
-            type="submit"
-          >
-            {isExecuting ? 'Enviando ...' : 'Pedir presupuesto'}
-            <ArrowRight size={18} color="white" />
-          </Button>
-        )}
-      </div>
+          {step !== 2 && (
+            <Button
+              className="ml-auto"
+              type="button"
+              onClick={nextStep}
+              disabled={!isStepValid()}
+            >
+              Siguiente
+            </Button>
+          )}
+
+          {step === 2 && (
+            <Button
+              className="ml-auto flex items-center justify-center gap-2 font-medium"
+              variant="primary"
+              type="submit"
+            >
+              {isExecuting ? 'Enviando ...' : 'Pedir presupuesto'}
+              <ArrowRight size={18} color="white" />
+            </Button>
+          )}
+        </div>
+      )}
 
       {errors.root && (
         <p className="col-span-2 text-red-500">{errors.root.message}</p>
