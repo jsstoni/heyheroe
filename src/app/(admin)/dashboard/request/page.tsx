@@ -3,7 +3,7 @@ import { getCommuneById } from '@/constants/commune';
 import { auth } from '@/lib/auth';
 import { relativeDate } from '@/lib/utils';
 import { getCachedRequests } from '#/admin/dashboard/request/data';
-import { Calendar, File, MapPin } from 'lucide-react';
+import { Calendar, File, MapPin, Users } from 'lucide-react';
 import { headers } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
@@ -52,10 +52,15 @@ async function AsyncDataRequest() {
             {relativeDate(service.createdAt)}
           </p>
 
-          <p className="mt-3 flex items-center gap-1">
+          <p className="mt-2 flex items-center gap-1">
             <MapPin className="size-3" /> {getCommuneById(service.commune)} -{' '}
             {service.address}
           </p>
+
+          <div className="mt-3 flex items-center gap-1 border-t pt-1">
+            <Users className="size-4" />
+            {service._count.Budget}
+          </div>
         </div>
       ))}
     </div>
