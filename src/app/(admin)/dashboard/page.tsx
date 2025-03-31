@@ -1,5 +1,5 @@
+import FormPerfil from '@/components/dashboard/form-perfil';
 import { Heading } from '@/components/heading';
-import FormPerfil from '#/admin/_components/form-perfil';
 
 export default async function Admin() {
   return (

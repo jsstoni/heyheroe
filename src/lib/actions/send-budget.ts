@@ -1,8 +1,8 @@
 'use server';
 
+import { actionClient, authMiddleware } from '@/lib/actions/safe-action';
 import prisma from '@/lib/db';
-import { actionClient, authMiddleware } from '@/lib/safe-action';
-import { schemaBudget } from '#/home/work/validation';
+import { schemaBudget } from '@/lib/zod/schemas/budget';
 
 export const sendBudget = actionClient
   .use(authMiddleware)

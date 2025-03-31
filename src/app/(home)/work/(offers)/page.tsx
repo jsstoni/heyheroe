@@ -1,14 +1,14 @@
+import CategoryFilter from '@/components/work/category-filter';
+import CityFilter from '@/components/work/city-filter';
 import { getCommuneById } from '@/constants/commune';
+import { getOffers } from '@/lib/queries/offers';
+import { filterParamsCache } from '@/lib/search-params/work';
 import { generateSlug, relativeDate } from '@/lib/utils';
-import CategoryFilter from '#/home/_components/category-filter';
-import { getOffers } from '#/home/work/data';
-import { filterParamsCache } from '#/home/work/searchParams';
 import { Briefcase, Calendar, Filter, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { SearchParams } from 'nuqs/server';
 import { Suspense } from 'react';
-import CityFilter from '../../_components/city-filter';
 
 export const metadata: Metadata = {
   title: 'Ofertas de trabajo',

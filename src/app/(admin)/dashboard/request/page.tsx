@@ -1,8 +1,8 @@
 import { Heading } from '@/components/heading';
 import { getCommuneById } from '@/constants/commune';
 import { auth } from '@/lib/auth';
+import { getRequests } from '@/lib/queries/requests';
 import { relativeDate } from '@/lib/utils';
-import { getCachedRequests } from '#/admin/dashboard/request/data';
 import { Calendar, File, MapPin, Users } from 'lucide-react';
 import { headers } from 'next/headers';
 
@@ -15,7 +15,7 @@ const getMyRequests = async () => {
     return [];
   }
 
-  const resquests = await getCachedRequests(session.user.id);
+  const resquests = await getRequests(session.user.id);
   return resquests;
 };
 

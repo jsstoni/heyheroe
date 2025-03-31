@@ -1,8 +1,8 @@
 'use client';
 
 import { commune } from '@/constants/commune';
+import { filtersParams } from '@/lib/search-params/work';
 import { useQueryState } from 'nuqs';
-import { filtersParams } from '../work/searchParams';
 
 export default function CityFilter() {
   const [city, setCity] = useQueryState(

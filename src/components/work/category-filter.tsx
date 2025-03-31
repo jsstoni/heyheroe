@@ -1,10 +1,10 @@
 'use client';
 
+import { filtersParams } from '@/lib/search-params/work';
 import servicesData from '~/data/services.json';
 import { Loader2 } from 'lucide-react';
 import { useQueryState } from 'nuqs';
 import { useTransition } from 'react';
-import { filtersParams } from '../work/searchParams';
 
 export default function CategoryFilter() {
   const [isLoading, startTransition] = useTransition();

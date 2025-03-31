@@ -1,7 +1,7 @@
+import FormBudget from '@/components/work/form-budget';
 import { commune } from '@/constants/commune';
+import { getOffersById } from '@/lib/queries/offers-id';
 import { getIdFrom, relativeDate } from '@/lib/utils';
-import FormBudget from '#/home/_components/form-budget';
-import { getOffersById } from '#/home/work/data';
 import { Briefcase, Calendar, MapPinned } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';

@@ -1,12 +1,12 @@
 import { ActiveLink } from '@/components/active-link';
 import { Footer } from '@/components/footer';
+import CoverageSection from '@/components/home/coverage-section';
+import ProfesionalCTA from '@/components/home/cta-profesional';
+import HowItWorks from '@/components/home/how-it-works';
 import SearchService from '@/components/search';
 import Button from '@/components/ui/button';
 import steps from '@/constants/steps-client';
 import prisma from '@/lib/db';
-import CoverageSection from '#/home/_components/coverage-section';
-import ProfesionalCTA from '#/home/_components/cta-profesional';
-import HowItWorks from '#/home/_components/how-it-works';
 import { ArrowRight, Search, Star } from 'lucide-react';
 import type { Metadata } from 'next';
 

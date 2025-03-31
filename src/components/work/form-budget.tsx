@@ -2,9 +2,9 @@
 
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { sendBudget } from '@/lib/actions/send-budget';
+import { BudgetValues, schemaBudget } from '@/lib/zod/schemas/budget';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { sendBudget } from '#/home/work/action';
-import { BudgetValues, schemaBudget } from '#/home/work/validation';
 import { Send } from 'lucide-react';
 import { useAction } from 'next-safe-action/hooks';
 import { useState } from 'react';

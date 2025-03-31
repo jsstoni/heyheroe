@@ -2,7 +2,8 @@ import prisma from '@/lib/db';
 import { unstable_cache } from 'next/cache';
 import 'server-only';
 
-export const getCachedRequests = async (userId: string) =>
+//my proposal
+export const getRequests = async (userId: string) =>
   unstable_cache(
     async () => {
       const requests = await prisma.proposal.findMany({

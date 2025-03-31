@@ -1,9 +1,8 @@
+import prisma from '@/lib/db';
 import { env } from '@/lib/env/server';
-import { PrismaClient } from '@prisma/client';
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 
-const prisma = new PrismaClient();
 export const auth = betterAuth({
   session: {
     cookieCache: {

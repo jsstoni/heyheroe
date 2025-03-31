@@ -1,8 +1,8 @@
 import { Accordion } from '@/components/accordion';
 import { Footer } from '@/components/footer';
+import FormService from '@/components/services/form-service';
 import items from '@/constants/faq-client';
 import prisma from '@/lib/db';
-import FormService from '#/home/_components/form-service';
 import { Clock, DollarSign } from 'lucide-react';
 import { Metadata } from 'next';
 
