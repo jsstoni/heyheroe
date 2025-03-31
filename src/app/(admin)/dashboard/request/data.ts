@@ -24,6 +24,7 @@ export const getCachedRequests = async (userId: string) =>
           },
         },
         where: { userId },
+        orderBy: { createdAt: 'desc' },
       });
 
       return requests;

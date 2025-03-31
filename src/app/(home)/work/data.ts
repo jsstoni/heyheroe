@@ -37,6 +37,7 @@ export const getOffers = async (
         commune ? { commune } : {},
       ],
     },
+    orderBy: { createdAt: 'desc' },
     omit: {
       userId: true,
       serviceId: true,
