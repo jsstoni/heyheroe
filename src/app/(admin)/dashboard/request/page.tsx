@@ -59,7 +59,7 @@ async function AsyncDataRequest() {
 
           <div className="mt-3 flex items-center gap-1 border-t pt-1">
             <Users className="size-4" />
-            {service._count.Budget}
+            {service._count.budget}
           </div>
         </div>
       ))}

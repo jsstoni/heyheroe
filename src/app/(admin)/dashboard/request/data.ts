@@ -19,7 +19,7 @@ export const getCachedRequests = async (userId: string) =>
           },
           _count: {
             select: {
-              Budget: true,
+              budget: true,
             },
           },
         },
