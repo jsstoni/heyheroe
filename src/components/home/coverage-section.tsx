@@ -1,9 +1,10 @@
 import { commune } from '@/constants/commune';
+import { Citys } from '@/lib/types';
 import { ArrowRight, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 export default function CoverageSection() {
-  const cities = commune
+  const cities: Citys[] = commune
     .filter(({ active, home }) => active && home)
     .sort((a, b) => a.name.localeCompare(b.name));
 

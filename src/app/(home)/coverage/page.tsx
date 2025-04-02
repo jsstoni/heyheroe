@@ -1,5 +1,6 @@
 import { Footer } from '@/components/footer';
 import { commune } from '@/constants/commune';
+import { Citys } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
 import { Metadata } from 'next';
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function Coverage() {
-  const cities = commune.sort((a, b) => a.name.localeCompare(b.name));
+  const cities: Citys[] = commune.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <>

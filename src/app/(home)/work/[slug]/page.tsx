@@ -1,5 +1,5 @@
 import FormBudget from '@/components/work/form-budget';
-import { commune } from '@/constants/commune';
+import { getCommuneById } from '@/constants/commune';
 import { getOffersById } from '@/lib/queries/offers-id';
 import { getIdFrom, relativeDate } from '@/lib/utils';
 import { Briefcase, Calendar, MapPinned } from 'lucide-react';
@@ -21,8 +21,6 @@ export default async function Offers({
     notFound();
   }
 
-  const place = commune.find((c) => c.id === offer.commune);
-
   return (
     <div className="container mx-auto px-4 py-8 md:px-0">
       <div className="grid grid-cols-6 gap-4">
@@ -36,7 +34,7 @@ export default async function Offers({
               {relativeDate(offer.createdAt)}
             </span>
             <span className="flex items-center gap-2">
-              • <MapPinned className="size-4" /> {place?.name}
+              • <MapPinned className="size-4" /> {getCommuneById(offer.commune)}
             </span>
           </div>
 
@@ -53,7 +51,7 @@ export default async function Offers({
             <span className="block text-xs font-thin text-gray-500">
               Solicitado por:
             </span>
-            {offer.user.name} ({place?.name})
+            {offer.user.name} ({getCommuneById(offer.commune)})
           </div>
 
           <FormBudget id={id} />

@@ -1,26 +1,10 @@
 'use client';
 
 import { Input } from '@/components/ui/input';
+import { Service, SubService } from '@/lib/types';
 import service from '~/data/services.json';
 import subService from '~/data/sub-services.json';
 import { useEffect, useRef, useState } from 'react';
-
-interface Service {
-  id: number;
-  name: string;
-  description: string;
-  slug: string;
-  icon: string;
-  active: boolean;
-}
-
-interface SubService {
-  id: number;
-  idService: number;
-  name: string;
-  description: string;
-  active: boolean;
-}
 
 export default function SearchService() {
   const services = service as Service[];
