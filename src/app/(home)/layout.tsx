@@ -9,7 +9,7 @@ export default function HomeLayout({
     <>
       <NavBar />
 
-      <main className="mt-[70px]">{children}</main>
+      <main className="mt-[64px]">{children}</main>
     </>
   );
 }

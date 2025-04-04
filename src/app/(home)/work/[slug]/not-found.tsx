@@ -8,7 +8,7 @@ export default function NotFound() {
         No se pudo encontrar el recurso solicitado
       </p>
       <Link
-        className="bg-primary-500 hover:bg-primary-600 mt-4 inline-block rounded-full p-2 px-4 text-white"
+        className="bg-primary hover:bg-accent mt-4 inline-block rounded-full p-2 px-4 text-white"
         href="/"
       >
         Volver a la página principal

@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`bg-white text-gray-800 ${manrope.className}`}>
+    <html lang="en" className={`bg-white text-gray-700 ${manrope.className}`}>
       <body className={`antialiased`}>
         <NuqsAdapter>{children}</NuqsAdapter>
         <Toaster position="bottom-right" />

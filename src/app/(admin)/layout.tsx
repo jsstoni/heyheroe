@@ -7,12 +7,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <NavBar />
 
-      <main className="relative mt-[70px]">
+      <main className="relative mt-[64px]">
         <div className="border-b max-sm:px-4">
           <nav className="container mx-auto flex items-center font-medium">
             {menu.map((item) => (
               <ActiveLink
-                className="hover:text-primary-400 flex items-center gap-2 px-4 py-3.5 first:pl-0"
+                className="hover:text-accent flex items-center gap-2 px-4 py-3.5 first:pl-0"
                 href={item.href}
                 key={item.name}
               >

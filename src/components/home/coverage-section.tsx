@@ -9,22 +9,21 @@ export default function CoverageSection() {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4 text-center md:px-8">
-        <h3 className="mb-1 text-2xl font-black md:text-4xl">
-          Cobertura de servicios
-        </h3>
-        <h4 className="mx-auto mb-12 max-w-md text-gray-600">
-          Explora nuestra área de servicio en la Quinta Región de Chile
-        </h4>
-
+    <section>
+      <h3 className="mb-1 text-center text-2xl font-black md:text-4xl">
+        Cobertura de servicios
+      </h3>
+      <h4 className="mx-auto max-w-md text-gray-600">
+        Explora nuestra área de servicio en la Quinta Región de Chile
+      </h4>
+      <div className="container mx-auto rounded-lg p-8 text-center">
         <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {cities.map(({ name: city, id: index }) => (
             <div
               key={index}
               className="flex items-center justify-center rounded-lg bg-gray-50 p-4 shadow-sm"
             >
-              <MapPin className="text-primary-500 mr-2 h-5 w-5" />
+              <MapPin className="text-primary mr-2 h-5 w-5" />
               <span>{city}</span>
             </div>
           ))}
@@ -33,7 +32,7 @@ export default function CoverageSection() {
         <div className="text-center">
           <Link
             href="/coverage"
-            className="text-primary-500 hover:text-primary-600 inline-flex items-center font-medium"
+            className="text-primary hover:text-accent inline-flex items-center font-medium"
           >
             Ver todas las zonas de cobertura
             <ArrowRight className="ml-2 h-4 w-4" />

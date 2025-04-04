@@ -158,14 +158,14 @@ export default function FormService({ id: serviceId }: { id: number }) {
 
       {step === 3 ? (
         <div className="col-span-2 text-center">
-          <CheckCircle className="stroke-primary-300 mx-auto size-16" />
+          <CheckCircle className="stroke-primary mx-auto size-16" />
           <p className="mt-3 text-lg font-medium">¡Gracias por tu solicitud!</p>
           <p className="mx-auto max-w-sm text-sm">
             Pronto comenzarás a recibir propuestas personalizadas para el
             servicio que necesitas.
           </p>
           <button
-            className="hover:text-primary-500 mx-auto mt-3 flex cursor-pointer items-center gap-2"
+            className="hover:text-primary mx-auto mt-3 flex cursor-pointer items-center gap-2"
             type="button"
             onClick={() => setStep(1)}
           >

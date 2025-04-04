@@ -26,7 +26,7 @@ export default async function Offers({
       <div className="grid grid-cols-6 gap-4">
         <div className="col-span-4">
           <div className="mb-1 flex items-center gap-2 font-thin text-gray-500">
-            <span className="bg-primary-50 text-primary-600 rounded-full border px-3 py-1 text-xs font-medium">
+            <span className="bg-muted text-accent rounded-full border px-3 py-1 text-xs font-medium">
               {offer.subServices.service.name}
             </span>
             <span className="flex items-center gap-2">
@@ -47,7 +47,7 @@ export default async function Offers({
         </div>
 
         <div className="col-span-2">
-          <div className="mb-4 space-y-2 rounded-lg border p-4 shadow-sm">
+          <div className="mb-4 space-y-2 rounded-lg border p-4 shadow-inner">
             <span className="block text-xs font-thin text-gray-500">
               Solicitado por:
             </span>
@@ -56,7 +56,7 @@ export default async function Offers({
 
           <FormBudget id={id} />
 
-          <div className="border-primary-200 bg-primary-50/40 mt-5 space-y-2 rounded-lg border p-6 text-center shadow-sm">
+          <div className="bg-muted/30 border-primary/40 mt-5 space-y-2 rounded-lg border p-6 text-center shadow-inner">
             <strong className="block">¿Eres un profesional?</strong>
             <p>
               Postúlate a este servicio y miles más. Crea tu perfil gratis y
@@ -65,7 +65,7 @@ export default async function Offers({
             <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLScx8OXvSgSOzNZvUU5f56RTMUnE-QH8XL_TB_fNaoYpkYxtXw/viewform?usp=header"
               target="_blank"
-              className="border-primary-500 text-primary-500 flex w-full items-center justify-center gap-2 rounded-lg border p-2"
+              className="hover:text-accent border-primary text-primary flex w-full items-center justify-center gap-2 rounded-lg border p-2"
             >
               <Briefcase className="size-4" /> Postularme a este servicio
             </Link>
