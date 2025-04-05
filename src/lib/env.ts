@@ -12,5 +12,10 @@ export const env = createEnv({
     AUTH_GOOGLE_ID: z.string().min(1),
     AUTH_GOOGLE_SECRET: z.string().min(1),
   },
-  experimental__runtimeEnv: process.env,
+  client: {
+    NEXT_PUBLIC_BASE_URL: z.string().min(1),
+  },
+  experimental__runtimeEnv: {
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+  },
 });
