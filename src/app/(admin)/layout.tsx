@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <nav className="container mx-auto flex items-center font-medium">
             {menu.map((item) => (
               <ActiveLink
-                className="hover:text-accent flex items-center gap-2 px-4 py-3.5 first:pl-0"
+                className="flex items-center gap-2 px-4 py-3.5 first:pl-0 hover:text-accent"
                 href={item.href}
                 key={item.name}
               >

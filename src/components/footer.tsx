@@ -21,7 +21,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={item?.href || '#'}
-                    className="hover:text-primary flex items-center transition-colors"
+                    className="flex items-center transition-colors hover:text-primary"
                   >
                     <ArrowRight className="mr-2 h-3 w-3" />
                     {item?.title}
@@ -34,13 +34,13 @@ export function Footer() {
             <h4 className="mb-4 text-lg font-semibold">Contacto</h4>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center gap-2">
-                <Mail className="stroke-primary size-4" /> info@heyheroe.com
+                <Mail className="size-4 stroke-primary" /> info@heyheroe.com
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="stroke-primary size-4" /> +56 948 977 182
+                <Phone className="size-4 stroke-primary" /> +56 948 977 182
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="stroke-primary size-4" /> Chile, Valparaíso
+                <MapPin className="size-4 stroke-primary" /> Chile, Valparaíso
               </li>
             </ul>
           </div>

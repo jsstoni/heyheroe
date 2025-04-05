@@ -23,7 +23,7 @@ export default function CoverageSection() {
               key={index}
               className="flex items-center justify-center rounded-lg bg-gray-50 p-4 shadow-sm"
             >
-              <MapPin className="text-primary mr-2 h-5 w-5" />
+              <MapPin className="mr-2 h-5 w-5 text-primary" />
               <span>{city}</span>
             </div>
           ))}
@@ -32,7 +32,7 @@ export default function CoverageSection() {
         <div className="text-center">
           <Link
             href="/coverage"
-            className="text-primary hover:text-accent inline-flex items-center font-medium"
+            className="inline-flex items-center font-medium text-primary hover:text-accent"
           >
             Ver todas las zonas de cobertura
             <ArrowRight className="ml-2 h-4 w-4" />

@@ -14,7 +14,7 @@ const AccordionItem = memo(
   ({ title, content, isOpen, onClick }: AccordionItemProps) => (
     <div>
       <button
-        className="hover:text-primary flex w-full items-center justify-between py-4 focus:outline-none"
+        className="flex w-full items-center justify-between py-4 hover:text-primary focus:outline-none"
         onClick={onClick}
         aria-expanded={isOpen}
       >

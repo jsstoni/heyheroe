@@ -49,12 +49,12 @@ export default async function Home() {
       <section className="relative">
         <div className="relative container mx-auto px-4 pt-12 text-center text-balance md:px-8">
           <div className="mx-auto max-w-3xl space-y-3">
-            <span className="bg-primary inline-block rounded-full px-3 py-1 font-medium text-white">
+            <span className="inline-block rounded-full bg-primary px-3 py-1 font-medium text-white">
               +{total} servicios profesionales.
             </span>
             <h1 className="text-5xl font-black text-balance md:text-7xl">
               Tu hogar, en manos{' '}
-              <span className="text-primary relative z-10">expertas</span>
+              <span className="relative z-10 text-primary">expertas</span>
             </h1>
             <h2 className="text-xl text-gray-500">
               Desde limpieza hasta reparaciones, tenemos más de{' '}
@@ -81,7 +81,7 @@ export default async function Home() {
                 />
               </div>
               <div>
-                <h3 className="group-hover:text-primary font-semibold">
+                <h3 className="font-semibold group-hover:text-primary">
                   {service.name}
                 </h3>
                 <span className="text-sm text-gray-500">

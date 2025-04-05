@@ -41,7 +41,7 @@ async function WorkList() {
         >
           <div className="rounded-lg border bg-white p-4 shadow-xs group-hover:shadow-lg">
             <div className="flex items-center">
-              <strong className="group-hover:text-primary text-lg font-medium">
+              <strong className="text-lg font-medium group-hover:text-primary">
                 {item.subServices.service.name} - {item.subServices.name}
               </strong>
             </div>

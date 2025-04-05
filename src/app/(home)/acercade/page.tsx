@@ -16,21 +16,22 @@ export default function Acercade() {
           necesidades con rapidez y calidad.
         </p>
 
+        <h3 className="text-3xl">💡 Misión:</h3>
         <p>
-          <h3 className="text-3xl">💡 Misión:</h3> Formalizar el trabajo de
-          profesionales independientes dedicados a tareas del hogar,
-          ofreciéndoles un espacio profesional donde puedan demostrar sus
-          habilidades, gestionar sus servicios y acceder a mejores oportunidades
-          laborales. Nuestro objetivo es dignificar su trabajo, impulsando su
-          crecimiento económico y visibilidad en el mercado.
+          Formalizar el trabajo de profesionales independientes dedicados a
+          tareas del hogar, ofreciéndoles un espacio profesional donde puedan
+          demostrar sus habilidades, gestionar sus servicios y acceder a mejores
+          oportunidades laborales. Nuestro objetivo es dignificar su trabajo,
+          impulsando su crecimiento económico y visibilidad en el mercado.
         </p>
 
+        <h3 className="text-3xl">🎯 Visión:</h3>
         <p>
-          <h3 className="text-3xl">🎯 Visión:</h3> Convertirnos en la plataforma
-          líder para la búsqueda de servicios en el hogar, donde cualquier
-          persona pueda encontrar expertos de confianza de manera rápida,
-          sencilla y segura, promoviendo un ecosistema inclusivo y eficiente
-          donde la calidad y la accesibilidad sean prioridades.
+          Convertirnos en la plataforma líder para la búsqueda de servicios en
+          el hogar, donde cualquier persona pueda encontrar expertos de
+          confianza de manera rápida, sencilla y segura, promoviendo un
+          ecosistema inclusivo y eficiente donde la calidad y la accesibilidad
+          sean prioridades.
         </p>
       </div>
       <Footer />

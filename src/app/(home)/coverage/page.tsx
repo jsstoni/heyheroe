@@ -34,7 +34,7 @@ export default function Coverage() {
               >
                 <MapPin
                   className={cn(
-                    'text-primary mr-2 h-5 w-5',
+                    'mr-2 h-5 w-5 text-primary',
                     !active && 'stroke-red-200'
                   )}
                 />

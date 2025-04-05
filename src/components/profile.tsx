@@ -9,7 +9,7 @@ export default function Profile() {
   if (!session) {
     return (
       <Link
-        className="border-primary text-primary hover:bg-primary rounded-full border px-4 py-1 hover:text-white"
+        className="rounded-full border border-primary px-4 py-1 text-primary hover:bg-primary hover:text-white"
         href="/login"
       >
         Empezar ahora
@@ -26,7 +26,7 @@ export default function Profile() {
         title={session.user.name}
       />
       <Link
-        className="hover:text-primary text-sm font-medium"
+        className="text-sm font-medium hover:text-primary"
         href="/dashboard"
       >
         {session.user?.name}
