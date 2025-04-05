@@ -25,7 +25,7 @@ export default async function Offers({
     <div className="container mx-auto px-4 py-8 md:px-0">
       <div className="grid grid-cols-6 gap-4">
         <div className="col-span-4">
-          <div className="mb-1 flex items-center gap-2 font-thin text-gray-500">
+          <div className="mb-4 flex items-center gap-2 font-thin text-gray-500">
             <span className="rounded-full border bg-muted px-3 py-1 text-xs font-medium text-accent">
               {offer.subServices.service.name}
             </span>

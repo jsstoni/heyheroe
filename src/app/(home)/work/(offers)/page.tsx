@@ -74,11 +74,9 @@ export default async function Work({
             <Filter className="size-4" /> Filtros
           </p>
 
-          <CategoryFilter />
-
-          <hr className="my-3" />
-
           <CityFilter />
+          <hr className="my-3" />
+          <CategoryFilter />
         </div>
 
         <div className="flex-1">

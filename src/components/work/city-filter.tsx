@@ -1,5 +1,6 @@
 'use client';
 
+import { Select } from '@/components/ui/select';
 import { commune } from '@/constants/commune';
 import { filtersParams } from '@/lib/search-params/work';
 import { useQueryState } from 'nuqs';
@@ -12,29 +13,21 @@ export default function CityFilter() {
     })
   );
 
+  const options = commune
+    .filter((c) => c.active)
+    .map((c) => ({
+      value: c.id,
+      label: c.name,
+    }));
+
   return (
     <>
       <span className="mb-1 block text-sm text-gray-400">Comuna</span>
-
-      <ul className="flex flex-col gap-1">
-        {commune
-          .filter((c) => c.active)
-          .map((c) => (
-            <li key={c.id}>
-              <label className="flex items-center gap-2 select-none">
-                <input
-                  className="size-5"
-                  name="city"
-                  type="radio"
-                  value={c.id}
-                  checked={city === c.id}
-                  onChange={() => setCity(c.id)}
-                />{' '}
-                {c.name}
-              </label>
-            </li>
-          ))}
-      </ul>
+      <Select
+        options={[{ value: '', label: 'Todos' }, ...options]}
+        value={city}
+        onChange={(ev) => setCity(Number(ev.target.value))}
+      />
     </>
   );
 }
