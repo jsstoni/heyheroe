@@ -23,9 +23,10 @@ const eslintConfig = [
     },
     rules: {
       '@next/next/no-img-element': 'off',
+      '@next/next/no-async-client-component': 'error',
       '@typescript-eslint/no-explicit-any': 'off',
       'unused-imports/no-unused-imports': 'error',
-      'unused-imports/no-unused-vars': [
+      '@typescript-eslint/no-unused-vars': [
         'warn',
         {
           vars: 'all',
