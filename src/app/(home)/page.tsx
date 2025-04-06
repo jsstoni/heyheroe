@@ -49,7 +49,7 @@ export default async function Home() {
       <section className="relative">
         <div className="relative container mx-auto px-4 pt-12 text-center text-balance md:px-8">
           <div className="mx-auto max-w-3xl space-y-3">
-            <span className="inline-block rounded-full bg-primary px-3 py-1 font-medium text-white">
+            <span className="inline-block rounded-full bg-muted px-3 py-1 font-medium text-primary">
               +{total} servicios profesionales.
             </span>
             <h1 className="text-5xl font-black text-balance md:text-7xl">
@@ -93,9 +93,9 @@ export default async function Home() {
         </nav>
       </section>
 
-      <section className="container mx-auto px-4 py-20 md:px-8">
+      <section className="container mx-auto px-4 py-20 md:px-0">
         <HowItWorks
-          subtitle="En solo tres pasos podrás encontrar al profesional perfecto para tus necesidades"
+          subtitle="En solo tres pasos podrás encontrar al profesional"
           steps={steps}
         />
       </section>

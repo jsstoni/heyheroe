@@ -6,12 +6,19 @@ interface Props {
 export default function HowItWorks({ subtitle, steps }: Props) {
   return (
     <>
-      <h3 className="mb-1 text-center text-4xl font-black">¿Cómo funciona?</h3>
-      <h4 className="mx-auto mb-16 max-w-md text-center">{subtitle}</h4>
+      <div>
+        <h3 className="mb-1 text-2xl font-black md:text-3xl">
+          ¿Cómo funciona?
+        </h3>
+        <h4 className="mb-12">{subtitle}</h4>
+      </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {steps.map(({ title, description }, index) => (
-          <div className="relative border p-6" key={index}>
+          <div
+            className="relative rounded-lg border bg-gray-50 p-6"
+            key={index}
+          >
             <div className="absolute -top-2 -left-2 size-4 border-t-2 border-l-2 border-gray-400" />
             <div className="absolute -right-2 -bottom-2 size-4 border-r-2 border-b-2 border-gray-400" />
 
