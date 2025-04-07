@@ -1,3 +1,4 @@
+import { ErrorSuspense } from '@/components/error-suspense';
 import CategoryFilter from '@/components/work/category-filter';
 import CityFilter from '@/components/work/city-filter';
 import { getCommuneById } from '@/constants/commune';
@@ -8,7 +9,6 @@ import { Briefcase, Calendar, Filter, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { SearchParams } from 'nuqs/server';
-import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Ofertas de trabajo',
@@ -59,6 +59,21 @@ async function WorkList() {
   );
 }
 
+function Loader() {
+  return (
+    <div className="space-y-4">
+      {Array.from({ length: 3 }).map((_, index) => (
+        <div key={index} className="rounded-lg border bg-white p-4 shadow-xs">
+          <div className="h-4 w-1/2 animate-pulse rounded-md bg-gray-200"></div>
+          <div className="mt-1 h-3 w-44 animate-pulse rounded-md bg-gray-200"></div>
+
+          <div className="mt-4 h-4 w-3/4 animate-pulse rounded-md bg-gray-200"></div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default async function Work({
   searchParams,
 }: {
@@ -84,9 +99,9 @@ export default async function Work({
             <Briefcase className="size-5" /> Ofertas de trabajo
           </h3>
 
-          <Suspense fallback="loading...">
+          <ErrorSuspense loading={<Loader />} error={'Error'}>
             <WorkList />
-          </Suspense>
+          </ErrorSuspense>
         </div>
       </section>
     </>
