@@ -122,13 +122,17 @@ export default async function Sub({ params }: PropsParams) {
             </div>
           </div>
 
-          <div className="rounded-xl border bg-white p-6 shadow-lg">
-            <p className="text-2xl font-medium">Solicitar Presupuesto</p>
-            <p className="mb-6 text-gray-400">
-              Por favor complete la información para procesar su solicitud
-            </p>
+          <div className="rounded-xl border bg-white shadow-lg">
+            <div className="rounded-t-xl bg-primary p-6 text-white">
+              <p className="text-2xl font-bold">Solicitar Presupuesto</p>
+              <p>
+                Por favor complete la información para procesar su solicitud
+              </p>
+            </div>
 
-            <FormService id={id} />
+            <div className="p-6">
+              <FormService id={id} />
+            </div>
           </div>
         </div>
       </div>

@@ -49,9 +49,10 @@ export default async function Home() {
       <section className="relative">
         <div className="relative container mx-auto px-4 pt-12 text-center text-balance md:px-8">
           <div className="mx-auto max-w-3xl space-y-3">
-            <span className="inline-block rounded-full bg-muted px-3 py-1 font-medium text-primary">
-              +{total} servicios profesionales.
-            </span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 font-medium text-primary">
+              <small className="size-2 rounded-full bg-primary"></small>+{total}{' '}
+              servicios profesionales.
+            </div>
             <h1 className="text-5xl font-black text-balance md:text-7xl">
               Tu hogar, en manos{' '}
               <span className="relative z-10 text-primary">expertas</span>

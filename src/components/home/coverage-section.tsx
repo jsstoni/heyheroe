@@ -22,7 +22,7 @@ export default function CoverageSection() {
 
         <Link
           href="/coverage"
-          className="ml-auto inline-flex items-center font-medium text-primary hover:text-accent"
+          className="ml-auto inline-flex items-center rounded-lg border border-primary p-2 px-4 text-xs font-medium text-primary hover:text-accent"
         >
           Ver todas las zonas de cobertura
           <ArrowRight className="ml-2 h-4 w-4" />
