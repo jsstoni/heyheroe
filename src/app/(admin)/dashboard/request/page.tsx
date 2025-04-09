@@ -1,3 +1,5 @@
+import AsideBudget from '@/components/dashboard/aside-budget';
+import { PreviewBudget } from '@/components/dashboard/preview-budget';
 import { Heading } from '@/components/heading';
 import { getCommuneById } from '@/constants/commune';
 import { auth } from '@/lib/auth';
@@ -16,6 +18,7 @@ const getMyRequests = async () => {
   }
 
   const resquests = await getRequests(session.user.id);
+
   return resquests;
 };
 
@@ -60,6 +63,8 @@ async function AsyncDataRequest() {
           <div className="mt-3 flex items-center gap-1 border-t pt-1">
             <Users className="size-4" />
             {service._count.budget}
+
+            <PreviewBudget id={service.id} />
           </div>
         </div>
       ))}
@@ -76,6 +81,8 @@ export default async function Request() {
       />
 
       <AsyncDataRequest />
+
+      <AsideBudget />
     </>
   );
 }

@@ -21,3 +21,23 @@ export type Citys = {
   active: boolean;
   home: boolean;
 };
+
+export type Budget = {
+  budget: {
+    budget: number;
+    user: {
+      name: string;
+    };
+    id: number;
+    userId: string;
+    proposalId: number;
+    createdAt: Date;
+    updatedAt: Date;
+  }[];
+  subServices: {
+    name: string;
+    service: {
+      name: string;
+    };
+  };
+};
