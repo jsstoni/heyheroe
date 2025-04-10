@@ -5,7 +5,7 @@ import {
   ActionError,
   authMiddleware,
 } from '@/lib/actions/safe-action';
-import prisma from '@/lib/db';
+import prisma from '@/lib/prisma/db';
 import { schemaBudget } from '@/lib/zod/schemas/budget';
 
 export const sendBudget = actionClient

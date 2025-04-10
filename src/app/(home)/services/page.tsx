@@ -1,5 +1,5 @@
 import { Footer } from '@/components/footer';
-import prisma from '@/lib/db';
+import prisma from '@/lib/prisma/db';
 import { Metadata } from 'next';
 import Link from 'next/link';
 

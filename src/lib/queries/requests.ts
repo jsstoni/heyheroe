@@ -1,4 +1,4 @@
-import prisma from '@/lib/db';
+import prisma from '@/lib/prisma/db';
 import { unstable_cache } from 'next/cache';
 import 'server-only';
 

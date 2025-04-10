@@ -4,7 +4,7 @@ import CoverageSection from '@/components/home/coverage-section';
 import ProfesionalCTA from '@/components/home/cta-profesional';
 import HowItWorks from '@/components/home/how-it-works';
 import steps from '@/constants/steps-client';
-import prisma from '@/lib/db';
+import prisma from '@/lib/prisma/db';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-static';

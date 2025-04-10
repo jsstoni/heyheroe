@@ -1,4 +1,4 @@
-import prisma from '@/lib/db';
+import prisma from '@/lib/prisma/db';
 import 'server-only';
 
 export async function getOffersById(id: number | null) {

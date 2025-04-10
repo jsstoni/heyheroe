@@ -1,7 +1,7 @@
 'use server';
 
 import { actionClient, authMiddleware } from '@/lib/actions/safe-action';
-import prisma from '@/lib/db';
+import prisma from '@/lib/prisma/db';
 import { schemaProposal } from '@/lib/zod/schemas/proposal';
 
 const sendProposal = actionClient
