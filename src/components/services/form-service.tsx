@@ -140,7 +140,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
       {step === 2 && (
         <>
           <label className="col-span-2">
-            Describe tu necesidad a detalle ({rest})
+            Describe tu necesidad a detalle (Mínimo {rest} caracteres)
             <Textarea
               rows={4}
               error={errors.description}
