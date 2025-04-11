@@ -44,7 +44,7 @@ async function AsyncDataRequest() {
     <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
       {resquests.map((service) => (
         <div
-          className="rounded-lg border bg-white p-4 text-gray-400 shadow-xs"
+          className="self-start rounded-lg border bg-white p-4 text-gray-400 shadow-xs"
           key={service.id}
         >
           <h3 className="text-xl font-medium text-gray-800">

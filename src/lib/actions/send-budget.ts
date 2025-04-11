@@ -18,6 +18,8 @@ export const sendBudget = actionClient
       select: { userId: true },
     });
 
+    const details = JSON.stringify(data.details);
+
     if (!proposal || proposal.userId === user) {
       throw new ActionError('No puedes enviarte prosupuesto a ti mismo');
     }
@@ -26,6 +28,7 @@ export const sendBudget = actionClient
       data: {
         userId: user,
         proposalId: data.id,
+        details,
         budget: data.budget,
       },
     });
