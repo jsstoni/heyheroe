@@ -32,28 +32,32 @@ async function WorkList() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {offers.map((item) => (
-        <Link
-          className="group block"
-          href={`/work/${generateSlug(`${item.subServices.service.name}-${item.subServices.name}`)}-tarea-${item.id}`}
+        <div
           key={item.id}
+          className="group flex flex-col rounded-lg border bg-white p-4 shadow-xs hover:shadow-lg"
         >
-          <div className="rounded-lg border bg-white p-4 shadow-xs group-hover:shadow-lg">
-            <div className="flex items-center">
-              <strong className="text-lg font-medium group-hover:text-primary">
-                {item.subServices.service.name} - {item.subServices.name}
-              </strong>
-            </div>
-            <p className="flex items-center gap-1 text-sm text-gray-400">
-              <Calendar className="size-3" />
-              Publicado {relativeDate(item.createdAt)}
-              <MapPin className="ml-2 size-3" />
-              {getCommuneById(item.commune)}
-            </p>
-            <p className="mt-2">{item.description}</p>
+          <div className="flex items-center">
+            <strong className="text-lg font-medium">
+              {item.subServices.service.name} - {item.subServices.name}
+            </strong>
           </div>
-        </Link>
+          <p className="mt-1 flex items-center gap-1 text-sm text-gray-500">
+            <Calendar className="size-3" />
+            Publicado {relativeDate(item.createdAt)}
+            <MapPin className="ml-2 size-3" />
+            {getCommuneById(item.commune)}
+          </p>
+          <p className="mt-3">{item.description}</p>
+
+          <Link
+            className="mt-3 mr-auto inline-flex rounded-full border border-primary p-1 px-5 text-primary hover:text-accent"
+            href={`/work/${generateSlug(`${item.subServices.service.name}-${item.subServices.name}`)}-tarea-${item.id}`}
+          >
+            Ver Detalles
+          </Link>
+        </div>
       ))}
     </div>
   );
@@ -95,8 +99,8 @@ export default async function Work({
         </div>
 
         <div className="flex-1">
-          <h3 className="mb-4 flex items-center gap-2 text-2xl drop-shadow-md">
-            <Briefcase className="size-5" /> Ofertas de trabajo
+          <h3 className="mb-4 flex items-center gap-2 text-2xl">
+            Ofertas de trabajo
           </h3>
 
           <ErrorSuspense loading={<Loader />} error={'Error'}>
