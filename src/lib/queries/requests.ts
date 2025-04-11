@@ -3,7 +3,7 @@ import { unstable_cache } from 'next/cache';
 import 'server-only';
 
 //my proposal
-export const getRequests = async (userId: string) =>
+export const getRequests = (userId: string) =>
   unstable_cache(
     async () => {
       const requests = await prisma.proposal.findMany({
@@ -31,5 +31,5 @@ export const getRequests = async (userId: string) =>
       return requests;
     },
     [`services-${userId}`],
-    { revalidate: 60, tags: ['requests'] }
+    { revalidate: 3600, tags: ['requests'] }
   )();
