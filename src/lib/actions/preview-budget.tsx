@@ -25,6 +25,7 @@ export const previewBudget = async (proposalId: number) => {
       ...proposal,
       budget: proposal.budget.map((item) => ({
         ...item,
+        details: JSON.parse(item.details),
         budget: Number(item.budget),
       })),
     };

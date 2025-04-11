@@ -1,7 +1,8 @@
 'use client';
 
 import { usePreviewBudget } from '@/lib/stores/preview-budget';
-import { cn, formatPrice } from '@/lib/utils';
+import { cn, formatPrice, relativeDate } from '@/lib/utils';
+import { Calendar } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 type Props = {
@@ -61,7 +62,7 @@ export default function AsideBudget({ size = 'small' }: Props) {
           ×
         </button>
 
-        <h2 className="mt-2 mb-6 text-xl font-semibold text-gray-800">
+        <h2 className="mb-4 text-xl font-semibold text-gray-800">
           Presupuestos
         </h2>
 
@@ -72,10 +73,24 @@ export default function AsideBudget({ size = 'small' }: Props) {
             <ul className="space-y-4">
               {info.budget.map((budget, index) => (
                 <li key={index} className="rounded border p-4 shadow-sm">
-                  <p className="text-lg font-medium text-green-700">
-                    {formatPrice(budget.budget)}
+                  <div className="mb-2 border-b pb-2 text-sm">
+                    {budget.details.map((detail, index) => (
+                      <div key={index}>
+                        {detail.description}: {formatPrice(detail.amount)}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <p className="text-md text-gray-600">{budget.user.name}</p>
+                    <p className="text-lg font-medium text-green-700">
+                      {formatPrice(budget.budget)}
+                    </p>
+                  </div>
+                  <p className="flex items-center gap-1 text-xs">
+                    <Calendar className="size-3" />
+                    <span>Recibido {relativeDate(budget.createdAt)}</span>
                   </p>
-                  <p className="text-sm text-gray-600">{budget.user.name}</p>
                 </li>
               ))}
             </ul>

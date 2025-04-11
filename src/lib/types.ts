@@ -24,6 +24,10 @@ export type Citys = {
 
 export type Budget = {
   budget: {
+    details: {
+      description: string;
+      amount: number;
+    }[];
     budget: number;
     user: {
       name: string;

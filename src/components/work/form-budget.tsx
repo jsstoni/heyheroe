@@ -85,6 +85,7 @@ export default function FormBudget({ id }: { id: number | null }) {
               </div>
               <div>
                 <Input
+                  type="number"
                   error={errors.details?.[index]?.amount?.message}
                   {...register(`details.${index}.amount`)}
                 />
