@@ -9,7 +9,7 @@ export default function CoverageSection() {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <section className="container border-t px-4 py-16 md:px-0">
+    <section className="container px-4 pt-10 pb-16 md:px-0">
       <div className="flex items-start">
         <div>
           <h3 className="mb-1 text-2xl font-black md:text-3xl">
