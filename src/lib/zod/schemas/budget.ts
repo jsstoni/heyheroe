@@ -2,12 +2,12 @@ import { z } from 'zod';
 
 export const schemaBudget = z.object({
   id: z.number().min(1, 'Está faltando el id'),
-  budget: z.coerce.number().min(1, 'Ingresa un presupuesto'),
+  budget: z.number().min(1, 'Ingresa un presupuesto'),
   details: z
     .array(
       z.object({
         description: z.string().min(1, 'Ingresa una descripción'),
-        amount: z.coerce.number().min(1, 'Ingresa un monto'),
+        amount: z.number().min(1, 'Ingresa un monto'),
       })
     )
     .min(1, 'Por favor, agrega al menos un detalle'),

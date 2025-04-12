@@ -85,9 +85,11 @@ export default function FormBudget({ id }: { id: number | null }) {
               </div>
               <div>
                 <Input
+                  {...register(`details.${index}.amount`, {
+                    valueAsNumber: true,
+                  })}
                   type="number"
                   error={errors.details?.[index]?.amount?.message}
-                  {...register(`details.${index}.amount`)}
                 />
               </div>
               <button type="button" onClick={() => remove(index)}>
@@ -103,11 +105,11 @@ export default function FormBudget({ id }: { id: number | null }) {
             Valor del servicio
             <div className="flex items-center">
               <Input
+                {...register('budget', { valueAsNumber: true })}
                 className="rounded-none rounded-l-xl"
-                value={detailsAmountTotal}
-                {...register('budget')}
                 type="number"
                 placeholder="$0"
+                value={detailsAmountTotal}
                 readOnly
               />
               <Button

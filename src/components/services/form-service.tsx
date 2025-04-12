@@ -107,23 +107,23 @@ export default function FormService({ id: serviceId }: { id: number }) {
             <Calendar className="pointer-events-none absolute top-9 left-3 size-4 text-gray-400" />
             <Input
               {...register('serviceDate')}
-              error={errors.serviceDate}
-              type="date"
               className="pl-8"
+              type="date"
+              error={errors.serviceDate}
             />
           </label>
 
           <label>
             Tipo de propiedad
-            <Select options={home} error={errors.type} {...register('type')} />
+            <Select {...register('type')} options={home} error={errors.type} />
           </label>
 
           <label>
             Comuna
             <Select
-              options={[{ value: '', label: 'Seleccionar comuna' }, ...cities]}
+              {...register('commune', { valueAsNumber: true })}
+              options={[{ value: 0, label: 'Seleccionar comuna' }, ...cities]}
               error={errors.commune}
-              {...register('commune')}
             />
           </label>
           <label className="col-span-2">
@@ -142,9 +142,9 @@ export default function FormService({ id: serviceId }: { id: number }) {
           <label className="col-span-2">
             Describe tu necesidad a detalle (Mínimo {rest} caracteres)
             <Textarea
-              rows={4}
-              error={errors.description}
               {...register('description')}
+              error={errors.description}
+              rows={4}
               value={value}
               onChange={handleChange}
             />

@@ -1,12 +1,12 @@
 import { z } from 'zod';
 
 export const schemaProposal = z.object({
-  serviceId: z.coerce.number().min(1, 'Se requiere el ID del servicio'),
+  serviceId: z.number().min(1, 'Se requiere el ID del servicio'),
   type: z.enum(['Casa', 'Departamento'], {
     message: 'Seleccionar el tipo de domicilio',
   }),
   address: z.string().min(1, 'Ingresa la ubicación'),
-  commune: z.coerce.number().min(1, 'Ingresa la comuna'),
+  commune: z.number().min(1, 'Ingresa la comuna'),
   serviceDate: z.coerce
     .date({ message: 'La fecha es obligatoria' })
     .refine((date) => date > new Date(), {
