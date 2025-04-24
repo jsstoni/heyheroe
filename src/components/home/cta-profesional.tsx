@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function ProfesionalCTA() {
   return (
     <section className="container mx-auto my-16 px-4 md:px-0">
-      <div className="flex rounded-lg bg-primary/20 p-10 pb-0 text-balance shadow-inner">
+      <div className="flex rounded-3xl bg-muted p-10 pb-0 text-balance shadow-inner">
         <div>
           <h3 className="mb-4 text-2xl font-black text-primary-foreground md:text-4xl">
             ¿Eres un profesional?
@@ -21,11 +21,10 @@ export default function ProfesionalCTA() {
             Saber más
           </Link>
         </div>
-        <img
-          src="/hero.png"
-          alt="Hero Image"
-          className="mx-auto -mt-30 max-w-md"
-        />
+
+        <figure className="mx-auto -mt-30 mask-b-from-75% mask-b-to-100%">
+          <img src="/hero.png" alt="Hero Image" />
+        </figure>
       </div>
     </section>
   );

@@ -26,14 +26,14 @@ export default function FormPerfil() {
   } = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
-      name: session?.user.name,
-      email: session?.user.email,
+      name: session?.user.name || '',
+      email: session?.user.email || '',
       phone: '',
     },
   });
 
-  setValue('name', session?.user.name);
-  setValue('email', session?.user.email);
+  setValue('name', session?.user.name || '');
+  setValue('email', session?.user.email || '');
   setValue('phone', session?.user.phone || '');
 
   const onSubmit = async () => {

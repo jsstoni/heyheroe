@@ -49,14 +49,17 @@ async function WorkList() {
             <MapPin className="ml-2 size-3" />
             {getCommuneById(item.commune)}
           </p>
-          <p className="mt-3">{item.description}</p>
 
-          <Link
-            className="mt-3 mr-auto inline-flex rounded-full border border-primary p-1 px-5 text-primary hover:text-accent"
-            href={`/work/${generateSlug(`${item.subServices.service.name}-${item.subServices.name}`)}-tarea-${item.id}`}
-          >
-            Ver Detalles
-          </Link>
+          <div className="grid grid-cols-[1fr_auto] items-baseline-last">
+            <p className="mt-3">{item.description}</p>
+
+            <Link
+              className="mt-3 mr-auto inline-flex rounded-full border border-primary p-1 px-5 text-sm text-primary hover:text-accent"
+              href={`/work/${generateSlug(`${item.subServices.service.name}-${item.subServices.name}`)}-tarea-${item.id}`}
+            >
+              Ver Detalles
+            </Link>
+          </div>
         </div>
       ))}
     </div>
