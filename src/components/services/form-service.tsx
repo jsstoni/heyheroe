@@ -100,6 +100,11 @@ export default function FormService({ id: serviceId }: { id: number }) {
       className="grid grid-cols-2 gap-x-6 gap-y-4"
       onSubmit={handleSubmit(onSubmit)}
     >
+      <input
+        type="hidden"
+        {...register('serviceId', { valueAsNumber: true })}
+      />
+
       {step === 1 && (
         <>
           <label className="relative col-span-2">
