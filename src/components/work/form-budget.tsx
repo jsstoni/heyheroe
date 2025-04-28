@@ -10,6 +10,7 @@ import { useAction } from 'next-safe-action/hooks';
 import { useEffect, useMemo, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import ErrorMessage from '../error-message';
 
 export default function FormBudget({ id }: { id: number | null }) {
   const [open, setOpen] = useState<boolean>(false);
@@ -102,9 +103,10 @@ export default function FormBudget({ id }: { id: number | null }) {
               </button>
             </div>
           ))}
-          {errors.details && (
-            <p className="col-span-2 text-red-500">{errors.details.message}</p>
-          )}
+          <ErrorMessage
+            className="col-span-2"
+            message={errors.details?.message}
+          />
 
           <label className="block">
             Valor del servicio
@@ -126,13 +128,12 @@ export default function FormBudget({ id }: { id: number | null }) {
               </Button>
             </div>
           </label>
-          {errors.budget && (
-            <p className="col-span-2 text-red-500">{errors.budget.message}</p>
-          )}
+          <ErrorMessage
+            className="col-span-2"
+            message={errors.budget?.message}
+          />
 
-          {errors.root && (
-            <p className="col-span-2 text-red-500">{errors.root.message}</p>
-          )}
+          <ErrorMessage className="col-span-2" message={errors.root?.message} />
         </form>
       )}
     </>
