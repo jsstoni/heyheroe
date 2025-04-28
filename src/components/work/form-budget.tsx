@@ -7,7 +7,7 @@ import { BudgetValues, schemaBudget } from '@/lib/zod/schemas/budget';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Send } from 'lucide-react';
 import { useAction } from 'next-safe-action/hooks';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
@@ -19,6 +19,7 @@ export default function FormBudget({ id }: { id: number | null }) {
     handleSubmit,
     register,
     getValues,
+    setValue,
     setError,
     reset,
     watch,
@@ -35,6 +36,10 @@ export default function FormBudget({ id }: { id: number | null }) {
     0
   );
 
+  useEffect(() => {
+    setValue('budget', detailsAmountTotal);
+  }, [detailsAmountTotal, setValue]);
+
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'details',
@@ -43,7 +48,7 @@ export default function FormBudget({ id }: { id: number | null }) {
   const { executeAsync, isExecuting } = useAction(sendBudget, {
     onSuccess({ data }) {
       toast.success(data?.success || 'Presupuesto enviado');
-      reset();
+      reset({ id: id || undefined, details: [], budget: 0 });
     },
     onError({ error }) {
       toast.error(error.serverError || 'Hubo un error, vuelve intentar');
@@ -109,7 +114,6 @@ export default function FormBudget({ id }: { id: number | null }) {
                 className="rounded-none rounded-l-xl"
                 type="number"
                 placeholder="$0"
-                value={detailsAmountTotal}
                 readOnly
               />
               <Button
