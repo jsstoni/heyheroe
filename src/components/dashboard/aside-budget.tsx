@@ -75,8 +75,11 @@ export default function AsideBudget({ size = 'small' }: Props) {
                 <li key={index} className="rounded border p-4 shadow-sm">
                   <div className="mb-2 border-b pb-2 text-sm">
                     {budget.details.map((detail, index) => (
-                      <div key={index}>
-                        {detail.description}: {formatPrice(detail.amount)}
+                      <div className="flex items-center" key={index}>
+                        <span>{detail.description}:</span>
+                        <span className="ml-auto">
+                          {formatPrice(detail.amount)}
+                        </span>
                       </div>
                     ))}
                   </div>
