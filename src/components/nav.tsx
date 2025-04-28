@@ -17,7 +17,7 @@ export const NavBar = () => {
           eyhéroe
         </Link>
 
-        <ul className="ml-auto flex items-center justify-between gap-5 font-medium">
+        <ul className="mx-auto flex items-center justify-between gap-5 font-medium">
           <li>
             <ActiveLink className="hover:text-primary" href="/work">
               Ofertas de trabajo
