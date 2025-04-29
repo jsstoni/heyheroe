@@ -50,8 +50,11 @@ export default async function Home() {
         <div className="relative container mx-auto px-4 pt-12 text-center text-balance md:px-8">
           <div className="mx-auto max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 font-medium text-primary">
-              <small className="size-2 rounded-full bg-primary"></small>+{total}{' '}
-              servicios profesionales.
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-primary"></span>
+              </span>
+              +{total} servicios profesionales.
             </div>
             <h1 className="text-5xl font-black text-balance md:text-7xl">
               Tu hogar, en manos{' '}
