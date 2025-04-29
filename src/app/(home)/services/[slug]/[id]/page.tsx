@@ -85,10 +85,10 @@ export default async function Sub({ params }: PropsParams) {
       <div className="bg-gray-50 py-14 max-sm:px-4">
         <div className="relative container mx-auto grid items-start gap-8 md:grid-cols-2">
           <div className="md:mt-4">
-            <h1 className="mb-1 text-4xl font-bold">{data.service.name}</h1>
-            <h2 className="mb-6 text-2xl">{data.name}</h2>
+            <h1 className="mb-2 text-4xl font-bold">{data.service.name}</h1>
+            <h2 className="text-2xl">{data.name}</h2>
 
-            <div className="space-y-4">
+            <div className="my-10 space-y-4">
               <div className="flex items-start gap-3">
                 <div className="rounded-full bg-purple-300/40 p-2">
                   <Clock className="size-7 stroke-purple-700" />
@@ -114,12 +114,11 @@ export default async function Sub({ params }: PropsParams) {
                   </p>
                 </div>
               </div>
-
-              <h3 className="mt-10 text-xl font-medium underline">
-                Preguntas frecuentes
-              </h3>
-              <Accordion items={items} defaultOpen={0} />
             </div>
+            <h3 className="text-xl font-medium underline">
+              Preguntas frecuentes
+            </h3>
+            <Accordion items={items} defaultOpen={0} />
           </div>
 
           <div className="rounded-xl border bg-white shadow-lg">

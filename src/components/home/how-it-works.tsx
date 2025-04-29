@@ -6,11 +6,9 @@ interface Props {
 export default function HowItWorks({ subtitle, steps }: Props) {
   return (
     <>
-      <div>
-        <h3 className="mb-1 text-2xl font-black md:text-3xl">
-          ¿Cómo funciona?
-        </h3>
-        <h4 className="mb-12">{subtitle}</h4>
+      <div className="mb-16 text-center">
+        <h3 className="mb-2 text-3xl md:text-4xl">¿Cómo funciona?</h3>
+        <h4 className="text-gray-500">{subtitle}</h4>
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

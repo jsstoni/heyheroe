@@ -48,13 +48,15 @@ export default async function AllService() {
   return (
     <>
       <section className="bg-gray-50 py-14">
-        <h1 className="text-center text-2xl font-bold md:text-3xl">
-          Todos nuestros servicios profesionales
-        </h1>
-        <p className="mb-6 text-center">
-          Encuentra el servicio que necesitas entre nuestras categorías
-          especializadas
-        </p>
+        <hgroup className="text-center">
+          <h1 className="mb-2 text-3xl md:text-4xl">
+            Todos nuestros servicios profesionales
+          </h1>
+          <p className="text-gray-500">
+            Encuentra el servicio que necesitas entre nuestras categorías
+            especializadas
+          </p>
+        </hgroup>
 
         <div className="container mx-auto grid grid-cols-2 gap-4 px-4 py-5 md:grid-cols-3 md:px-8">
           {data.map((service) => (

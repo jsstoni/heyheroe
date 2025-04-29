@@ -5,7 +5,7 @@ export default function ProfesionalCTA() {
     <section className="container mx-auto my-16 px-4 md:px-0">
       <div className="flex rounded-3xl bg-muted p-10 pb-0 text-balance shadow-inner">
         <div>
-          <h3 className="mb-4 text-2xl font-black text-primary-foreground md:text-4xl">
+          <h3 className="mb-4 text-2xl text-primary-foreground md:text-4xl">
             ¿Eres un profesional?
           </h3>
           <h4 className="mx-auto mb-8 max-w-2xl">
