@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import CoverageSection from '@/components/home/coverage-section';
 import ProfesionalCTA from '@/components/home/cta-profesional';
 import HowItWorks from '@/components/home/how-it-works';
+import Button from '@/components/ui/button';
 import steps from '@/constants/steps-client';
 import prisma from '@/lib/prisma/db';
 import type { Metadata } from 'next';
@@ -47,8 +48,8 @@ export default async function Home() {
   return (
     <>
       <section className="relative">
-        <div className="relative container mx-auto px-4 pt-12 text-center text-balance md:px-8">
-          <div className="mx-auto max-w-3xl space-y-3">
+        <div className="relative container mx-auto flex h-[540px] flex-col justify-center">
+          <div className="max-w-xl space-y-3">
             <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 font-medium text-primary">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
@@ -61,14 +62,45 @@ export default async function Home() {
               <span className="relative z-10 text-primary">expertas</span>
             </h1>
             <h2 className="text-xl text-gray-500">
-              Desde limpieza hasta reparaciones, tenemos más de{' '}
-              <span className="text-accent">{total} servicios</span> para tu
-              hogar.
+              Conecta con profesionales verificados para jardinería, limpieza y
+              más—todo en una plataforma fácil de usar.
             </h2>
+
+            <hgroup className="mt-6 flex items-center gap-4">
+              <Button variant="primary" className="p-2 px-8 text-lg">
+                Explorar servicios
+              </Button>
+              <Button>Únete como profesional</Button>
+            </hgroup>
+          </div>
+          <div className="absolute inset-0 top-4 -z-10 size-full rounded-r-3xl bg-[url(/bg.jpg)] bg-cover bg-center bg-no-repeat object-cover">
+            <div
+              className="absolute inset-0 size-full"
+              style={{
+                background:
+                  'linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 65%)',
+              }}
+            ></div>
           </div>
         </div>
+      </section>
 
-        <nav className="container mx-auto mt-5 grid grid-cols-2 gap-3 rounded-lg bg-gray-100 p-3 shadow-inner md:grid-cols-3 md:gap-6 md:p-6">
+      <section className="container mx-auto px-4 py-20 md:px-0">
+        <HowItWorks
+          subtitle="En solo tres pasos podrás encontrar al profesional"
+          steps={steps}
+        />
+      </section>
+
+      <section className="bg-gradient-to-b from-white to-gray-200 p-4 md:p-10">
+        <hgroup className="mb-16 text-center">
+          <h3 className="mb-2 text-3xl md:text-4xl">Servicios Profesionales</h3>
+          <h4 className="text-gray-500">
+            Cualquier servicio para el hogar que necesites, tenemos
+            profesionales confiables listos para ayudar
+          </h4>
+        </hgroup>
+        <nav className="container mx-auto mt-5 grid grid-cols-2 gap-3 rounded-lg md:grid-cols-3 md:gap-6">
           {services.map((service) => (
             <ActiveLink
               key={service.id}
@@ -95,13 +127,6 @@ export default async function Home() {
             </ActiveLink>
           ))}
         </nav>
-      </section>
-
-      <section className="container mx-auto px-4 py-20 md:px-0">
-        <HowItWorks
-          subtitle="En solo tres pasos podrás encontrar al profesional"
-          steps={steps}
-        />
       </section>
 
       <CoverageSection />
