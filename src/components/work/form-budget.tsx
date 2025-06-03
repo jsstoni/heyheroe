@@ -5,9 +5,9 @@ import { Input } from '@/components/ui/input';
 import { sendBudget } from '@/lib/actions/send-budget';
 import { BudgetValues, schemaBudget } from '@/lib/zod/schemas/budget';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Send } from 'lucide-react';
+import { Loader2, Send } from 'lucide-react';
 import { useAction } from 'next-safe-action/hooks';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import ErrorMessage from '../error-message';
@@ -123,8 +123,12 @@ export default function FormBudget({ id }: { id: number | null }) {
                 disabled={isExecuting}
                 variant="primary"
               >
-                <Send className="size-4" />
-                {isExecuting ? 'Enviando ...' : 'Enviar'}
+                {isExecuting ? (
+                  <Loader2 className="size-4 animate-spin" />
+                ) : (
+                  <Send className="size-4" />
+                )}{' '}
+                Enviar
               </Button>
             </div>
           </label>
