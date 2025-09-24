@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, type ChangeEvent } from 'react';
 
 type UseCharacterLimitProps = {
