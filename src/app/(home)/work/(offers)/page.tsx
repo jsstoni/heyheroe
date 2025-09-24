@@ -5,7 +5,7 @@ import { getCommuneById } from '@/constants/commune';
 import { getOffers } from '@/lib/queries/offers';
 import { filterParamsCache } from '@/lib/search-params/work';
 import { generateSlug, relativeDate } from '@/lib/utils';
-import { Briefcase, Calendar, Filter, MapPin } from 'lucide-react';
+import { Calendar, Filter, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { SearchParams } from 'nuqs/server';
