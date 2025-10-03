@@ -1,7 +1,7 @@
 'use client';
 
+import servicesData from '@/constants/services.json';
 import { filtersParams } from '@/lib/search-params/work';
-import servicesData from '~/data/services.json';
 import { Loader2 } from 'lucide-react';
 import { useQueryState } from 'nuqs';
 import { useTransition } from 'react';

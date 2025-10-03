@@ -1,9 +1,9 @@
 'use client';
 
 import { Input } from '@/components/ui/input';
+import service from '@/constants/services.json';
+import subService from '@/constants/sub-services.json';
 import type { Service, SubService } from '@/lib/types';
-import service from '~/data/services.json';
-import subService from '~/data/sub-services.json';
 import { useEffect, useRef, useState } from 'react';
 
 export default function SearchService() {

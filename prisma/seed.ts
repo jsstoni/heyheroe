@@ -5,10 +5,10 @@ const prisma = new PrismaClient();
 
 async function main() {
   const services = JSON.parse(
-    await fs.readFile('./data/services.json', 'utf-8')
+    await fs.readFile('./constants/services.json', 'utf-8')
   );
   const subservices = JSON.parse(
-    await fs.readFile('./data/sub-services.json', 'utf-8')
+    await fs.readFile('./constants/sub-services.json', 'utf-8')
   );
 
   await prisma.services.createMany({
