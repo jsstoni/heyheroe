@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma/db';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 interface PropsParams {
@@ -70,27 +70,25 @@ export default async function Service({ params }: PropsParams) {
   }
 
   return (
-    <>
-      <div className="container mx-auto py-14">
-        <h1 className="text-3xl font-bold">{data.name}</h1>
-        <p className="text-gray-500">Selecciona el servicio a contratar</p>
+    <div className="container mx-auto py-14">
+      <h1 className="font-bold text-3xl">{data.name}</h1>
+      <p className="text-gray-500">Selecciona el servicio a contratar</p>
 
-        <div className="grid gap-8 py-5 md:grid-cols-2">
-          {data.subServices.map((service) => (
-            <Link
-              className="group relative overflow-hidden rounded-md border bg-white p-5 text-xl font-bold text-zinc-600 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
-              href={`/services/${data.slug}/${service.id}`}
-              key={service.id}
-            >
-              <div className="absolute -top-8 -right-8 size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
-              <span className="group-hover:text-primary">{service.name}</span>
-              <small className="mt-1 block text-sm font-normal text-gray-500">
-                {service.description}
-              </small>
-            </Link>
-          ))}
-        </div>
+      <div className="grid gap-8 py-5 md:grid-cols-2">
+        {data.subServices.map((service) => (
+          <Link
+            className="group hover:-translate-y-1 relative overflow-hidden rounded-md border bg-white p-5 font-bold text-xl text-zinc-600 shadow-lg transition-all hover:shadow-xl"
+            href={`/services/${data.slug}/${service.id}`}
+            key={service.id}
+          >
+            <div className="-top-8 -right-8 absolute size-16 rounded-full bg-indigo-600 opacity-10 transition-transform group-hover:scale-150" />
+            <span className="group-hover:text-primary">{service.name}</span>
+            <small className="mt-1 block font-normal text-gray-500 text-sm">
+              {service.description}
+            </small>
+          </Link>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

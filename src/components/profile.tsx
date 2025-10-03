@@ -26,11 +26,11 @@ export default function Profile() {
         title={session.user.name}
       />
       <Link
-        className="text-sm font-medium hover:text-primary"
+        className="font-medium text-sm hover:text-primary"
         href="/dashboard"
       >
         {session.user?.name}
-        <span className="block text-xs font-normal text-gray-400">
+        <span className="block font-normal text-gray-400 text-xs">
           {session.user?.email}
         </span>
       </Link>

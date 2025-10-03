@@ -4,7 +4,7 @@ import FormService from '@/components/services/form-service';
 import items from '@/constants/faq-client';
 import prisma from '@/lib/prisma/db';
 import { Clock, DollarSign } from 'lucide-react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 interface PropsParams {
   params: Promise<{ id: number }>;
@@ -15,7 +15,7 @@ export const dynamic = 'force-static';
 const getData = async (id: number) => {
   try {
     const serviceId = Number(id);
-    if (isNaN(serviceId)) {
+    if (Number.isNaN(serviceId)) {
       throw new Error('ID es inválido');
     }
 
@@ -83,9 +83,9 @@ export default async function Sub({ params }: PropsParams) {
   return (
     <>
       <div className="bg-gray-50 py-14 max-sm:px-4">
-        <div className="relative container mx-auto grid items-start gap-8 md:grid-cols-2">
+        <div className="container relative mx-auto grid items-start gap-14 md:grid-cols-2">
           <div className="md:mt-4">
-            <h1 className="mb-2 text-4xl font-bold">{data.service.name}</h1>
+            <h1 className="mb-2 font-bold text-4xl">{data.service.name}</h1>
             <h2 className="text-2xl">{data.name}</h2>
 
             <div className="my-10 space-y-4">
@@ -95,7 +95,7 @@ export default async function Sub({ params }: PropsParams) {
                 </div>
                 <div>
                   <h4 className="font-medium">Ahorra tiempo</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-gray-600 text-sm">
                     Deja que profesionales se encarguen mientras te enfocas en
                     lo importante
                   </p>
@@ -108,14 +108,14 @@ export default async function Sub({ params }: PropsParams) {
                 </div>
                 <div>
                   <h4 className="font-medium">Precios competitivos</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-gray-600 text-sm">
                     Compara presupuestos y elige la mejor opción para tu
                     bolsillo
                   </p>
                 </div>
               </div>
             </div>
-            <h3 className="text-xl font-medium underline">
+            <h3 className="font-medium text-xl underline">
               Preguntas frecuentes
             </h3>
             <Accordion items={items} defaultOpen={0} />
@@ -123,7 +123,7 @@ export default async function Sub({ params }: PropsParams) {
 
           <div className="rounded-xl border bg-white shadow-lg">
             <div className="rounded-t-xl bg-primary p-6 text-white">
-              <p className="text-2xl font-bold">Solicitar Presupuesto</p>
+              <p className="font-bold text-2xl">Solicitar Presupuesto</p>
               <p>
                 Por favor complete la información para procesar su solicitud
               </p>

@@ -1,6 +1,6 @@
 import { Footer } from '@/components/footer';
 import prisma from '@/lib/prisma/db';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const dynamic = 'force-static';
@@ -64,13 +64,13 @@ export default async function AllService() {
               className="rounded-xl bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
               key={service.id}
             >
-              <h3 className="mb-2 text-xl font-medium">{service.name}</h3>
+              <h3 className="mb-2 font-medium text-xl">{service.name}</h3>
               <p className="text-gray-500">{service.description}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {service.subServices.map((sub) => (
                   <Link
-                    className="hover:bg-primary-100 rounded-full bg-muted px-3 py-1.5 text-xs text-primary-foreground hover:text-accent"
+                    className="rounded-full bg-muted px-3 py-1.5 text-primary-foreground text-xs hover:bg-primary-100 hover:text-accent"
                     href={`/services/${service.slug}/${sub.id}`}
                     key={sub.id}
                   >

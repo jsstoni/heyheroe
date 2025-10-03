@@ -3,14 +3,14 @@
 import Button from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { sendBudget } from '@/lib/actions/send-budget';
-import { BudgetValues, schemaBudget } from '@/lib/zod/schemas/budget';
+import { type BudgetValues, schemaBudget } from '@/lib/zod/schemas/budget';
+import ErrorMessage from '../error-message';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2, Send } from 'lucide-react';
 import { useAction } from 'next-safe-action/hooks';
 import { useEffect, useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import ErrorMessage from '../error-message';
 
 export default function FormBudget({ id }: { id: number | null }) {
   const [open, setOpen] = useState<boolean>(false);
@@ -108,7 +108,7 @@ export default function FormBudget({ id }: { id: number | null }) {
             message={errors.details?.message}
           />
 
-          <label className="block">
+          <div className="block">
             Valor del servicio
             <div className="flex items-center">
               <Input
@@ -131,7 +131,7 @@ export default function FormBudget({ id }: { id: number | null }) {
                 Enviar
               </Button>
             </div>
-          </label>
+          </div>
           <ErrorMessage
             className="col-span-2"
             message={errors.budget?.message}

@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from 'react';
+import { type ChangeEvent, useState } from 'react';
 
 type UseCharacterLimitProps = {
   maxLength?: number;
@@ -38,7 +38,7 @@ export function useCharacterLimit({
     }
 
     if (
-      maxLength == undefined &&
+      maxLength === undefined &&
       minLength !== undefined &&
       minLength >= newLength
     ) {

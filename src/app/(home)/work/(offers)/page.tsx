@@ -39,22 +39,22 @@ async function WorkList() {
           className="group flex flex-col rounded-lg border bg-white p-4 shadow-xs hover:shadow-lg"
         >
           <div className="flex items-center">
-            <strong className="text-lg font-medium">
+            <strong className="font-medium text-lg">
               {item.subServices.service.name} - {item.subServices.name}
             </strong>
           </div>
-          <p className="mt-1 flex items-center gap-1 text-sm text-gray-500">
+          <p className="mt-1 flex items-center gap-1 text-gray-500 text-sm">
             <Calendar className="size-3" />
             Publicado {relativeDate(item.createdAt)}
             <MapPin className="ml-2 size-3" />
             {getCommuneById(item.commune)}
           </p>
 
-          <div className="grid grid-cols-[1fr_auto] items-baseline-last">
+          <div className="items-baseline-last grid grid-cols-[1fr_auto]">
             <p className="mt-3">{item.description}</p>
 
             <Link
-              className="mt-3 mr-auto inline-flex rounded-full border border-primary p-1 px-5 text-sm text-primary hover:text-accent"
+              className="mt-3 mr-auto inline-flex rounded-full border border-primary p-1 px-5 text-primary text-sm hover:text-accent"
               href={`/work/${generateSlug(`${item.subServices.service.name}-${item.subServices.name}`)}-tarea-${item.id}`}
             >
               Ver Detalles
@@ -70,11 +70,12 @@ function Loader() {
   return (
     <div className="space-y-4">
       {Array.from({ length: 3 }).map((_, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: <noindex>
         <div key={index} className="rounded-lg border bg-white p-4 shadow-xs">
-          <div className="h-4 w-1/2 animate-pulse rounded-md bg-gray-200"></div>
-          <div className="mt-1 h-3 w-44 animate-pulse rounded-md bg-gray-200"></div>
+          <div className="h-4 w-1/2 animate-pulse rounded-md bg-gray-200" />
+          <div className="mt-1 h-3 w-44 animate-pulse rounded-md bg-gray-200" />
 
-          <div className="mt-4 h-4 w-3/4 animate-pulse rounded-md bg-gray-200"></div>
+          <div className="mt-4 h-4 w-3/4 animate-pulse rounded-md bg-gray-200" />
         </div>
       ))}
     </div>
@@ -89,28 +90,26 @@ export default async function Work({
   await filterParamsCache.parse(searchParams);
 
   return (
-    <>
-      <section className="container flex flex-col p-4 py-10 md:flex-row md:gap-8 md:px-0">
-        <div className="relative w-full self-start rounded-lg border bg-white p-4 shadow-xs md:w-72">
-          <p className="mb-2 flex items-center gap-1 text-lg font-medium">
-            <Filter className="size-4" /> Filtros
-          </p>
+    <section className="container flex flex-col p-4 py-10 md:flex-row md:gap-8 md:px-0">
+      <div className="relative w-full self-start rounded-lg border bg-white p-4 shadow-xs md:w-72">
+        <p className="mb-2 flex items-center gap-1 font-medium text-lg">
+          <Filter className="size-4" /> Filtros
+        </p>
 
-          <CityFilter />
-          <hr className="my-3" />
-          <CategoryFilter />
-        </div>
+        <CityFilter />
+        <hr className="my-3" />
+        <CategoryFilter />
+      </div>
 
-        <div className="flex-1">
-          <h3 className="mb-4 flex items-center gap-2 text-2xl">
-            Ofertas de trabajo
-          </h3>
+      <div className="flex-1">
+        <h3 className="mb-4 flex items-center gap-2 text-2xl">
+          Ofertas de trabajo
+        </h3>
 
-          <ErrorSuspense loading={<Loader />} error={'Error'}>
-            <WorkList />
-          </ErrorSuspense>
-        </div>
-      </section>
-    </>
+        <ErrorSuspense loading={<Loader />} error={'Error'}>
+          <WorkList />
+        </ErrorSuspense>
+      </div>
+    </section>
   );
 }

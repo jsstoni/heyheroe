@@ -26,7 +26,7 @@ export default async function Offers({
       <div className="grid grid-cols-6 gap-4">
         <div className="col-span-4">
           <div className="mb-4 flex items-center gap-2 font-thin text-gray-500">
-            <span className="rounded-full border bg-muted px-3 py-1 text-xs font-medium text-accent">
+            <span className="rounded-full border bg-muted px-3 py-1 font-medium text-accent text-xs">
               {offer.subServices.service.name}
             </span>
             <span className="flex items-center gap-2">
@@ -38,7 +38,7 @@ export default async function Offers({
             </span>
           </div>
 
-          <h3 className="mb-4 text-3xl font-black">{offer.subServices.name}</h3>
+          <h3 className="mb-4 font-black text-3xl">{offer.subServices.name}</h3>
 
           <strong className="my-2 block text-lg">
             Descripción del servicio
@@ -48,7 +48,7 @@ export default async function Offers({
 
         <div className="col-span-2">
           <div className="mb-4 space-y-2 rounded-lg border p-4 shadow-inner">
-            <span className="block text-xs font-thin text-gray-500">
+            <span className="block font-thin text-gray-500 text-xs">
               Solicitado por:
             </span>
             {offer.user.name} ({getCommuneById(offer.commune)})

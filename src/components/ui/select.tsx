@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import * as React from 'react';
-import { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
+import type { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
 
 type SelectError =
   | FieldError
@@ -45,7 +45,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           ))}
         </select>
         {errorMessage && (
-          <p className="mt-1 text-sm text-red-500">{errorMessage}</p>
+          <p className="mt-1 text-red-500 text-sm">{errorMessage}</p>
         )}
       </>
     );

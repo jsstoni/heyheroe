@@ -52,7 +52,7 @@ export default function FormPerfil() {
       className="grid gap-4 md:grid-cols-2"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <label>
+      <div>
         Nombre completo
         <Input
           {...register('name')}
@@ -60,9 +60,9 @@ export default function FormPerfil() {
           id="name"
           type="text"
         />
-      </label>
+      </div>
 
-      <label>
+      <div>
         Correo electrónico
         <Input
           {...register('email')}
@@ -71,9 +71,9 @@ export default function FormPerfil() {
           type="email"
           disabled
         />
-      </label>
+      </div>
 
-      <label>
+      <div>
         Teléfono
         <Input
           {...register('phone')}
@@ -82,7 +82,7 @@ export default function FormPerfil() {
           placeholder="948977182"
           type="tel"
         />
-      </label>
+      </div>
 
       <Button className="col-span-2 w-[100px]" type="submit">
         Guardar

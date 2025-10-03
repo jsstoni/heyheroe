@@ -3,8 +3,8 @@ import Link from 'next/link';
 export default function NotFound() {
   return (
     <div className="container space-y-2 py-20 text-center">
-      <h2 className="text-6xl font-medium">No encontrado</h2>
-      <p className="text-lg text-gray-500">
+      <h2 className="font-medium text-6xl">No encontrado</h2>
+      <p className="text-gray-500 text-lg">
         No se pudo encontrar el recurso solicitado
       </p>
       <Link

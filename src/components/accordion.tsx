@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronDown } from 'lucide-react';
-import React, { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 
 type AccordionItemProps = {
   title: string;
@@ -14,11 +14,12 @@ const AccordionItem = memo(
   ({ title, content, isOpen, onClick }: AccordionItemProps) => (
     <div>
       <button
+        type="button"
         className="flex w-full items-center justify-between py-4 hover:text-primary focus:outline-none"
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-medium">{title}</span>
+        <span className="font-medium text-lg">{title}</span>
         <ChevronDown
           className={`size-5 transition-transform duration-200 ${
             isOpen ? 'rotate-180' : ''

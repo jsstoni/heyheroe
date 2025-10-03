@@ -1,7 +1,7 @@
 'use client';
 
 import { Input } from '@/components/ui/input';
-import { Service, SubService } from '@/lib/types';
+import type { Service, SubService } from '@/lib/types';
 import service from '~/data/services.json';
 import subService from '~/data/sub-services.json';
 import { useEffect, useRef, useState } from 'react';
@@ -90,7 +90,7 @@ export default function SearchService() {
               })}
             </ul>
           ) : (
-            <p className="text-sm text-gray-500">
+            <p className="text-gray-500 text-sm">
               No se encontraron resultados.
             </p>
           )}

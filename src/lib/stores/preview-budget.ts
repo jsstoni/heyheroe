@@ -1,4 +1,4 @@
-import { Budget } from '@/lib/types';
+import type { Budget } from '@/lib/types';
 import { create } from 'zustand';
 
 export type BudgetState = {

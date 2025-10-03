@@ -1,6 +1,6 @@
+import 'server-only';
 import prisma from '@/lib/prisma/db';
 import { unstable_cache } from 'next/cache';
-import 'server-only';
 
 //my proposal
 export const getRequests = (userId: string) =>

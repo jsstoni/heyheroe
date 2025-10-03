@@ -7,7 +7,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { commune } from '@/constants/commune';
 import { sendProposal } from '@/lib/actions/send-proposal';
 import { useCharacterLimit } from '@/lib/hooks/use-character-limit';
-import { ProposalValues, schemaProposal } from '@/lib/zod/schemas/proposal';
+import {
+  type ProposalValues,
+  schemaProposal,
+} from '@/lib/zod/schemas/proposal';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ArrowLeft, ArrowRight, Calendar, CheckCircle } from 'lucide-react';
 import { useAction } from 'next-safe-action/hooks';
@@ -44,7 +47,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
   });
 
   const { value, handleChange, rest } = useCharacterLimit({
-    minLength: 80,
+    minLength: 50,
   });
 
   const { executeAsync, isExecuting } = useAction(sendProposal, {
@@ -107,7 +110,7 @@ export default function FormService({ id: serviceId }: { id: number }) {
 
       {step === 1 && (
         <>
-          <label className="relative col-span-2">
+          <div className="relative col-span-2">
             ¿Para qué fecha lo necesitas?
             <Calendar className="pointer-events-none absolute top-9 left-3 size-4 text-gray-400" />
             <Input
@@ -116,55 +119,56 @@ export default function FormService({ id: serviceId }: { id: number }) {
               type="date"
               error={errors.serviceDate}
             />
-          </label>
+          </div>
 
-          <label>
+          <div>
             Tipo de propiedad
             <Select {...register('type')} options={home} error={errors.type} />
-          </label>
+          </div>
 
-          <label>
+          <div>
             Comuna
             <Select
               {...register('commune', { valueAsNumber: true })}
               options={[{ value: 0, label: 'Seleccionar comuna' }, ...cities]}
               error={errors.commune}
             />
-          </label>
-          <label className="col-span-2">
+          </div>
+          <div className="col-span-2">
             ¿Cúal es la ubicación?
             <Textarea
               {...register('address')}
               error={errors.address}
               rows={2}
             />
-          </label>
+          </div>
         </>
       )}
 
       {step === 2 && (
-        <>
-          <label className="col-span-2">
-            Describe tu necesidad a detalle (Mínimo {rest} caracteres)
-            <Textarea
-              {...register('description')}
-              error={errors.description}
-              rows={4}
-              value={value}
-              onChange={handleChange}
-            />
-            <span className="col-span-2 text-xs text-gray-500">
-              Incluye detalles como tamaño del espacio, materiales necesarios,
-              requisitos específicos, etc.
-            </span>
-          </label>
-        </>
+        <div className="col-span-2">
+          <p>
+            Describe tu necesidad a detalle{' '}
+            <span className="text-xs">(Mínimo {rest} caracteres)</span>
+          </p>
+          <Textarea
+            {...register('description')}
+            error={errors.description}
+            rows={4}
+            value={value}
+            onChange={handleChange}
+          />
+          <span className="col-span-2 text-gray-500 text-xs">
+            Incluye detalles como tamaño del espacio, materiales necesarios,
+            requisitos específicos, etc.
+          </span>
+        </div>
       )}
 
       {step === 3 ? (
         <div className="col-span-2 text-center">
           <CheckCircle className="mx-auto size-16 stroke-primary" />
-          <p className="mt-3 text-lg font-medium">¡Gracias por tu solicitud!</p>
+          <p className="mt-3 font-medium text-lg">¡Gracias por tu solicitud!</p>
           <p className="mx-auto max-w-sm text-sm">
             Pronto comenzarás a recibir propuestas personalizadas para el
             servicio que necesitas.

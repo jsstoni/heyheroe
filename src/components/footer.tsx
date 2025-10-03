@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
-            <h3 className="mb-4 text-2xl font-bold">
+            <h3 className="mb-4 font-bold text-2xl">
               Hey<span className="text-primary">Héroe</span>
             </h3>
             <p className="text-gray-400">
@@ -15,9 +15,10 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Sobre HeyHéroe</h4>
+            <h4 className="mb-4 font-semibold text-lg">Sobre HeyHéroe</h4>
             <ul className="space-y-3 text-gray-400">
               {about.map((item, index) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: noindex
                 <li key={index}>
                   <Link
                     href={item?.href || '#'}
@@ -31,7 +32,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Contacto</h4>
+            <h4 className="mb-4 font-semibold text-lg">Contacto</h4>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center gap-2">
                 <Mail className="size-4 stroke-primary" /> info@heyheroe.com
@@ -45,7 +46,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-6 flex items-center justify-center gap-4 border-t border-gray-700 pt-4 text-gray-400">
+        <div className="mt-6 flex items-center justify-center gap-4 border-gray-700 border-t pt-4 text-gray-400">
           <p>HeyHèroe &copy; {new Date().getFullYear()}</p>
           <Link href="" id="">
             Términos de uso

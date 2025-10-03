@@ -22,7 +22,7 @@ export default function CityFilter() {
 
   return (
     <>
-      <span className="mb-1 block text-sm text-gray-400">Comuna</span>
+      <span className="mb-1 block text-gray-400 text-sm">Comuna</span>
       <Select
         options={[{ value: '', label: 'Todos' }, ...options]}
         value={city}

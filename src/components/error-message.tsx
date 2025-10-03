@@ -8,5 +8,5 @@ export default function ErrorMessage({
   className?: string;
 }) {
   if (!message) return null;
-  return <div className={cn('text-sm text-red-500', className)}>{message}</div>;
+  return <div className={cn('text-red-500 text-sm', className)}>{message}</div>;
 }

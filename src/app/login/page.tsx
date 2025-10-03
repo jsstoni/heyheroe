@@ -13,8 +13,8 @@ export default function Login() {
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div className="w-full max-w-md space-y-4 rounded-xl bg-white p-8 shadow-md">
         <div className="text-center">
-          <h2 className="mt-6 text-3xl font-extrabold">Iniciar sesión</h2>
-          <p className="mt-1 text-sm text-gray-600">
+          <h2 className="mt-6 font-extrabold text-3xl">Iniciar sesión</h2>
+          <p className="mt-1 text-gray-600 text-sm">
             Utiliza tu cuenta de Google para acceder
           </p>
         </div>
@@ -25,10 +25,10 @@ export default function Login() {
           variant="secondary"
           onClick={googleSignIn}
         >
-          <small className="absolute inset-0 w-3 bg-primary transition-all duration-300 group-hover:w-full"></small>
+          <small className="absolute inset-0 w-3 bg-primary transition-all duration-300 group-hover:w-full" />
           <span className="relative z-10">Iniciar con Google</span>
         </Button>
-        <p className="mt-4 text-center text-sm text-gray-600">
+        <p className="mt-4 text-center text-gray-600 text-sm">
           Después de iniciar sesión, podrás completar tu perfil de usuario.
         </p>
       </div>

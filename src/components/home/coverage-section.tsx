@@ -1,5 +1,5 @@
 import { commune } from '@/constants/commune';
-import { Citys } from '@/lib/types';
+import type { Citys } from '@/lib/types';
 import { ArrowRight, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
@@ -30,7 +30,7 @@ export default function CoverageSection() {
 
       <Link
         href="/coverage"
-        className="mx-auto inline-flex items-center rounded-lg border border-primary p-2 px-4 text-xs font-medium text-primary hover:text-accent"
+        className="mx-auto inline-flex items-center rounded-lg border border-primary p-2 px-4 font-medium text-primary text-xs hover:text-accent"
       >
         Ver todas las zonas de cobertura
         <ArrowRight className="ml-2 h-4 w-4" />

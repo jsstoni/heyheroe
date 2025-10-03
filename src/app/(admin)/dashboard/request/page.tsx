@@ -47,7 +47,7 @@ async function AsyncDataRequest() {
           className="self-start rounded-lg border bg-white p-4 text-gray-400 shadow-xs"
           key={service.id}
         >
-          <h3 className="text-xl font-medium text-gray-800">
+          <h3 className="font-medium text-gray-800 text-xl">
             {service.subServices.service.name} - {service.subServices.name}
           </h3>
           <p className="flex items-center gap-2 text-sm">

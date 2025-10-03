@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`bg-white text-gray-700 ${manrope.className}`}>
-      <body className={`antialiased`}>
+      <body className={'antialiased'}>
         <NuqsAdapter>{children}</NuqsAdapter>
         <Toaster position="bottom-right" />
       </body>

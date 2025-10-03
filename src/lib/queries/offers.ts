@@ -1,5 +1,5 @@
-import prisma from '@/lib/prisma/db';
 import 'server-only';
+import prisma from '@/lib/prisma/db';
 
 export const getOffers = async (
   category: string[] | null = null,

@@ -1,12 +1,12 @@
-import Link from 'next/link';
 import { ActiveLink } from './active-link';
 import Profile from './profile';
+import Link from 'next/link';
 
 export const NavBar = () => {
   return (
     <header className="fixed top-0 z-50 w-full border-b bg-white">
       <nav className="container flex h-[64px] items-center justify-between gap-4 px-4 md:px-0">
-        <Link className="flex items-end gap-1 text-2xl font-black" href="/">
+        <Link className="flex items-end gap-1 font-black text-2xl" href="/">
           <img
             src="/logo.svg"
             width="25"

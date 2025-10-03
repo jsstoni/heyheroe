@@ -1,4 +1,4 @@
-import { clsx, type ClassValue } from 'clsx';
+import { type ClassValue, clsx } from 'clsx';
 import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { twMerge } from 'tailwind-merge';
@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatPrice(value: number, currency: string = 'CLP') {
+export function formatPrice(value: number, currency = 'CLP') {
   return new Intl.NumberFormat('es-CL', {
     style: 'currency',
     currency,
@@ -30,16 +30,16 @@ export function generateSlug(text: string): string {
     .toLowerCase()
     .trim()
     .replace(/\s+/g, '-')
-    .replace(/[^\w\-]+/g, '')
-    .replace(/\-\-+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
     .replace(/^-+/, '')
     .replace(/-+$/, '');
 }
 
 export function getIdFrom(slug: string) {
   const match = slug.match(/tarea-(\d+)$/);
-  if (match && match[1]) {
-    return parseInt(match[1], 10);
+  if (match?.[1]) {
+    return Number.parseInt(match[1], 10);
   }
   return null;
 }

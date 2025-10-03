@@ -48,20 +48,20 @@ export default async function Home() {
   return (
     <>
       <section className="relative">
-        <div className="relative container mx-auto flex h-[540px] flex-col justify-center">
+        <div className="container relative mx-auto flex h-[540px] flex-col justify-center">
           <div className="max-w-xl space-y-3">
             <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 font-medium text-primary">
               <span className="relative flex h-3 w-3">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex h-3 w-3 rounded-full bg-primary"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-primary" />
               </span>
               +{total} servicios profesionales.
             </div>
-            <h1 className="text-5xl font-black text-balance md:text-7xl">
+            <h1 className="text-balance font-black text-5xl md:text-7xl">
               Tu hogar, en manos{' '}
               <span className="relative z-10 text-primary">expertas</span>
             </h1>
-            <h2 className="text-xl text-gray-500">
+            <h2 className="text-gray-500 text-xl">
               Conecta con profesionales verificados para jardinería, limpieza y
               más—todo en una plataforma fácil de usar.
             </h2>
@@ -73,14 +73,14 @@ export default async function Home() {
               <Button>Únete como profesional</Button>
             </hgroup>
           </div>
-          <div className="absolute inset-0 top-4 -z-10 size-full rounded-r-3xl bg-[url(/bg.jpg)] bg-cover bg-center bg-no-repeat object-cover">
+          <div className="-z-10 absolute inset-0 top-4 size-full rounded-r-3xl bg-[url(/bg.jpg)] bg-center bg-cover bg-no-repeat object-cover">
             <div
               className="absolute inset-0 size-full"
               style={{
                 background:
                   'linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 65%)',
               }}
-            ></div>
+            />
           </div>
         </div>
       </section>
@@ -104,7 +104,7 @@ export default async function Home() {
           {services.map((service) => (
             <ActiveLink
               key={service.id}
-              className="group relative flex flex-col items-start gap-2 overflow-hidden rounded-xl bg-white p-3 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl md:gap-4 lg:flex-row"
+              className="group hover:-translate-y-1 relative flex flex-col items-start gap-2 overflow-hidden rounded-xl bg-white p-3 shadow-sm transition-all hover:shadow-xl md:gap-4 lg:flex-row"
               href={`/services/${service.slug}`}
               title={service.name}
             >
@@ -120,7 +120,7 @@ export default async function Home() {
                 <h3 className="font-semibold group-hover:text-primary">
                   {service.name}
                 </h3>
-                <span className="text-sm text-gray-500">
+                <span className="text-gray-500 text-sm">
                   {service.description}
                 </span>
               </div>

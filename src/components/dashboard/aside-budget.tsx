@@ -50,11 +50,11 @@ export default function AsideBudget({ size = 'small' }: Props) {
         'fixed top-[64px] right-0 z-50 h-full border bg-white shadow-xl',
         width
       )}
-      role="complementary"
       aria-label="Presupuestos"
     >
       <div className="relative h-full overflow-y-auto p-6">
         <button
+          type="button"
           onClick={closeAside}
           className="absolute top-4 right-4 cursor-pointer text-2xl text-gray-500 hover:text-gray-700"
           aria-label="Cerrar"
@@ -62,7 +62,7 @@ export default function AsideBudget({ size = 'small' }: Props) {
           ×
         </button>
 
-        <h2 className="mb-4 text-xl font-semibold text-gray-800">
+        <h2 className="mb-4 font-semibold text-gray-800 text-xl">
           Presupuestos
         </h2>
 
@@ -72,9 +72,11 @@ export default function AsideBudget({ size = 'small' }: Props) {
           ) : (
             <ul className="space-y-4">
               {info.budget.map((budget, index) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: <noindex>
                 <li key={index} className="rounded border p-4 shadow-sm">
                   <div className="mb-2 border-b pb-2 text-sm">
                     {budget.details.map((detail, index) => (
+                      // biome-ignore lint/suspicious/noArrayIndexKey: <noindex>
                       <div className="flex items-center" key={index}>
                         <span>{detail.description}:</span>
                         <span className="ml-auto">
@@ -85,8 +87,8 @@ export default function AsideBudget({ size = 'small' }: Props) {
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <p className="text-md text-gray-600">{budget.user.name}</p>
-                    <p className="text-lg font-medium text-green-700">
+                    <p className="text-gray-600 text-md">{budget.user.name}</p>
+                    <p className="font-medium text-green-700 text-lg">
                       {formatPrice(budget.budget)}
                     </p>
                   </div>
