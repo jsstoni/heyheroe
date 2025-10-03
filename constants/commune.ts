@@ -1,0 +1,43 @@
+export const commune = [
+  { id: 1, name: 'Calle Larga', active: false, home: false },
+  { id: 2, name: 'Los Andes', active: true, home: true },
+  { id: 3, name: 'Rinconada', active: false, home: false },
+  { id: 4, name: 'San Esteban', active: false, home: false },
+  { id: 5, name: 'Cabildo', active: false, home: false },
+  { id: 6, name: 'La Ligua', active: true, home: false },
+  { id: 7, name: 'Papudo', active: false, home: false },
+  { id: 8, name: 'Petorca', active: false, home: false },
+  { id: 9, name: 'Zapallar', active: false, home: false },
+  { id: 10, name: 'Hijuelas', active: false, home: false },
+  { id: 11, name: 'La Calera', active: true, home: false },
+  { id: 12, name: 'La Cruz', active: false, home: false },
+  { id: 13, name: 'Nogales', active: false, home: false },
+  { id: 14, name: 'Quillota', active: true, home: true },
+  { id: 15, name: 'Algarrobo', active: false, home: false },
+  { id: 16, name: 'Cartagena', active: false, home: false },
+  { id: 17, name: 'El Quisco', active: false, home: false },
+  { id: 18, name: 'El Tabo', active: false, home: false },
+  { id: 19, name: 'San Antonio', active: true, home: true },
+  { id: 20, name: 'Santo Domingo', active: false, home: false },
+  { id: 21, name: 'Catemu', active: false, home: false },
+  { id: 22, name: 'Llay-Llay', active: true, home: false },
+  { id: 23, name: 'Panquehue', active: false, home: false },
+  { id: 24, name: 'Putaendo', active: false, home: false },
+  { id: 25, name: 'San Felipe', active: true, home: true },
+  { id: 26, name: 'Santa María', active: false, home: false },
+  { id: 27, name: 'Casablanca', active: true, home: false },
+  { id: 28, name: 'Concón', active: true, home: true },
+  { id: 29, name: 'Puchuncaví', active: false, home: false },
+  { id: 30, name: 'Quintero', active: true, home: false },
+  { id: 31, name: 'Valparaíso', active: true, home: true },
+  { id: 32, name: 'Viña del Mar', active: true, home: true },
+  { id: 33, name: 'Limache', active: true, home: true },
+  { id: 34, name: 'Olmué', active: false, home: false },
+  { id: 35, name: 'Quilpué', active: true, home: true },
+  { id: 36, name: 'Villa Alemana', active: true, home: true },
+];
+
+export function getCommuneById(communeId: number) {
+  const city = commune.find(({ id }) => id === communeId);
+  return city?.name;
+}

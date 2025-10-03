@@ -1,0 +1,57 @@
+import { cn } from '@/lib/utils';
+import * as React from 'react';
+import type { FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
+
+type SelectError =
+  | FieldError
+  | Merge<FieldError, FieldErrorsImpl<any>>
+  | string
+  | undefined;
+
+export interface SelectOption {
+  value: string | number;
+  label: string;
+}
+
+interface SelectProps extends React.ComponentProps<'select'> {
+  options: SelectOption[];
+  error?: SelectError;
+}
+
+const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
+  ({ className, options, error, ...props }, ref) => {
+    const errorMessage =
+      typeof error === 'string'
+        ? error
+        : error && 'message' in error
+          ? (error.message as string)
+          : null;
+
+    return (
+      <>
+        <select
+          className={cn(
+            'h-10 w-full rounded-md border px-3 py-1.5 disabled:cursor-not-allowed disabled:opacity-25',
+            errorMessage && 'border-red-500',
+            className
+          )}
+          ref={ref}
+          {...props}
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        {errorMessage && (
+          <p className="mt-1 text-red-500 text-sm">{errorMessage}</p>
+        )}
+      </>
+    );
+  }
+);
+
+Select.displayName = 'Select';
+
+export { Select };

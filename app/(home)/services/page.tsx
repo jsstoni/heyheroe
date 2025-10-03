@@ -1,0 +1,89 @@
+import { Footer } from '@/components/footer';
+import prisma from '@/lib/prisma/db';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+export const dynamic = 'force-static';
+
+export const metadata: Metadata = {
+  title: 'Servicios',
+  description:
+    'Servicios para el hogar que simplifican tu día a día. Soluciones rápidas y eficaces para que disfrutes de un espacio más cómodo y seguro.',
+};
+
+const getData = async () => {
+  try {
+    const services = await prisma.services.findMany({
+      orderBy: {
+        name: 'asc',
+      },
+      where: {
+        active: true,
+      },
+      include: {
+        subServices: {
+          where: {
+            active: true,
+          },
+          select: {
+            id: true,
+            name: true,
+          },
+          orderBy: {
+            name: 'asc',
+          },
+        },
+      },
+    });
+    return services;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
+export default async function AllService() {
+  const data = await getData();
+
+  return (
+    <>
+      <section className="bg-gray-50 py-14">
+        <hgroup className="text-center">
+          <h1 className="mb-2 text-3xl md:text-4xl">
+            Todos nuestros servicios profesionales
+          </h1>
+          <p className="text-gray-500">
+            Encuentra el servicio que necesitas entre nuestras categorías
+            especializadas
+          </p>
+        </hgroup>
+
+        <div className="container mx-auto grid grid-cols-2 gap-4 px-4 py-5 md:grid-cols-3 md:px-8">
+          {data.map((service) => (
+            <div
+              className="rounded-xl bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+              key={service.id}
+            >
+              <h3 className="mb-2 font-medium text-xl">{service.name}</h3>
+              <p className="text-gray-500">{service.description}</p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {service.subServices.map((sub) => (
+                  <Link
+                    className="rounded-full bg-muted px-3 py-1.5 text-primary-foreground text-xs hover:bg-primary-100 hover:text-accent"
+                    href={`/services/${service.slug}/${sub.id}`}
+                    key={sub.id}
+                  >
+                    {sub.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}

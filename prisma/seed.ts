@@ -1,4 +1,4 @@
-import { PrismaClient } from '../src/lib/prisma/generated/client';
+import { PrismaClient } from '@/lib/prisma/generated/client';
 import fs from 'node:fs/promises';
 
 const prisma = new PrismaClient();
