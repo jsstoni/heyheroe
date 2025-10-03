@@ -1,6 +1,6 @@
 generator client {
   provider        = "prisma-client"
-  output          = "../../src/lib/prisma/generated"
+  output          = "../../lib/prisma/generated"
   moduleFormat    = "esm"
   previewFeatures = ["prismaSchemaFolder"]
 }
