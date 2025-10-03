@@ -1,9 +1,9 @@
 import { Footer } from '@/components/footer';
 import { commune } from '@/constants/commune';
-import { Citys } from '@/lib/types';
+import type { Citys } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Cobertura',
